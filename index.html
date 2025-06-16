@@ -6,1376 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>prompts.chat — awesome AI prompts</title>
-<!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Awesome ChatGPT Prompts | This repo includes ChatGPT prompt curation to use ChatGPT better.</title>
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>prompts.chat | This repo includes ChatGPT prompt curation to use ChatGPT better.</title>
 <meta name="generator" content="Jekyll v3.10.0" />
-<meta property="og:title" content="Awesome ChatGPT Prompts" />
+<meta property="og:title" content="prompts.chat" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="This repo includes ChatGPT prompt curation to use ChatGPT better." />
 <meta property="og:description" content="This repo includes ChatGPT prompt curation to use ChatGPT better." />
-<meta property="og:site_name" content="Awesome ChatGPT Prompts" />
+<meta property="og:site_name" content="prompts.chat" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Awesome ChatGPT Prompts" />
+<meta property="twitter:title" content="prompts.chat" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","description":"This repo includes ChatGPT prompt curation to use ChatGPT better.","headline":"Awesome ChatGPT Prompts","name":"Awesome ChatGPT Prompts","url":"/"}</script>
+{"@context":"https://schema.org","@type":"WebSite","description":"This repo includes ChatGPT prompt curation to use ChatGPT better.","headline":"prompts.chat","name":"prompts.chat","url":"/"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=3a1d66c8ca083ca340df11ed4c46e765181c50ae">
-    <style>
-      :root {
-        --bg-color-light: #ffffff;
-        --bg-color-dark: #1a1a1a;
-        --text-color-light: #000000;
-        --text-color-dark: #ffffff;
-        --sidebar-width: 300px;
-        --accent-color: #10b981;
-        --accent-color-hover: #059669;
-      }
 
-      body {
-        background-color: var(--bg-color-light);
-        color: var(--text-color-light);
-        margin: 0;
-        padding: 0;
-      }
-
-      body.dark-mode {
-        background-color: var(--bg-color-dark);
-        color: var(--text-color-dark);
-      }
-
-      .dark-mode-toggle {
-        background-color: transparent;
-        border: none;
-        color: var(--accent-color);
-        cursor: pointer;
-        padding: 6px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        opacity: 0.8;
-        transition: opacity 0.2s ease;
-      }
-
-      .dark-mode-toggle:hover {
-        opacity: 1;
-      }
-
-      .mode-icon {
-        width: 20px;
-        height: 20px;
-        stroke: currentColor;
-      }
-
-      .site-header {
-        padding: 1rem 2rem;
-        text-align: left;
-        border-bottom: 1px solid #e1e4e8;
-        background-color: var(--bg-color-light);
-        position: sticky;
-        top: 0;
-        z-index: 100;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .dark-mode .site-header {
-        background-color: var(--bg-color-dark);
-        border-bottom-color: #2d2d2d;
-      }
-
-      .header-left {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 0;
-      }
-
-      .header-right {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 12px;
-      }
-
-      .star-count {
-        display: flex;
-        align-items: center;
-        gap: 4px;
-        color: var(--accent-color);
-        font-size: 0.9rem;
-        opacity: 0.8;
-        text-decoration: none;
-        transition: opacity 0.2s ease;
-      }
-
-      .star-count:hover {
-        opacity: 1;
-      }
-
-      .star-count svg {
-        width: 16px;
-        height: 16px;
-      }
-
-      .social-links {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 12px;
-        margin-right: 8px;
-      }
-
-      .social-link {
-        color: var(--accent-color);
-        opacity: 0.8;
-        transition: opacity 0.2s ease;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .social-link:hover {
-        opacity: 1;
-      }
-
-      .social-link svg {
-        width: 24px;
-        height: 24px;
-      }
-
-      .site-footer {
-        padding: 12px 20px;
-        text-align: center;
-        border-top: 1px solid #e1e4e8;
-        background: var(--bg-color-light);
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        z-index: 100;
-      }
-
-      .dark-mode .site-footer {
-        background: var(--bg-color-dark);
-        border-color: #2d2d2d;
-      }
-
-      .footer-content {
-        max-width: none;
-        margin: 0;
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 0 30px;
-        text-align: left;
-        font-size: 0.7rem;
-        padding: 0 1rem;
-      }
-
-      .footer-section {
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-      }
-
-      .footer-section h3 {
-        font-size: 0.8rem;
-        margin: 0;
-        opacity: 0.8;
-      }
-
-      .dark-mode .footer-section h3 {
-        color: var(--text-color-dark);
-      }
-
-      .footer-section p {
-        font-size: inherit;
-        margin: 0;
-        line-height: 1.3;
-        opacity: 0.6;
-        color: var(--text-color-light);
-      }
-
-      .dark-mode .footer-section p {
-        color: var(--text-color-dark);
-      }
-
-      .book-links {
-        display: flex;
-        flex-direction: column;
-        gap: 4px;
-      }
-
-      .book-link svg {
-        width: 14px;
-        height: 14px;
-      }
-
-      /* Add padding to main content to prevent overlap with fixed footer */
-      .layout-wrapper {
-        padding-bottom: 100px;
-      }
-
-      @media (max-width: 768px) {
-        .footer-content {
-          grid-template-columns: 1fr;
-          gap: 12px;
-          text-align: left;
-          padding: 0 1rem;
-        }
-
-        .footer-section {
-          text-align: left;
-        }
-
-        .footer-section p {
-          text-align: left;
-        }
-
-        .book-links {
-          align-items: flex-start;
-        }
-
-        .site-footer {
-          position: static;
-          text-align: left;
-        }
-
-        .layout-wrapper {
-          padding-bottom: 0;
-        }
-
-        .site-description {
-          display: none !important;
-        }
-
-        .site-header {
-          padding: 0.75rem 1rem;
-          flex-direction: column;
-          align-items: stretch;
-          gap: 8px;
-          position: relative;
-        }
-
-        .header-right {
-          position: absolute;
-          top: 1.3rem;
-          right: 0.75rem;
-          gap: 8px;
-          display: flex;
-          align-items: center;
-        }
-
-        .star-count {
-          display: flex;
-          font-size: 0.8rem;
-        }
-
-        .star-count svg {
-          width: 14px;
-          height: 14px;
-        }
-
-        .dark-mode-toggle {
-          padding: 4px;
-        }
-
-        .mode-icon {
-          width: 18px;
-          height: 18px;
-        }
-
-        .site-slogan {
-          display: none;
-        }
-
-        .site-description {
-          display: flex !important;
-          margin-top: 4px;
-        }
-
-        .platform-hint {
-          font-size: 0.7rem;
-        }
-
-        .platform-tag {
-          padding: 1px 6px;
-          font-size: 0.75rem;
-        }
-
-        .github-link {
-          display: none;
-        }
-
-        .github-link span {
-          display: none;
-        }
-
-        .search-container {
-          padding-bottom: 0 !important;
-          margin-bottom: 0 !important;
-        }
-      }
-
-      .site-title {
-        font-size: 1.8rem;
-        font-weight: 700;
-        margin: 0;
-        background: linear-gradient(45deg, var(--accent-color), #3b82f6);
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        display: inline-block;
-        position: relative;
-        transition: transform 0.3s ease;
-      }
-
-      /* Blinking cursor animation for development mode */
-      @keyframes blink-cursor {
-        0%, 100% { opacity: 1; }
-        50% { opacity: 0; }
-      }
-
-      .site-slogan {
-        font-size: 0.9rem;
-        opacity: 0.7;
-        margin: 0 0 0.8rem 0;
-        line-height: 1;
-      }
-
-      @media (max-width: 768px) {
-        .site-slogan {
-          display: none;
-        }
-
-        .site-description {
-          display: flex !important;
-          margin-top: 4px;
-        }
-
-        .platform-hint {
-          font-size: 0.7rem;
-        }
-
-        .platform-tag {
-          padding: 1px 6px;
-          font-size: 0.75rem;
-        }
-
-        .header-right {
-          gap: 8px;
-        }
-
-        .mode-text {
-          display: none;
-        }
-
-        .dark-mode-toggle {
-          padding: 6px;
-        }
-
-        .github-link {
-          padding: 6px;
-        }
-
-        .github-link span {
-          display: none;
-        }
-
-        .star-count {
-          display: none;
-        }
-      }
-
-      .site-title:hover {
-        transform: translateY(-2px);
-      }
-
-      .site-title::before {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(45deg, var(--accent-color), #3b82f6);
-        filter: blur(20px);
-        opacity: 0;
-        transition: opacity 0.3s ease;
-        z-index: -1;
-      }
-
-      .site-title:hover::before {
-        opacity: 0.15;
-      }
-
-      .site-description {
-        color: var(--text-color-light);
-        margin: 0;
-        font-size: 0.95rem;
-        opacity: 0.8;
-        display: flex;
-        flex-direction: column;
-        gap: 0.3rem;
-      }
-
-      .platform-hint {
-        font-size: 0.75rem;
-        opacity: 0.6;
-        margin: 0;
-      }
-
-      .platform-pills {
-        display: flex;
-        gap: 0.5rem;
-        align-items: center;
-        flex-wrap: wrap;
-      }
-
-      .platform-tag {
-        display: inline-flex;
-        align-items: center;
-        padding: 2px 8px;
-        border-radius: 12px;
-        font-size: 0.85rem;
-        background: rgba(16, 185, 129, 0.1);
-        color: var(--accent-color);
-        border: 1px solid var(--accent-color);
-        text-decoration: none;
-        cursor: pointer;
-        transition: all 0.2s ease;
-      }
-
-      .platform-tag:hover {
-        background: rgba(16, 185, 129, 0.2);
-        transform: translateY(-1px);
-      }
-
-      .platform-tag.active {
-        background: var(--accent-color);
-        color: white;
-        transform: translateY(-1px);
-      }
-
-      .dark-mode .platform-tag {
-        background: rgba(16, 185, 129, 0.2);
-      }
-
-      .dark-mode .platform-tag:hover {
-        background: rgba(16, 185, 129, 0.25);
-      }
-
-      .dark-mode .platform-tag.active {
-        background: var(--accent-color);
-      }
-
-      .dark-mode .site-description {
-        color: var(--text-color-dark);
-      }
-
-      .action-buttons {
-        display: flex;
-        gap: 8px;
-        align-items: center;
-      }
-
-      .chat-button {
-        background: transparent;
-        border: none;
-        cursor: pointer;
-        padding: 2px;
-        color: var(--accent-color);
-        opacity: 0.8;
-        transition: opacity 0.2s ease;
-        z-index: 2;
-        flex-shrink: 0;
-      }
-
-      .chat-button:hover {
-        opacity: 1;
-      }
-
-      .chat-button svg {
-        width: 16px;
-        height: 16px;
-      }
-
-      .layout-wrapper {
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-      }
-
-      .content-wrapper {
-        display: flex;
-        flex: 1;
-      }
-
-      .sidebar {
-        width: var(--sidebar-width);
-        padding: 20px;
-        border-right: 1px solid #e1e4e8;
-        height: calc(100vh - 140px);
-        overflow-y: auto;
-        background-color: var(--bg-color-light);
-      }
-
-      .dark-mode .sidebar {
-        background-color: var(--bg-color-dark);
-        border-right-color: #2d2d2d;
-      }
-
-      .main-content {
-        flex: 1;
-        height: calc(100vh - 140px);
-        overflow-y: auto;
-        padding: 20px;
-      }
-
-      .prompts-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 16px;
-        max-width: 100%;
-        margin: 0;
-        padding: 16px;
-      }
-
-      .container-lg.markdown-body {
-        padding: 0;
-        max-width: none;
-      }
-
-      @media (max-width: 1600px) {
-        .prompts-grid {
-          grid-template-columns: repeat(3, 1fr);
-        }
-      }
-
-      @media (max-width: 1200px) {
-        .prompts-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-      }
-
-      @media (max-width: 768px) {
-        .prompts-grid {
-          grid-template-columns: 1fr;
-          gap: 15px;
-        }
-      }
-
-      .prompt-card {
-        background: var(--bg-color-light);
-        border: 1px solid #e1e4e8;
-        border-radius: 12px;
-        padding: 16px;
-        position: relative;
-        transition: transform 0.2s ease;
-        display: flex;
-        flex-direction: column;
-        min-height: 200px;
-      }
-
-      .dark-mode .prompt-card {
-        background: var(--bg-color-dark);
-        border-color: #2d2d2d;
-      }
-
-      .prompt-card:hover {
-        transform: translateY(-2px);
-      }
-
-      .prompt-title {
-        font-size: 1rem;
-        font-weight: 600;
-        margin: 0 0 12px 0;
-        color: var(--text-color-light);
-        line-height: 1.4;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .dark-mode .prompt-title {
-        color: var(--text-color-dark);
-      }
-
-      .prompt-content {
-        font-size: 0.9rem;
-        line-height: 1.5;
-        color: var(--text-color-light);
-        opacity: 0.8;
-        display: -webkit-box;
-        -webkit-line-clamp: 4;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        margin-bottom: 40px;
-      }
-
-      .dark-mode .prompt-content {
-        color: var(--text-color-dark);
-      }
-
-      .copy-button {
-        position: static;
-        background: transparent;
-        border: none;
-        cursor: pointer;
-        padding: 2px;
-        color: var(--accent-color);
-        opacity: 0.8;
-        transition: opacity 0.2s ease;
-        z-index: 2;
-        margin-left: 8px;
-        flex-shrink: 0;
-      }
-
-      .copy-button:hover {
-        opacity: 1;
-      }
-
-      .copy-button svg {
-        width: 16px;
-        height: 16px;
-      }
-
-      .search-container {
-        margin-bottom: 20px;
-      }
-
-      .prompt-count {
-        margin-bottom: 12px;
-        padding: 6px 10px;
-        border-radius: 6px;
-        background: rgba(16, 185, 129, 0.1);
-        color: var(--accent-color);
-        font-size: 0.8rem;
-        font-weight: 500;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-
-      .dark-mode .prompt-count {
-        background: rgba(16, 185, 129, 0.15);
-      }
-
-      .prompt-count .count-number {
-        font-weight: 600;
-        font-size: 0.9rem;
-      }
-
-      .prompt-count.filtered {
-        background: rgba(59, 130, 246, 0.1);
-        color: #3b82f6;
-      }
-
-      .dark-mode .prompt-count.filtered {
-        background: rgba(59, 130, 246, 0.15);
-      }
-
-      #searchInput {
-        width: 100%;
-        padding: 8px;
-        border: 1px solid #e1e4e8;
-        border-radius: 4px;
-        margin-bottom: 10px;
-        background-color: var(--bg-color-light);
-        color: var(--text-color-light);
-      }
-
-      .dark-mode #searchInput {
-        background-color: var(--bg-color-dark);
-        color: var(--text-color-dark);
-        border-color: #2d2d2d;
-      }
-
-      #searchResults {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-      }
-
-      .search-result-item {
-        padding: 8px 12px;
-        cursor: pointer;
-        transition: all 0.2s ease;
-        border-radius: 6px;
-      }
-
-      .search-result-item:hover {
-        background-color: rgba(16, 185, 129, 0.1);
-        border-radius: 6px;
-        transform: translateX(4px);
-      }
-
-      .dark-mode .search-result-item:hover {
-        background-color: rgba(16, 185, 129, 0.2);
-      }
-
-      .search-result-item.active {
-        background-color: var(--accent-color);
-        color: white;
-      }
-
-      @media (max-width: 768px) {
-        .content-wrapper {
-          flex-direction: column;
-        }
-
-        .sidebar {
-          width: 100%;
-          height: auto;
-          border-right: none;
-          border-bottom: 1px solid #e1e4e8;
-        }
-
-        .dark-mode .sidebar {
-          border-bottom-color: #2d2d2d;
-        }
-
-        .main-content {
-          height: auto;
-        }
-
-        .header-right {
-          gap: 8px;
-        }
-
-        .mode-text {
-          display: none;
-        }
-
-        .dark-mode-toggle {
-          padding: 6px;
-        }
-
-        .github-link {
-          padding: 6px;
-        }
-
-        .github-link span {
-          display: none;
-        }
-      }
-
-      /* Add modal styles */
-      .modal-overlay {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.7);
-        z-index: 1000;
-        backdrop-filter: blur(4px);
-      }
-
-      .modal {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: var(--bg-color-light);
-        border-radius: 12px;
-        padding: 24px;
-        width: 90%;
-        max-width: 800px;
-        max-height: 90vh;
-        overflow-y: auto;
-        z-index: 1001;
-        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
-      }
-
-      .dark-mode .modal {
-        background: var(--bg-color-dark);
-      }
-
-      .modal-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        margin-bottom: 16px;
-      }
-
-      .modal-title {
-        font-size: 1.4rem;
-        font-weight: 600;
-        margin: 0;
-        padding-right: 80px;
-        color: var(--text-color-light);
-        flex: 1;
-      }
-
-      .modal-actions {
-        display: flex;
-        gap: 12px;
-        flex-shrink: 0;
-      }
-
-      .modal-copy-button {
-        background: transparent;
-        border: none;
-        cursor: pointer;
-        padding: 4px;
-        color: var(--accent-color);
-        opacity: 0.8;
-        transition: opacity 0.2s ease;
-        width: 32px;
-        height: 32px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .modal-close {
-        position: static;
-        background: transparent;
-        border: none;
-        cursor: pointer;
-        color: var(--text-color-light);
-        padding: 4px;
-        opacity: 0.7;
-        transition: opacity 0.2s ease;
-        width: 32px;
-        height: 32px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .dark-mode .modal-close {
-        color: var(--text-color-dark);
-      }
-
-      .modal-close:hover {
-        opacity: 1;
-      }
-
-      .prompt-card {
-        cursor: pointer;
-      }
-
-      /* Add contributor badge styles */
-      .contributor-badge {
-        position: absolute;
-        bottom: 8px;
-        right: 12px;
-        font-size: 0.65rem;
-        color: var(--accent-color);
-        text-decoration: none;
-        opacity: 0.7;
-        transition: all 0.2s ease;
-        background: rgba(16, 185, 129, 0.1);
-        padding: 1px 6px;
-        border-radius: 8px;
-      }
-
-      .dark-mode .contributor-badge {
-        background: rgba(16, 185, 129, 0.15);
-      }
-
-      .contributor-badge:hover {
-        opacity: 1;
-        transform: translateY(-1px);
-        background: var(--accent-color);
-        color: white;
-      }
-
-      .dark-mode .contributor-badge:hover {
-        color: var(--bg-color-dark);
-      }
-
-      .prompt-content {
-        font-size: 0.9rem;
-        line-height: 1.5;
-        color: var(--text-color-light);
-        opacity: 0.8;
-        display: -webkit-box;
-        -webkit-line-clamp: 4;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        margin-bottom: 40px;
-      }
-
-      /* Add modal header and footer styles */
-      .modal-footer {
-        margin-top: 20px;
-        padding-top: 16px;
-        border-top: 1px solid #e1e4e8;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .dark-mode .modal-footer {
-        border-color: #2d2d2d;
-      }
-
-      .modal-footer-left {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-      }
-
-      .modal-footer-right {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-      }
-
-      .modal-chat-button {
-        display: flex;
-        align-items: center;
-        gap: 6px;
-        padding: 6px 12px;
-        border-radius: 6px;
-        font-size: 0.9rem;
-        background: var(--accent-color);
-        color: white;
-        border: none;
-        cursor: pointer;
-        transition: all 0.2s ease;
-      }
-
-      .modal-chat-button:hover {
-        background: var(--accent-color-hover);
-      }
-
-      .modal-chat-button svg {
-        width: 16px;
-        height: 16px;
-      }
-
-      .modal-contributor {
-        font-size: 0.8rem;
-        color: var(--accent-color);
-        text-decoration: none;
-        opacity: 0.8;
-        transition: opacity 0.2s ease;
-      }
-
-      .modal-contributor:hover {
-        opacity: 1;
-      }
-
-      .dark-mode .modal-title {
-        color: var(--text-color-dark);
-      }
-
-      .modal-content {
-        font-size: 1rem;
-        line-height: 1.6;
-        color: var(--text-color-light);
-      }
-
-      .dark-mode .modal-content {
-        color: var(--text-color-dark);
-      }
-
-      .modal-copy-button:hover {
-        opacity: 1;
-      }
-
-      .modal-copy-button svg {
-        width: 20px;
-        height: 20px;
-      }
-
-      .modal-close svg {
-        width: 20px;
-        height: 20px;
-      }
-
-      .dark-mode .modal-close {
-        color: var(--text-color-dark);
-      }
-
-      .footer-section a {
-        color: var(--accent-color);
-        text-decoration: none;
-      }
-
-      .footer-section a:hover {
-        opacity: 1;
-      }
-
-      .book-link {
-        color: var(--accent-color) !important;
-        padding: 1px 0;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        opacity: 0.7;
-        transition: opacity 0.2s ease;
-      }
-
-      .dark-mode .book-link {
-        color: var(--accent-color) !important;
-      }
-
-      .book-link:hover {
-        opacity: 1;
-      }
-
-      .social-footer-link {
-        color: var(--accent-color);
-        opacity: 0.8;
-        transition: opacity 0.2s ease;
-      }
-
-      .dark-mode .social-footer-link {
-        color: var(--accent-color);
-      }
-
-      .contribute-card {
-        border: 2px dashed var(--accent-color);
-        background: rgba(16, 185, 129, 0.05);
-        transition: all 0.2s ease;
-      }
-
-      .contribute-card:hover {
-        background: rgba(16, 185, 129, 0.1);
-        transform: translateY(-2px);
-      }
-
-      .dark-mode .contribute-card {
-        background: rgba(16, 185, 129, 0.1);
-      }
-
-      .dark-mode .contribute-card:hover {
-        background: rgba(16, 185, 129, 0.15);
-      }
-
-      .search-result-item.add-prompt {
-        color: var(--accent-color);
-        border: 1px dashed var(--accent-color);
-        background: rgba(16, 185, 129, 0.05);
-        transition: all 0.2s ease;
-      }
-
-      .search-result-item.add-prompt:hover {
-        background: rgba(16, 185, 129, 0.1);
-        transform: translateY(-1px);
-      }
-
-      .dark-mode .search-result-item.add-prompt {
-        background: rgba(16, 185, 129, 0.1);
-      }
-
-      .dark-mode .search-result-item.add-prompt:hover {
-        background: rgba(16, 185, 129, 0.15);
-      }
-
-      .star-count {
-        display: flex;
-        align-items: center;
-        gap: 4px;
-        color: var(--accent-color);
-        font-size: 0.9rem;
-        opacity: 0.8;
-        text-decoration: none;
-        transition: opacity 0.2s ease;
-      }
-
-      .star-count:hover {
-        opacity: 1;
-      }
-
-      .star-count svg {
-        width: 16px;
-        height: 16px;
-      }
-
-      @media (max-width: 768px) {
-        .star-count {
-          display: flex;
-          font-size: 0.8rem;
-        }
-
-        .star-count svg {
-          width: 14px;
-          height: 14px;
-        }
-      }
-
-      /* Dev Mode Toggle Switch Styles */
-      .dev-mode-toggle {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        margin-right: 12px;
-      }
-
-      .dev-mode-label {
-        font-size: 0.9rem;
-        color: var(--accent-color);
-        opacity: 0.8;
-      }
-
-      .switch {
-        position: relative;
-        display: inline-block;
-        width: 40px;
-        height: 20px;
-      }
-
-      .switch input {
-        opacity: 0;
-        width: 0;
-        height: 0;
-      }
-
-      .slider {
-        position: absolute;
-        cursor: pointer;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: #ccc;
-        transition: .4s;
-      }
-
-      .dark-mode .slider {
-        background-color: #555;
-      }
-
-      .slider:before {
-        position: absolute;
-        content: "";
-        height: 16px;
-        width: 16px;
-        left: 2px;
-        bottom: 2px;
-        background-color: white;
-        transition: .4s;
-      }
-
-      .dark-mode .slider:before {
-        background-color: #e1e1e1;
-      }
-
-      input:checked + .slider {
-        background-color: var(--accent-color);
-      }
-
-      .dark-mode input:checked + .slider {
-        background-color: var(--accent-color);
-      }
-
-      input:focus + .slider {
-        box-shadow: 0 0 1px var(--accent-color);
-      }
-
-      .dark-mode input:focus + .slider {
-        box-shadow: 0 0 1px var(--accent-color);
-      }
-
-      input:checked + .slider:before {
-        transform: translateX(20px);
-      }
-
-      .slider.round {
-        border-radius: 34px;
-      }
-
-      .slider.round:before {
-        border-radius: 50%;
-      }
-
-      .dev-mode-label {
-        color: var(--text-color-light);
-        margin-left: 8px;
-        font-size: 0.9rem;
-      }
-
-      .dark-mode .dev-mode-label {
-        color: var(--text-color-dark);
-      }
-
-      @media (max-width: 768px) {
-        .dev-mode-label {
-          display: none;
-        }
-      }
-
-      /* Copilot Suggestion Modal Styles */
-      .copilot-suggestion-backdrop {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.5);
-        backdrop-filter: blur(4px);
-        -webkit-backdrop-filter: blur(4px);
-        z-index: 1001;
-        display: none;
-      }
-
-      .dark-mode .copilot-suggestion-backdrop {
-        background: rgba(0, 0, 0, 0.7);
-      }
-
-      .copilot-suggestion-modal {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: var(--bg-color-light);
-        border-radius: 12px;
-        padding: 32px;
-        width: 90%;
-        max-width: 520px;
-        z-index: 1002;
-        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
-        display: none;
-      }
-
-      .dark-mode .copilot-suggestion-modal {
-        background: var(--bg-color-dark);
-        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
-      }
-
-      .prompts-count-label {
-        display: none;
-      }
-
-      .dev-mode .count-label {
-        display: none;
-      }
-
-      .dev-mode .prompts-count-label {
-        display: block;
-      }
-
-      .copilot-suggestion-content {
-        margin-bottom: 24px;
-        color: var(--text-color-light);
-        font-size: 1.1rem;
-        line-height: 1.5;
-      }
-
-      .dark-mode .copilot-suggestion-content {
-        color: var(--text-color-dark);
-      }
-
-      .copilot-suggestion-actions {
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-      }
-
-      .copilot-suggestion-checkbox {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        color: var(--text-color-light);
-        font-size: 0.9rem;
-        opacity: 0.8;
-        order: 2;
-        margin-top: 8px;
-      }
-
-      .dark-mode .copilot-suggestion-checkbox {
-        color: var(--text-color-dark);
-      }
-
-      .copilot-suggestion-checkbox input[type="checkbox"] {
-        width: 16px;
-        height: 16px;
-        accent-color: var(--accent-color);
-        cursor: pointer;
-        margin: 0;
-      }
-
-      .copilot-suggestion-checkbox:hover {
-        opacity: 1;
-      }
-
-      .copilot-suggestion-buttons {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-        order: 1;
-      }
-
-      .copilot-suggestion-button {
-        padding: 12px 16px;
-        border-radius: 8px;
-        font-size: 0.95rem;
-        border: none;
-        cursor: pointer;
-        transition: all 0.2s ease;
-        font-weight: 500;
-        width: 100%;
-      }
-
-      .copilot-suggestion-button.primary {
-        background: var(--accent-color);
-        color: white;
-      }
-
-      .copilot-suggestion-button.primary:hover {
-        background: var(--accent-color-hover);
-        transform: translateY(-1px);
-      }
-
-      .copilot-suggestion-button.secondary {
-        background: transparent;
-        color: var(--text-color-light);
-        border: 1px solid #e1e4e8;
-      }
-
-      .dark-mode .copilot-suggestion-button.secondary {
-        color: var(--text-color-dark);
-        border-color: #2d2d2d;
-      }
-
-      .copilot-suggestion-button.secondary:hover {
-        background: rgba(0, 0, 0, 0.05);
-        transform: translateY(-1px);
-      }
-
-      .dark-mode .copilot-suggestion-button.secondary:hover {
-        background: rgba(255, 255, 255, 0.05);
-      }
-
-      @media (max-width: 480px) {
-        .copilot-suggestion-modal {
-          padding: 24px;
-          max-width: 100%;
-          margin: 0 16px;
-        }
-
-        .copilot-suggestion-content {
-          font-size: 1rem;
-          margin-bottom: 20px;
-        }
-
-        .copilot-suggestion-button {
-          padding: 10px 16px;
-          font-size: 0.9rem;
-        }
-      }
-    </style>
-    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
-
-<!-- Setup Google Analytics -->
-
-
-
-<!-- You can set your favicon here -->
-<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
-
-<!-- end custom head snippets -->
-
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6945602608405209" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css?v=26f697229f39f02d22a588f2dd6b1222d1eeab69">
   </head>
-  <body>
+  <body class="">
     <div class="layout-wrapper">
       <!-- Copilot Suggestion Modal Backdrop -->
       <div class="copilot-suggestion-backdrop"></div>
@@ -1398,33 +48,61 @@
       <header class="site-header">
         <div class="header-left">
           <h1 class="site-title">prompts.chat</h1>
-          <p class="site-slogan">World's First & Most Famous Prompts Directory</p>
+          <p class="site-slogan">World's First & Most Famous Prompts Directory
+            
+            <a href="/vibe" class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 hover:bg-green-200 transition-colors">
+              New: Try Vibe Coding Mode!
+            </a>
+            
+          </p>
+          
           <div class="site-description">
             <p class="platform-hint">Choose your AI platform</p>
             <div class="platform-pills">
               <button class="platform-tag" data-platform="github-copilot" data-url="https://github.com/copilot">GitHub Copilot</button>
               <button class="platform-tag" data-platform="chatgpt" data-url="https://chat.openai.com">ChatGPT</button>
+              <div class="platform-tag-container">
+                <button class="platform-tag" data-platform="grok" data-url="https://grok.com/chat?reasoningMode=none">Grok</button>
+                <div class="grok-mode-dropdown" style="display: none;">
+                  <div class="grok-mode-option" data-url="https://grok.com/chat?reasoningMode=none">Grok</div>
+                  <div class="grok-mode-option" data-url="https://grok.com/chat?reasoningMode=deepsearch">Grok Deep Search</div>
+                  <div class="grok-mode-option" data-url="https://grok.com/chat?reasoningMode=think">Grok Thinking</div>
+                </div>
+              </div>
               <button class="platform-tag" data-platform="claude" data-url="https://claude.ai/new">Claude</button>
               <button class="platform-tag" data-platform="perplexity" data-url="https://perplexity.ai">Perplexity</button>
-              <button class="platform-tag" data-platform="gemini" data-url="https://gemini.google.com">Gemini</button>
-              <button class="platform-tag" data-platform="llama" data-url="https://meta.ai">Llama</button>
               <button class="platform-tag" data-platform="mistral" data-url="https://chat.mistral.ai/chat">Mistral</button>
+              <button class="platform-tag" data-platform="gemini" data-url="https://gemini.google.com">Gemini</button>
+              <button class="platform-tag" data-platform="llama" data-url="https://meta.ai">Meta</button>
             </div>
           </div>
+          
         </div>
         <div class="header-right">
-          <div class="dev-mode-toggle">
-            <label class="switch">
-              <input type="checkbox" id="devModeToggle">
-              <span class="slider round"></span>
-            </label>
-            <span class="dev-mode-label">Dev Prompts</span>
-          </div>
+          <a href="https://cursor.com" target="_blank" class="cursor-logo" title="Built with Cursor AI">
+            <svg height="1em" style="flex:none;line-height:1" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11.925 24l10.425-6-10.425-6L1.5 18l10.425 6z" fill="#10b981" class="cursor-logo-path dark-mode-path"></path>
+              <path d="M22.35 18V6L11.925 0v12l10.425 6z" fill="#10b981" class="cursor-logo-path dark-mode-path"></path>
+              <path d="M11.925 0L1.5 6v12l10.425-6V0z" fill="#10b981" class="cursor-logo-path dark-mode-path"></path>
+              <path d="M22.35 6L11.925 24V12L22.35 6z" fill="#fff" class="cursor-logo-path dark-mode-path"></path>
+              <path d="M22.35 6l-10.425 6L1.5 6h20.85z" fill="#fff" class="cursor-logo-path dark-mode-path"></path>
+            </svg>
+            <span>vibecoded with cursor</span>
+          </a>
           <a href="https://github.com/f/awesome-chatgpt-prompts/stargazers" target="_blank" class="star-count">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
             </svg>
             <span id="starCount">...</span>
+          </a>
+          <a href="https://chromewebstore.google.com/detail/promptschat/eemdohkhbaifiocagjlhibfbhamlbeej" target="_blank" class="chrome-ext-link">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <circle cx="12" cy="12" r="4"></circle>
+              <line x1="21.17" y1="8" x2="12" y2="8"></line>
+              <line x1="3.95" y1="6.06" x2="8.54" y2="14"></line>
+              <line x1="10.88" y1="21.94" x2="15.46" y2="14"></line>
+            </svg>
           </a>
           <button class="dark-mode-toggle" onclick="toggleDarkMode()" title="Toggle dark mode">
             <svg class="mode-icon sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
@@ -1446,24 +124,90 @@
           </div>
         </div>
         <div class="main-content">
+          
+          <div class="main-content-header">
+            <div class="header-content">
+              <div class="platform-selectors">
+                Reply in <select id="languageSelect" class="custom-select">
+                  <option value="English">English</option>
+                  <option value="Spanish">Spanish</option>
+                  <option value="French">French</option>
+                  <option value="German">German</option>
+                  <option value="Italian">Italian</option>
+                  <option value="Portuguese">Portuguese</option>
+                  <option value="Russian">Russian</option>
+                  <option value="Chinese">Chinese</option>
+                  <option value="Japanese">Japanese</option>
+                  <option value="Korean">Korean</option>
+                  <option value="Turkish">Turkish</option>
+                  <option value="custom">Custom...</option>
+                </select>
+                <input type="text" id="customLanguage" class="custom-input" placeholder="language..." style="display: none;">
+                using <select id="toneSelect" class="custom-select">
+                  <option value="professional">professional</option>
+                  <option value="casual">casual</option>
+                  <option value="friendly">friendly</option>
+                  <option value="formal">formal</option>
+                  <option value="technical">technical</option>
+                  <option value="creative">creative</option>
+                  <option value="enthusiastic">enthusiastic</option>
+                  <option value="humorous">humorous</option>
+                  <option value="authoritative">authoritative</option>
+                  <option value="empathetic">empathetic</option>
+                  <option value="analytical">analytical</option>
+                  <option value="conversational">conversational</option>
+                  <option value="academic">academic</option>
+                  <option value="persuasive">persuasive</option>
+                  <option value="inspirational">inspirational</option>
+                  <option value="custom">Custom...</option>
+                </select>
+                <input type="text" id="customTone" class="custom-input" placeholder="tone..." style="display: none;">
+                tone, for <select id="audienceSelect" class="custom-select">
+                  <option value="everyone">everyone</option>
+                  <option value="developers">developers</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          
           <div class="container-lg markdown-body">
-      <p align="center">
+            <div id="promptContent">
+              <p align="center">
 <img width="395" alt="prompts.chat" src="https://github.com/user-attachments/assets/e0d0e32d-d2ce-4459-9f37-e951d9f4f5de" />
 </p>
 
 <h3 align="center">Sponsors</h3>
 
-<p align="center">
+<div align="center">
+
   <a href="https://clemta.com" align="center" target="_blank">
     <img height="50" alt="Clemta logo" src="https://clemta.com/wp-content/uploads/2023/03/logo-clemta-com-1.png.webp" />
   </a>
-  <br /><br />
-  <a href="https://hf.co/chat" align="center" target="_blank">
-    <img height="60" alt="Hugging Face logo" src="https://github.com/user-attachments/assets/4187ef06-7cae-402a-a410-e0a999758fed" />
+  <br />
+  <sub>With Clemta, you can run your company from the comfort of your home.</sub>
+<hr />
+   <a href="https://www.warp.dev/awesome-chatgpt-prompts">
+      <img alt="Warp sponsorship" width="400" src="https://github.com/user-attachments/assets/ab8dd143-b0fd-4904-bdc5-dd7ecac94eae" />
+   </a>
+
+#### [Warp, the intelligent terminal for developers](https://www.warp.dev/awesome-chatgpt-prompts)
+[Available for MacOS, Linux, &amp; Windows](https://www.warp.dev/awesome-chatgpt-prompts)<br />
+
+<hr />
+  <a href="https://graphite.dev/?utm_source=github&amp;utm_medium=repo&amp;utm_campaign=awesome_chatgpt_prompts" align="center" target="_blank">
+    <img height="100" alt="Graphite logo" src="https://github.com/user-attachments/assets/981a244b-4bc8-4884-98f7-dd1d425063ae" />
   </a>
   <br />
+  <sub>Graphite is the AI developer productivity platform helping teams on GitHub ship higher quality software, faster.</sub>
+<hr />
+  <a href="https://github.com/f/mcptools" align="center" target="_blank">
+    <img height="60" alt="Hugging Face logo" src="https://github.com/f/mcptools/raw/master/.github/resources/logo.png" />
+  </a>
+  <br />
+  <sub>If you're building MCPs, <a href="https://github.com/f/mcptools">MCP Tools</a> is a Swiss-army knife for MCP Servers.</sub>
+<hr />
   <sub><a href="https://github.com/sponsors/f/sponsorships?sponsor=f&amp;tier_id=319423">Be my sponsor and your logo will be here!</a></sub>
-</p>
+</div>
 
 <hr />
 <p><a href="https://github.com/sindresorhus/awesome"><img src="https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg" alt="Awesome" /></a></p>
@@ -1590,7 +334,7 @@ Frontend Developer, Full Stack Developer, iOS Developer etc.</p>
 
 <blockquote>
   <p>I want you to act as an interviewer. I will be the candidate and you will ask
-me the interview questions for the <code class="language-plaintext highlighter-rouge">position</code> position. I want you to only
+me the interview questions for the ${Position:JavaScript Developer} position. I want you to only
 reply as the interviewer. Do not write all the conversation at once. I want
 you to only do the interview with me. Ask me the questions and wait for my
 answers. Do not write explanations. Ask me the questions one by one like an
@@ -1677,20 +421,17 @@ must be able to process nonverbal information, such as the emotional state of
 the speaker.”</p>
 </blockquote>
 
-<h2 id="act-as-character-from-moviebookanything">Act as ‘Character’ from ‘Movie/Book/Anything’</h2>
+<h2 id="act-as-character">Act as Character</h2>
 
 <p>Contributed by: <a href="https://github.com/BRTZL">@BRTZL</a>
 <a href="https://github.com/mattsq">@mattsq</a></p>
 
-<p><strong>Examples</strong>: Character: Harry Potter, Series: Harry Potter Series, Character:
-Darth Vader, Series: Star Wars etc.</p>
-
 <blockquote>
-  <p>I want you to act like {character} from {series}. I want you to respond and
-answer like {character} using the tone, manner and vocabulary {character}
-would use. Do not write any explanations. Only answer like {character}. You
-must know all of the knowledge of {character}. My first sentence is “Hi
-{character}.”</p>
+  <p>I want you to act like ${Character: Anakin Skywalker} from ${Series: Star Wars}. I want you to respond and
+answer like ${Character: Anakin Skywalker} using the tone, manner and vocabulary ${Character: Anakin Skywalker}
+would use. Do not write any explanations. Only answer like ${Character: Anakin Skywalker}. You
+must know all of the knowledge of ${Character: Anakin Skywalker}. My first sentence is “Hi
+${Character: Anakin Skywalker}.”</p>
 </blockquote>
 
 <h2 id="act-as-an-advertiser">Act as an Advertiser</h2>
@@ -2081,6 +822,46 @@ habits. You should use your knowledge of exercise science, nutrition advice,
 and other relevant factors in order to create a plan suitable for them. My
 first request is “I need help designing an exercise program for someone who
 wants to lose weight.”</p>
+</blockquote>
+
+<h2 id="act-as-an-expert-personal-fitness-trainer-with-specialization-in-helping-remote-workers">Act as an expert personal fitness trainer with specialization in helping remote workers</h2>
+
+<p>Contributed by: <a href="https://github.com/kamyab7">@kamyab7</a></p>
+
+<blockquote>
+  <p>I want you to act as a personal trainer. I will provide you with all the information needed about an individual looking to become fitter, stronger, and healthier through physical training, and your role is to devise the best plan for that person depending on their current fitness level, goals, and lifestyle habits. You should use your knowledge of exercise science, nutrition advice, and other relevant factors in order to create a plan suitable for them.</p>
+
+  <p>Client Profile:</p>
+
+  <ul>
+    <li>Age: <strong>{age}</strong></li>
+    <li>Gender: <strong>{gender}</strong></li>
+    <li>Occupation: <strong>{occupation} (remote worker)</strong></li>
+    <li>Height: <strong>{height}</strong></li>
+    <li>Weight: <strong>{weight}</strong></li>
+    <li>Blood type: <strong>{blood_type}</strong></li>
+    <li>Goal: <strong>{fitness_goal}</strong></li>
+    <li>Workout constraints: <strong>{workout_constraints}</strong></li>
+    <li>Specific concerns: <strong>{specific_concerns}</strong></li>
+    <li>Workout preference: <strong>{workout_preference}</strong></li>
+    <li>Open to supplements: <strong>{supplements_preference}</strong></li>
+  </ul>
+
+  <p>Please design a comprehensive plan that includes:</p>
+
+  <ol>
+    <li>A detailed <strong>{workout_days}-day weekly workout regimen</strong> with specific exercises, sets, reps, and rest periods</li>
+    <li>A sustainable <strong>nutrition plan</strong> that supports the goal and considers the client’s blood type</li>
+    <li>Appropriate <strong>supplement recommendations</strong></li>
+    <li>Techniques and exercises to address <strong>{specific_concerns}</strong></li>
+    <li>Daily <strong>movement or mobility strategies</strong> for a remote worker to stay active and offset sitting</li>
+    <li>Simple <strong>tracking metrics</strong> for monitoring progress</li>
+  </ol>
+
+  <p>Provide practical implementation guidance that fits into a remote worker’s routine, emphasizing sustainability, proper form, and injury prevention.</p>
+
+  <p>My first request is:
+“I need help designing a complete fitness, nutrition, and mobility plan for a <strong>{age}-year-old {gender} {occupation}</strong> whose goal is <strong>{fitness_goal}</strong>.”</p>
 </blockquote>
 
 <h2 id="act-as-a-mental-health-adviser">Act as a Mental Health Adviser</h2>
@@ -3341,15 +2122,39 @@ I will write (f). My first prompt is google.com</p>
 
 <h2 id="act-as-a-senior-frontend-developer">Act as a Senior Frontend Developer</h2>
 
-<p>Contributed by <a href="https://github.com/ozcanzaferayan">zaferayan</a></p>
+<p>Contributed by: <a href="https://github.com/ozcanzaferayan">zaferayan</a>
+Contributed by: <a href="https://github.com/MustafaEminn">MustafaEminn</a></p>
 
 <blockquote>
   <p>I want you to act as a Senior Frontend developer. I will describe a project
-details you will code project with this tools: Create React App, yarn, Ant
+details you will code project with this tools: Vite (React template), yarn, Ant
 Design, List, Redux Toolkit, createSlice, thunk, axios. You should merge files
 in single index.js file and nothing else. Do not write explanations. My first
 request is “Create Pokemon App that lists pokemons with images that come from
 PokeAPI sprites endpoint”</p>
+</blockquote>
+
+<h2 id="act-as-a-code-reviewer">Act as a Code Reviewer</h2>
+
+<p>Contributed by: <a href="https://github.com/rajudandigam">rajudandigam</a></p>
+
+<blockquote>
+  <p>I want you to act as a Code reviewer who is experienced developer in the given code language.
+I will provide you with the code block or methods or code file along with the code language name, and
+I would like you to review the code and share the feedback, suggestions and alternative recommended approaches.
+Please write explanations behind the feedback or suggestions or alternative approaches.</p>
+</blockquote>
+
+<h2 id="act-as-a-accessibility-auditor">Act as a Accessibility Auditor</h2>
+
+<p>Contributed by: <a href="https://github.com/rajudandigam">rajudandigam</a></p>
+
+<blockquote>
+  <p>I want you to act as an Accessibility Auditor who is a web accessibility expert and experienced accessibility engineer.
+I will provide you with the website link.
+I would like you to review and check compliance with WCAG 2.2 and Section 508.
+Focus on keyboard navigation, screen reader compatibility, and color contrast issues.
+Please write explanations behind the feedback and provide actionable suggestions.</p>
 </blockquote>
 
 <h2 id="act-as-a-solr-search-engine">Act as a Solr Search Engine</h2>
@@ -3443,6 +2248,25 @@ information about the task and the prefix for the task code, and I would like
 you to generate an appropriate commit message using the conventional commit
 format. Do not write any explanations or other words, just reply with the
 commit message.</p>
+</blockquote>
+
+<h2 id="act-as-a-conventional-commit-message-generator">Act as a Conventional Commit Message Generator</h2>
+
+<p>Contributed by:</p>
+<ol>
+  <li><a href="https://github.com/jeff-nasseri">@jeff-nasseri</a></li>
+  <li><a href="https://github.com/Kamyab7">@kamyab7</a></li>
+</ol>
+
+<blockquote>
+  <p>I want you to act as a conventional commit message generator following the Conventional Commits specification. 
+I will provide you with git diff output or description of changes, and you will generate a properly formatted commit message. 
+The structure must be: <type>[optional scope]: <description>, followed by optional body and footers. 
+Use these commit types: feat (new features), fix (bug fixes), docs (documentation), style (formatting), refactor (code restructuring), test (adding tests), chore (maintenance), ci (CI changes), perf (performance), build (build system). 
+Include scope in parentheses when relevant (e.g., feat(api):). For breaking changes, add ! after type/scope or include BREAKING CHANGE: footer. 
+The description should be imperative mood, lowercase, no period. Body should explain what and why, not how. Include relevant footers like Refs: #123, Reviewed-by:, etc. Do not include markdown code blocks in output. (This is just an example, make sure do not use anything from in this example in actual commit message)
+The output should only contains commit message and nothing more.
+Do not include markdown code blocks in output</description></type></p>
 </blockquote>
 
 <h2 id="act-as-a-chief-executive-officer">Act as a Chief Executive Officer</h2>
@@ -3542,6 +2366,21 @@ with these heders: Subject, Introduction, Problem Statement, Goals and
 Objectives, User Stories, Technical requirements, Benefits, KPIs, Development
 Risks, Conclusion. Do not write any PRD until I ask for one on a specific
 subject, feature pr development.</p>
+</blockquote>
+
+<h2 id="act-as-a-project-manager">Act as a Project Manager</h2>
+
+<p>Contributed by: <a href="https://github.com/semihkislar">@semihkislar</a></p>
+
+<blockquote>
+  <p>I acknowledge your request and am prepared to support you in drafting a
+comprehensive Product Requirements Document (PRD). Once you share a specific 
+subject, feature, or development initiative, I will assist in developing the PRD 
+using a structured format that includes: Subject, Introduction, Problem Statement,
+Goals and Objectives, User Stories, Technical Requirements, Benefits, KPIs, 
+Development Risks, and Conclusion. Until a clear topic is provided, no PRD will be
+initiated. Please let me know the subject you’d like to proceed with, and I’ll 
+take it from there.</p>
 </blockquote>
 
 <h2 id="act-as-a-drunk-person">Act as a Drunk Person</h2>
@@ -4050,8 +2889,7 @@ awesome-chatgpt-prompts repository and push it back”</p>
 <blockquote>
   <p>I want you to act as a any programming language to python code converter. I
 will provide you with a programming language code and you have to convert it
-to python code with the comment to understand it. Consider it’s a code when I
-use .”</p>
+to python code with the comment to understand it. Consider it’s a code when I use “code here”</p>
 </blockquote>
 
 <h2 id="act-as-virtual-fitness-coach">Act as Virtual Fitness Coach</h2>
@@ -4538,6 +3376,33 @@ challenges to resolve complex issues and scaling the application with zero
 issues and high performance of application in low or no network as well.</p>
 </blockquote>
 
+<h2 id="act-as-devops-engineer">Act as Devops Engineer</h2>
+
+<p>Contributed by: <a href="https://github.com/tscburak">@tscburak</a></p>
+
+<blockquote>
+  <p>You are a ${Title:Senior} DevOps engineer working at 
+${Company Type: Big Company}. Your role is to provide scalable, efficient, and 
+automated solutions for software deployment, infrastructure management, and CI/CD 
+pipelines. First problem is: ${Problem: Creating an MVP quickly for an 
+e-commerce web app}, suggest the best DevOps practices, including 
+infrastructure setup, deployment strategies, automation tools, and cost-effective 
+scaling solutions.</p>
+</blockquote>
+
+<h2 id="act-as-linux-script-developer">Act as Linux Script Developer</h2>
+
+<p>Contributed by: <a href="https://github.com/viardant">@viardant</a></p>
+
+<blockquote>
+  <p>You are an expert Linux script developer. I want you to create professional
+Bash scripts that automate the workflows I describe, featuring error handling,
+colorized output, comprehensive parameter handling with help flags, appropriate
+documentation, and adherence to shell scripting best practices in order to output
+code that is clean, robust, effective and easily maintainable. Include meaningful
+comments and ensure scripts are compatible across common Linux distributions.</p>
+</blockquote>
+
 <h2 id="contributors-">Contributors 😍</h2>
 
 <p>Many thanks to these AI whisperers:</p>
@@ -4550,12 +3415,7 @@ issues and high performance of application in low or no network as well.</p>
 
 <p>CC-0</p>
 
-
-      
-      <div class="footer border-top border-gray-light mt-5 pt-3 text-right text-gray">
-        Awesome ChatGPT Prompts is open source. <a href="https://github.com/traviszech/awesome-chatgpt-prompts/edit/gh-pages/README.md">Improve this page</a>.
-      </div>
-      
+            </div>
           </div>
         </div>
       </div>
@@ -4624,6 +3484,87 @@ issues and high performance of application in low or no network as well.</p>
       </footer>
     </div>
     <script src="script.js"></script>
+    
+    <script>
+      // Initialize audience selector
+      const audienceSelect = document.getElementById('audienceSelect');
+      
+      // Handle Grok platform selection
+      document.addEventListener('DOMContentLoaded', () => {
+        const grokButton = document.querySelector('[data-platform="grok"]');
+        const grokDropdown = document.querySelector('.grok-mode-dropdown');
+        const grokOptions = document.querySelectorAll('.grok-mode-option');
+        let isGrokDropdownVisible = false;
+
+        // Add event listeners for all platform buttons
+        const platformButtons = document.querySelectorAll('.platform-tag');
+        platformButtons.forEach(button => {
+          button.addEventListener('click', () => {
+            const platform = button.getAttribute('data-platform');
+            // If platform is not github-copilot, set audience to "everyone"
+            if (platform !== 'github-copilot') {
+              audienceSelect.value = 'everyone';
+              document.body.classList.remove('dev-mode');
+              // Trigger filtering if needed
+              if (typeof filterPrompts === 'function') {
+                filterPrompts();
+              }
+            }
+          });
+        });
+
+        // Hide dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+          if (!e.target.closest('.platform-tag-container')) {
+            grokDropdown.style.display = 'none';
+            isGrokDropdownVisible = false;
+          }
+        });
+
+        // Toggle dropdown
+        grokButton.addEventListener('click', (e) => {
+          e.stopPropagation();
+          isGrokDropdownVisible = !isGrokDropdownVisible;
+          grokDropdown.style.display = isGrokDropdownVisible ? 'block' : 'none';
+        });
+
+        // Handle option selection
+        grokOptions.forEach(option => {
+          option.addEventListener('click', (e) => {
+            const selectedUrl = option.dataset.url;
+            const selectedText = option.textContent;
+            grokButton.dataset.url = selectedUrl;
+            grokButton.textContent = selectedText;
+            grokDropdown.style.display = 'none';
+            isGrokDropdownVisible = false;
+            
+            // Also set audience to "everyone" for Grok options
+            audienceSelect.value = 'everyone';
+            document.body.classList.remove('dev-mode');
+            // Trigger filtering if needed
+            if (typeof filterPrompts === 'function') {
+              filterPrompts();
+            }
+          });
+        });
+      });
+      
+      // Set initial state based on URL params or default
+      const urlParams = new URLSearchParams(window.location.search);
+      const initialAudience = urlParams.get('audience') || 'everyone';
+      audienceSelect.value = initialAudience;
+      document.body.classList.toggle('dev-mode', initialAudience === 'developers');
+      
+      // Handle audience changes
+      audienceSelect.addEventListener('change', (e) => {
+        const isDevMode = e.target.value === 'developers';
+        document.body.classList.toggle('dev-mode', isDevMode);
+        
+        // Trigger prompt filtering
+        filterPrompts();
+      });
+    </script>
+    
     <style>video { max-width: 100% !important; }</style>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MSNHFWTE77"></script>
