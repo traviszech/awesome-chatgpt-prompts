@@ -6,6 +6,7 @@ import { db } from "@/lib/db";
 import { generatePromptEmbedding, findAndSaveRelatedPrompts } from "@/lib/ai/embeddings";
 import { generatePromptSlug } from "@/lib/slug";
 import { checkPromptQuality } from "@/lib/ai/quality-check";
+import { isTrending } from "@/lib/trending";
 import { BOT_PLATFORMS, botColorSchema, botConfigSchema, botIconSchema, botPlatformsData, botPlatformsSchema, installUrlSchema } from "@/lib/bots/schema";
 
 const updatePromptSchema = z.object({
@@ -110,6 +111,7 @@ export async function GET(
 
     return NextResponse.json({
       ...prompt,
+      isTrending: isTrending(prompt.trendingUntil),
       voteCount: prompt._count.votes,
       hasVoted,
     });

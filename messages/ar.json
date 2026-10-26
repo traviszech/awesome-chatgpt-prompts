@@ -161,6 +161,12 @@
     "promptPrivate": "خاص",
     "feature": "تمييز",
     "featured": "مميز",
+    "trending": "رائج",
+    "markTrending": "تمييز كرائج",
+    "trendingUntil": "رائج حتى {date}",
+    "trendingForDays": "{count, plural, one {رائج ليوم واحد} two {رائج ليومين} few {رائج لمدة # أيام} other {رائج لمدة # يومًا}}",
+    "stopTrending": "إيقاف الرواج",
+    "trendingUpdateFailed": "تعذّر تحديث حالة الرواج",
     "unlist": "إلغاء الإدراج",
     "relist": "إعادة الإدراج",
     "adminArea": "منطقة المسؤول",
@@ -584,6 +590,7 @@
         "private": "خاص",
         "unlisted": "غير مدرج",
         "featured": "مميز",
+        "trending": "رائج",
         "reported": "مُبلغ عنه",
         "deleted": "محذوف"
       }
@@ -788,6 +795,7 @@
     "newest": "الأحدث",
     "oldest": "الأقدم",
     "mostUpvoted": "الأكثر تصويتاً",
+    "trendingOnly": "الرائج فقط",
     "search": "بحث",
     "clear": "مسح",
     "found": "تم العثور على {count}",

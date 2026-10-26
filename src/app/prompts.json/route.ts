@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { db } from "@/lib/db";
+import { isTrending } from "@/lib/trending";
 import crypto from "crypto";
 
 function getUserIdentifier(user: {
@@ -82,6 +83,7 @@ export async function GET(request: NextRequest) {
       structuredFormat: true,
       isFeatured: true,
       featuredAt: true,
+      trendingUntil: true,
       requiresMediaUpload: true,
       requiredMediaType: true,
       requiredMediaCount: true,
@@ -171,6 +173,8 @@ export async function GET(request: NextRequest) {
         commentCount: prompt._count.comments,
         isFeatured: prompt.isFeatured,
         featuredAt: prompt.featuredAt,
+        isTrending: isTrending(prompt.trendingUntil),
+        trendingUntil: prompt.trendingUntil,
         requiresMediaUpload: prompt.requiresMediaUpload,
         requiredMediaType: prompt.requiredMediaType,
         requiredMediaCount: prompt.requiredMediaCount,

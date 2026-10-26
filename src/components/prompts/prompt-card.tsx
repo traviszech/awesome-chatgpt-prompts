@@ -17,6 +17,8 @@ import { VariableFillModal, hasVariables, renderContentWithVariables } from "@/c
 import { ExamplesSlider } from "@/components/prompts/examples-slider";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { AudioPlayer } from "@/components/prompts/audio-player";
+import { TrendingBadge } from "@/components/prompts/trending-badge";
+import { isTrending } from "@/lib/trending";
 import {
   Tooltip,
   TooltipContent,
@@ -35,6 +37,7 @@ export interface PromptCardProps {
     mediaUrl: string | null;
     isPrivate: boolean;
     isFeatured?: boolean;
+    trendingUntil?: Date | string | null;
     botIcon?: string | null;
     botColor?: string | null;
     botPlatforms?: readonly BotPlatform[] | null;
@@ -108,6 +111,7 @@ function StandardPromptCard({ prompt, showPinButton = false, isPinned = false }:
   const outgoingCount = prompt._count?.outgoingConnections || 0;
   const incomingCount = prompt._count?.incomingConnections || 0;
   const isFlowStart = outgoingCount > 0 && incomingCount === 0;
+  const trending = isTrending(prompt.trendingUntil);
   const [modalOpen, setModalOpen] = useState(false);
   const [modalMode, setModalMode] = useState<"copy" | "run">("copy");
   const [imageError, setImageError] = useState(false);
@@ -244,6 +248,7 @@ function StandardPromptCard({ prompt, showPinButton = false, isPinned = false }:
                 </span>
               </div>
             )}
+            {trending && <TrendingBadge className="text-[10px] bg-background/80 backdrop-blur-sm" />}
             <Badge variant="secondary" className="text-[10px] bg-background/80 backdrop-blur-sm">
               {t(`types.${prompt.type.toLowerCase()}`)}
             </Badge>
@@ -283,6 +288,7 @@ function StandardPromptCard({ prompt, showPinButton = false, isPinned = false }:
                   </span>
                 </div>
               )}
+              {trending && <TrendingBadge className="text-[10px]" />}
               <Badge variant="outline" className="text-[10px]">
                 {t(`types.${prompt.type.toLowerCase()}`)}
               </Badge>

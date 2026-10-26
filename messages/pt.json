@@ -161,6 +161,12 @@
     "promptPrivate": "Privado",
     "feature": "Destacar",
     "featured": "Destacado",
+    "trending": "Em alta",
+    "markTrending": "Marcar como em alta",
+    "trendingUntil": "Em alta até {date}",
+    "trendingForDays": "{count, plural, one {Em alta por # dia} other {Em alta por # dias}}",
+    "stopTrending": "Remover de em alta",
+    "trendingUpdateFailed": "Não foi possível atualizar o status em alta",
     "unlist": "Ocultar",
     "relist": "Mostrar",
     "adminArea": "Área Admin",
@@ -584,6 +590,7 @@
         "private": "Privados",
         "unlisted": "Não listados",
         "featured": "Destaques",
+        "trending": "Em alta",
         "reported": "Denunciados",
         "deleted": "Excluídos"
       }
@@ -788,6 +795,7 @@
     "newest": "Mais Recentes",
     "oldest": "Mais Antigos",
     "mostUpvoted": "Mais Votados",
+    "trendingOnly": "Somente em alta",
     "search": "Buscar",
     "clear": "Limpar",
     "found": "{count} encontrados",

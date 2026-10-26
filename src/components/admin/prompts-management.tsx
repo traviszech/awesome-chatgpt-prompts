@@ -29,6 +29,8 @@ import {
 } from "@/components/ui/alert-dialog";
 import { toast } from "sonner";
 import { useBranding } from "@/components/providers/branding-provider";
+import { TrendingBadge } from "@/components/prompts/trending-badge";
+import { isTrending } from "@/lib/trending";
 
 interface ImportResult {
   success: boolean;
@@ -66,6 +68,7 @@ interface AdminPrompt {
   isPrivate: boolean;
   isUnlisted: boolean;
   isFeatured: boolean;
+  trendingUntil: string | null;
   viewCount: number;
   createdAt: string;
   updatedAt: string;
@@ -685,6 +688,7 @@ export function PromptsManagement({ aiSearchEnabled, promptsWithoutEmbeddings, t
                 <SelectItem value="private">{t("promptsList.filters.private")}</SelectItem>
                 <SelectItem value="unlisted">{t("promptsList.filters.unlisted")}</SelectItem>
                 <SelectItem value="featured">{t("promptsList.filters.featured")}</SelectItem>
+                <SelectItem value="trending">{t("promptsList.filters.trending")}</SelectItem>
                 <SelectItem value="reported">{t("promptsList.filters.reported")}</SelectItem>
                 <SelectItem value="deleted">{t("promptsList.filters.deleted")}</SelectItem>
               </SelectContent>
@@ -731,6 +735,7 @@ export function PromptsManagement({ aiSearchEnabled, promptsWithoutEmbeddings, t
                       {prompt.isFeatured && (
                         <Star className="h-4 w-4 text-yellow-500 fill-yellow-500 flex-shrink-0" />
                       )}
+                      {isTrending(prompt.trendingUntil) && <TrendingBadge className="text-xs" />}
                       {prompt.isPrivate && (
                         <Badge variant="secondary" className="text-xs">
                           <EyeOff className="h-3 w-3 mr-1" />

@@ -23,6 +23,9 @@ import { VersionCompareModal } from "@/components/prompts/version-compare-modal"
 import { VersionCompareButton } from "@/components/prompts/version-compare-button";
 import { FeaturePromptButton } from "@/components/prompts/feature-prompt-button";
 import { UnlistPromptButton } from "@/components/prompts/unlist-prompt-button";
+import { TrendingBadge } from "@/components/prompts/trending-badge";
+import { TrendingPromptButton } from "@/components/prompts/trending-prompt-button";
+import { isTrending } from "@/lib/trending";
 import { UserExamplesSection } from "@/components/prompts/user-examples-section";
 import { DelistBanner } from "@/components/prompts/delist-banner";
 import { RestorePromptButton } from "@/components/prompts/restore-prompt-button";
@@ -421,6 +424,7 @@ export default async function PromptPage({ params }: PromptPageProps) {
               {prompt.isPrivate && (
                 <Badge variant="secondary">{t("promptPrivate")}</Badge>
               )}
+              {isTrending(prompt.trendingUntil) && <TrendingBadge />}
             </div>
           </div>
         </div>
@@ -864,6 +868,10 @@ export default async function PromptPage({ params }: PromptPageProps) {
             <FeaturePromptButton
               promptId={prompt.id}
               isFeatured={prompt.isFeatured}
+            />
+            <TrendingPromptButton
+              promptId={prompt.id}
+              trendingUntil={prompt.trendingUntil}
             />
             <UnlistPromptButton
               promptId={prompt.id}

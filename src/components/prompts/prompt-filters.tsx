@@ -15,7 +15,7 @@ import {
 } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
-import { X, Sparkles, Search, SlidersHorizontal, ExternalLink } from "lucide-react";
+import { X, Sparkles, Search, SlidersHorizontal, ExternalLink, Flame } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import DeepWikiIcon from "@/../public/deepwiki.svg";
@@ -51,8 +51,10 @@ interface PromptFiltersProps {
     tag?: string;
     sort?: string;
     ai?: string;
+    trending?: string;
   } & Record<string, string | undefined>;
   aiSearchEnabled?: boolean;
+  showTrendingFilter?: boolean;
   basePath?: string;
   primaryFilter?: PrimaryFilter;
   searchPlaceholder?: string;
@@ -60,7 +62,7 @@ interface PromptFiltersProps {
 
 const promptTypes = ["TEXT", "STRUCTURED", "IMAGE", "VIDEO", "AUDIO"];
 
-export function PromptFilters({ categories, tags, currentFilters, aiSearchEnabled, basePath = "/prompts", primaryFilter, searchPlaceholder }: PromptFiltersProps) {
+export function PromptFilters({ categories, tags, currentFilters, aiSearchEnabled, showTrendingFilter = false, basePath = "/prompts", primaryFilter, searchPlaceholder }: PromptFiltersProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const t = useTranslations();
@@ -104,9 +106,11 @@ export function PromptFilters({ categories, tags, currentFilters, aiSearchEnable
 
   const selectedTags = currentFilters.tag ? currentFilters.tag.split(",").filter(Boolean) : [];
 
-  const hasFilters = currentFilters.q || primaryValue || currentFilters.category || currentFilters.tag || currentFilters.sort;
+  const trendingOnly = showTrendingFilter && currentFilters.trending === "1";
 
-  const activeFilterCount = [primaryValue, currentFilters.category, currentFilters.tag, currentFilters.sort && currentFilters.sort !== "newest"].filter(Boolean).length;
+  const hasFilters = currentFilters.q || primaryValue || currentFilters.category || currentFilters.tag || currentFilters.sort || trendingOnly;
+
+  const activeFilterCount = [primaryValue, currentFilters.category, currentFilters.tag, currentFilters.sort && currentFilters.sort !== "newest", trendingOnly].filter(Boolean).length;
 
   return (
     <div className="space-y-4">
@@ -241,6 +245,23 @@ export function PromptFilters({ categories, tags, currentFilters, aiSearchEnable
 
       {/* Shared filters - shown on desktop always, on mobile when showFilters is true */}
       <div className={`space-y-4 ${showFilters ? "block" : "hidden"} lg:block`}>
+      {showTrendingFilter && (
+        <div className="flex items-center justify-between">
+          <Label className="text-xs flex items-center gap-1.5 cursor-pointer" htmlFor="trending-only">
+            <Flame className="h-3 w-3 text-orange-500" />
+            {t("search.trendingOnly")}
+          </Label>
+          <Switch
+            id="trending-only"
+            checked={trendingOnly}
+            onCheckedChange={(checked) => {
+              if (checked) analyticsSearch.filter("trending", "1");
+              updateFilter("trending", checked ? "1" : null);
+            }}
+          />
+        </div>
+      )}
+
       {/* Type (or platform) filter */}
       <div className="space-y-1.5">
         <Label className="text-xs">{primary.label}</Label>

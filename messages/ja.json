@@ -158,6 +158,12 @@
     "promptPrivate": "非公開",
     "feature": "注目に設定",
     "featured": "注目",
+    "trending": "トレンド",
+    "markTrending": "トレンドに設定",
+    "trendingUntil": "{date}までトレンド",
+    "trendingForDays": "{count, plural, other {#日間トレンド}}",
+    "stopTrending": "トレンドを解除",
+    "trendingUpdateFailed": "トレンド状態を更新できませんでした",
     "unlist": "非公開にする",
     "relist": "公開に戻す",
     "adminArea": "管理者エリア",
@@ -584,6 +590,7 @@
         "private": "非公開",
         "unlisted": "非掲載",
         "featured": "注目",
+        "trending": "トレンド",
         "reported": "報告済み",
         "deleted": "削除済み"
       }
@@ -788,6 +795,7 @@
     "newest": "新しい順",
     "oldest": "古い順",
     "mostUpvoted": "高評価順",
+    "trendingOnly": "トレンドのみ",
     "search": "検索",
     "clear": "クリア",
     "found": "{count}件見つかりました",

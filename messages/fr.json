@@ -161,6 +161,12 @@
     "promptPrivate": "Privé",
     "feature": "Mettre en avant",
     "featured": "En vedette",
+    "trending": "Tendance",
+    "markTrending": "Marquer comme tendance",
+    "trendingUntil": "Tendance jusqu’au {date}",
+    "trendingForDays": "{count, plural, one {Tendance pendant # jour} other {Tendance pendant # jours}}",
+    "stopTrending": "Retirer des tendances",
+    "trendingUpdateFailed": "Impossible de mettre à jour le statut tendance",
     "unlist": "Retirer",
     "relist": "Remettre",
     "adminArea": "Zone Admin",
@@ -584,6 +590,7 @@
         "private": "Privés",
         "unlisted": "Non listés",
         "featured": "En vedette",
+        "trending": "Tendances",
         "reported": "Signalés",
         "deleted": "Supprimés"
       }
@@ -788,6 +795,7 @@
     "newest": "Plus Récents",
     "oldest": "Plus Anciens",
     "mostUpvoted": "Plus Votés",
+    "trendingOnly": "Tendances uniquement",
     "search": "Rechercher",
     "clear": "Effacer",
     "found": "{count} trouvés",

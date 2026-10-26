@@ -22,6 +22,7 @@ interface InfinitePromptListProps {
     categorySlug?: string;
     tag?: string; 
     sort?: string;
+    trending?: string;
   };
 }
 
@@ -105,6 +106,7 @@ export function InfinitePromptList({
       if (filters.category) params.set("category", filters.category);
       if (filters.tag) params.set("tag", filters.tag);
       if (filters.sort) params.set("sort", filters.sort);
+      if (filters.trending) params.set("trending", filters.trending);
 
       const response = await fetch(`/api/prompts?${params.toString()}`, {
         signal: controller.signal,

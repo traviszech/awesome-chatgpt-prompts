@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { auth } from "@/lib/auth";
 import { db } from "@/lib/db";
+import { trendingWhere } from "@/lib/trending";
 
 // GET - List all prompts for admin with pagination and search
 export async function GET(request: NextRequest) {
@@ -43,6 +44,7 @@ export async function GET(request: NextRequest) {
       isUnlisted?: boolean;
       isPrivate?: boolean;
       isFeatured?: boolean;
+      trendingUntil?: { gt: Date };
       deletedAt?: { not: null } | null;
       reports?: { some: object };
       type?: "BOT";
@@ -59,6 +61,9 @@ export async function GET(request: NextRequest) {
         break;
       case "featured":
         filterConditions.isFeatured = true;
+        break;
+      case "trending":
+        Object.assign(filterConditions, trendingWhere());
         break;
       case "deleted":
         filterConditions.deletedAt = { not: null };
@@ -112,6 +117,7 @@ export async function GET(request: NextRequest) {
           isPrivate: true,
           isUnlisted: true,
           isFeatured: true,
+          trendingUntil: true,
           viewCount: true,
           createdAt: true,
           updatedAt: true,

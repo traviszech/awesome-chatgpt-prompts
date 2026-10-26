@@ -14,6 +14,8 @@ import {
   type BotPlatform,
 } from "@/lib/bots/schema";
 import { getBotUrl } from "@/lib/urls";
+import { TrendingBadge } from "@/components/prompts/trending-badge";
+import { isTrending } from "@/lib/trending";
 
 /** The subset of BotView a card needs; BotView satisfies it */
 export interface BotCardData {
@@ -25,6 +27,7 @@ export interface BotCardData {
   icon: BotIconName | null;
   color: BotColor | null;
   isFeatured: boolean;
+  trendingUntil?: Date | string | null;
   config: Pick<BotConfig, "routines">;
   author: { username: string };
   voteCount: number;
@@ -37,6 +40,7 @@ export interface BotPromptFields {
   title: string;
   description: string | null;
   isFeatured?: boolean;
+  trendingUntil?: Date | string | null;
   botIcon?: string | null;
   botColor?: string | null;
   botPlatforms?: readonly BotPlatform[] | null;
@@ -57,6 +61,7 @@ export function promptToBotCardData(prompt: BotPromptFields): BotCardData {
     icon: prompt.botIcon && isBotIconName(prompt.botIcon) ? prompt.botIcon : null,
     color: prompt.botColor && isBotColor(prompt.botColor) ? prompt.botColor : null,
     isFeatured: prompt.isFeatured ?? false,
+    trendingUntil: prompt.trendingUntil ?? null,
     config: parseBotConfig(prompt.botConfig),
     author: prompt.author,
     voteCount: prompt.voteCount ?? prompt._count?.votes ?? 0,
@@ -85,6 +90,7 @@ export function BotCard({ bot, position }: BotCardProps) {
       <div className="flex items-start justify-between gap-2">
         <BotAvatar icon={bot.icon} color={bot.color} />
         <div className="flex flex-wrap items-center justify-end gap-1.5">
+          {isTrending(bot.trendingUntil) && <TrendingBadge className="text-[10px]" />}
           {bot.isFeatured && <Star className="h-4 w-4 text-yellow-500 fill-yellow-500" />}
           <BotPlatformIcons platforms={bot.platforms} />
         </div>

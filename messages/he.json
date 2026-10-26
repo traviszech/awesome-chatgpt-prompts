@@ -161,6 +161,12 @@
     "promptPrivate": "פרטי",
     "feature": "הדגש",
     "featured": "מודגש",
+    "trending": "פופולרי עכשיו",
+    "markTrending": "סימון כפופולרי",
+    "trendingUntil": "פופולרי עד {date}",
+    "trendingForDays": "{count, plural, one {פופולרי ליום אחד} two {פופולרי ליומיים} other {פופולרי ל־# ימים}}",
+    "stopTrending": "הפסקת הסימון כפופולרי",
+    "trendingUpdateFailed": "לא ניתן לעדכן את סטטוס הפופולריות",
     "unlist": "הסר מהרשימה",
     "relist": "החזר לרשימה",
     "adminArea": "אזור ניהול",
@@ -584,6 +590,7 @@
         "private": "פרטי",
         "unlisted": "לא רשום",
         "featured": "מומלץ",
+        "trending": "פופולריים",
         "reported": "דווח",
         "deleted": "נמחק"
       }
@@ -788,6 +795,7 @@
     "newest": "חדש ביותר",
     "oldest": "ישן ביותר",
     "mostUpvoted": "הכי מדורג",
+    "trendingOnly": "פופולריים בלבד",
     "search": "חיפוש",
     "clear": "נקה",
     "found": "נמצאו {count}",

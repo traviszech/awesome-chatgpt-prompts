@@ -8,6 +8,7 @@ import { generatePromptEmbedding, findAndSaveRelatedPrompts } from "@/lib/ai/emb
 import { generatePromptSlug } from "@/lib/slug";
 import { checkPromptQuality } from "@/lib/ai/quality-check";
 import { isSimilarContent, normalizeContent } from "@/lib/similarity";
+import { isTrending, trendingWhere } from "@/lib/trending";
 import { BOT_PLATFORMS, EMPTY_BOT_CONFIG, botColorSchema, botConfigSchema, botIconSchema, botPlatformsData, botPlatformsSchema, installUrlSchema } from "@/lib/bots/schema";
 
 const promptSchema = z.object({
@@ -358,6 +359,7 @@ export async function GET(request: Request) {
     const tag = searchParams.get("tag");
     const sort = searchParams.get("sort");
     const q = searchParams.get("q");
+    const trending = searchParams.get("trending");
 
     const where: Record<string, unknown> = {
       isPrivate: false,
@@ -370,6 +372,10 @@ export async function GET(request: Request) {
 
     if (type) {
       where.type = type;
+    }
+
+    if (trending === "1" || trending === "true") {
+      Object.assign(where, trendingWhere());
     }
 
     if (categoryId) {
@@ -474,6 +480,7 @@ export async function GET(request: Request) {
     // Transform to include voteCount and contributorCount, exclude internal fields
     const prompts = promptsRaw.map(({ isPrivate: _p, isUnlisted: _u, unlistedAt: _ua, deletedAt: _d, ...p }) => ({
       ...p,
+      isTrending: isTrending(p.trendingUntil),
       voteCount: p._count.votes,
       contributorCount: p._count.contributors,
       contributors: p.contributors,

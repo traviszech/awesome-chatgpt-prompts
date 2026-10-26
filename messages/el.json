@@ -161,6 +161,12 @@
     "promptPrivate": "Ιδιωτικό",
     "feature": "Προβολή",
     "featured": "Προβεβλημένο",
+    "trending": "Δημοφιλές τώρα",
+    "markTrending": "Σήμανση ως δημοφιλές",
+    "trendingUntil": "Δημοφιλές έως {date}",
+    "trendingForDays": "{count, plural, one {Δημοφιλές για # ημέρα} other {Δημοφιλές για # ημέρες}}",
+    "stopTrending": "Διακοπή προβολής ως δημοφιλές",
+    "trendingUpdateFailed": "Δεν ήταν δυνατή η ενημέρωση της κατάστασης",
     "unlist": "Απόκρυψη",
     "relist": "Επαναφορά",
     "adminArea": "Περιοχή διαχειριστή",
@@ -584,6 +590,7 @@
         "private": "Ιδιωτικά",
         "unlisted": "Μη καταχωρημένα",
         "featured": "Προτεινόμενα",
+        "trending": "Δημοφιλή τώρα",
         "reported": "Αναφερθέντα",
         "deleted": "Διαγραμμένα"
       }
@@ -788,6 +795,7 @@
     "newest": "Νεότερα",
     "oldest": "Παλαιότερα",
     "mostUpvoted": "Περισσότερες ψήφοι",
+    "trendingOnly": "Μόνο δημοφιλή",
     "search": "Αναζήτηση",
     "clear": "Καθαρισμός",
     "found": "Βρέθηκαν {count}",

@@ -161,6 +161,12 @@
     "promptPrivate": "Privato",
     "feature": "In evidenza",
     "featured": "In evidenza",
+    "trending": "Di tendenza",
+    "markTrending": "Segna come di tendenza",
+    "trendingUntil": "Di tendenza fino al {date}",
+    "trendingForDays": "{count, plural, one {Di tendenza per # giorno} other {Di tendenza per # giorni}}",
+    "stopTrending": "Rimuovi dalle tendenze",
+    "trendingUpdateFailed": "Impossibile aggiornare lo stato di tendenza",
     "unlist": "Nascondi",
     "relist": "Mostra",
     "adminArea": "Area Admin",
@@ -584,6 +590,7 @@
         "private": "Privati",
         "unlisted": "Non elencati",
         "featured": "In evidenza",
+        "trending": "Di tendenza",
         "reported": "Segnalati",
         "deleted": "Eliminati"
       }
@@ -788,6 +795,7 @@
     "newest": "Più recenti",
     "oldest": "Più vecchi",
     "mostUpvoted": "Più votati",
+    "trendingOnly": "Solo di tendenza",
     "search": "Cerca",
     "clear": "Cancella",
     "found": "{count} trovati",

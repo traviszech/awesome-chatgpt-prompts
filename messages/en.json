@@ -161,6 +161,12 @@
     "promptPrivate": "Private",
     "feature": "Feature",
     "featured": "Featured",
+    "trending": "Trending",
+    "markTrending": "Mark trending",
+    "trendingUntil": "Trending until {date}",
+    "trendingForDays": "{count, plural, one {Trending for # day} other {Trending for # days}}",
+    "stopTrending": "Stop trending",
+    "trendingUpdateFailed": "Could not update trending status",
     "unlist": "Unlist",
     "relist": "Relist",
     "adminArea": "Admin Area",
@@ -584,6 +590,7 @@
         "private": "Private",
         "unlisted": "Unlisted",
         "featured": "Featured",
+        "trending": "Trending",
         "reported": "Reported",
         "deleted": "Deleted"
       }
@@ -788,6 +795,7 @@
     "newest": "Newest",
     "oldest": "Oldest",
     "mostUpvoted": "Most Upvoted",
+    "trendingOnly": "Trending only",
     "search": "Search",
     "clear": "Clear",
     "found": "{count} found",

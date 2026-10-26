@@ -25,6 +25,9 @@ import { BOT_PLATFORM_INFO, extractBotId, formatBotPlatforms, getBotById, getBot
 import { canViewPrompt } from "@/lib/prompt-access";
 import { buildPageMetadata, getBaseUrl, NOINDEX_ROBOTS, toMetaDescription } from "@/lib/seo";
 import { getBotUrl } from "@/lib/urls";
+import { isTrending } from "@/lib/trending";
+import { TrendingBadge } from "@/components/prompts/trending-badge";
+import { TrendingPromptButton } from "@/components/prompts/trending-prompt-button";
 
 interface BotPageProps {
   params: Promise<{ slug: string }>;
@@ -165,6 +168,7 @@ export default async function BotPage({ params }: BotPageProps) {
           {bot.platforms.map((platform) => (
             <BotPlatformBadge key={platform} platform={platform} />
           ))}
+          {isTrending(bot.trendingUntil) && <TrendingBadge />}
           {bot.isFeatured && <Star className="h-4 w-4 text-yellow-500 fill-yellow-500" />}
           {bot.isPrivate && (
             <Badge variant="secondary"><EyeOff />{t("private")}</Badge>
@@ -333,6 +337,7 @@ export default async function BotPage({ params }: BotPageProps) {
           </div>
           <div className="flex flex-wrap items-center gap-3">
             <FeaturePromptButton promptId={bot.id} isFeatured={bot.isFeatured} />
+            <TrendingPromptButton promptId={bot.id} trendingUntil={bot.trendingUntil} />
             <UnlistPromptButton promptId={bot.id} isUnlisted={bot.isUnlisted} />
             <Button variant="outline" size="sm" asChild>
               <Link href={`${canonicalPath}/edit`}>

@@ -161,6 +161,12 @@
     "promptPrivate": "خصوصی",
     "feature": "ویژه",
     "featured": "برگزیده",
+    "trending": "پرطرفدار",
+    "markTrending": "علامت‌گذاری به‌عنوان پرطرفدار",
+    "trendingUntil": "پرطرفدار تا {date}",
+    "trendingForDays": "{count, plural, other {پرطرفدار به مدت # روز}}",
+    "stopTrending": "توقف پرطرفدار",
+    "trendingUpdateFailed": "به‌روزرسانی وضعیت پرطرفدار ممکن نشد",
     "unlist": "حذف از فهرست",
     "relist": "بازگرداندن به فهرست",
     "adminArea": "بخش مدیریت",
@@ -584,6 +590,7 @@
         "private": "خصوصی",
         "unlisted": "نامرئی",
         "featured": "برگزیده",
+        "trending": "پرطرفدار",
         "reported": "گزارش شده",
         "deleted": "حذف شده"
       }
@@ -788,6 +795,7 @@
     "newest": "جدیدترین",
     "oldest": "قدیمی‌ترین",
     "mostUpvoted": "پرلایک‌ترین",
+    "trendingOnly": "فقط پرطرفدارها",
     "search": "جستجو",
     "clear": "پاک کردن",
     "found": "{count} یافت شد",

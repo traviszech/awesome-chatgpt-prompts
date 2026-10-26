@@ -161,6 +161,12 @@
     "promptPrivate": "Privé",
     "feature": "Uitlichten",
     "featured": "Uitgelicht",
+    "trending": "Trending",
+    "markTrending": "Markeren als trending",
+    "trendingUntil": "Trending tot {date}",
+    "trendingForDays": "{count, plural, one {# dag trending} other {# dagen trending}}",
+    "stopTrending": "Trending stoppen",
+    "trendingUpdateFailed": "Trendingstatus kon niet worden bijgewerkt",
     "unlist": "Verbergen",
     "relist": "Herlisten",
     "adminArea": "Beheergebied",
@@ -584,6 +590,7 @@
         "private": "Privé",
         "unlisted": "Verborgen",
         "featured": "Uitgelicht",
+        "trending": "Trending",
         "reported": "Gerapporteerd",
         "deleted": "Verwijderd"
       }
@@ -788,6 +795,7 @@
     "newest": "Nieuwste",
     "oldest": "Oudste",
     "mostUpvoted": "Meest gestemd",
+    "trendingOnly": "Alleen trending",
     "search": "Zoeken",
     "clear": "Wissen",
     "found": "{count} gevonden",

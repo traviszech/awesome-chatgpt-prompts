@@ -111,6 +111,7 @@ model Prompt {
   structuredFormat    StructuredFormat?
   featuredAt          DateTime?
   isFeatured          Boolean             @default(false)
+  trendingUntil       DateTime? // Shown as trending while this is in the future
   isUnlisted          Boolean             @default(false)
   unlistedAt          DateTime?
   delistReason        DelistReason?
@@ -146,6 +147,7 @@ model Prompt {
   @@index([botPlatforms], type: Gin)
   @@index([isPrivate])
   @@index([isFeatured])
+  @@index([trendingUntil])
   @@index([isUnlisted])
   @@index([slug])
   @@index([isPrivate, isUnlisted, deletedAt, createdAt(sort: Desc)])

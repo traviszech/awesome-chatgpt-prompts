@@ -161,6 +161,12 @@
     "promptPrivate": "Özel",
     "feature": "Öne Çıkar",
     "featured": "Öne Çıkan",
+    "trending": "Trend",
+    "markTrending": "Trend olarak işaretle",
+    "trendingUntil": "{date} tarihine kadar trend",
+    "trendingForDays": "{count, plural, other {# gün trend}}",
+    "stopTrending": "Trendden kaldır",
+    "trendingUpdateFailed": "Trend durumu güncellenemedi",
     "unlist": "Listeden Kaldır",
     "relist": "Listeye Ekle",
     "adminArea": "Yönetici Alanı",
@@ -584,6 +590,7 @@
         "private": "Özel",
         "unlisted": "Listelenmemiş",
         "featured": "Öne Çıkan",
+        "trending": "Trend",
         "reported": "Şikayet Edilen",
         "deleted": "Silinmiş"
       }
@@ -788,6 +795,7 @@
     "newest": "En Yeni",
     "oldest": "En Eski",
     "mostUpvoted": "En Çok Beğenilen",
+    "trendingOnly": "Yalnızca trendler",
     "search": "Ara",
     "clear": "Temizle",
     "found": "{count} bulundu",

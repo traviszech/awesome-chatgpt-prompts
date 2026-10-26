@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { BOT_PLATFORM_INFO, BOT_SORTS, botCategoryJson, botTagsJson, getBotUrls, listBots, platformFromParam, type BotSort } from "@/lib/bots";
 import { getBaseUrl } from "@/lib/seo";
+import { isTrending } from "@/lib/trending";
 
 const MAX_BOTS = 500;
 
@@ -33,6 +34,8 @@ export async function GET(request: Request) {
         installUrl: bot.installUrl,
         category: botCategoryJson(bot),
         tags: botTagsJson(bot),
+        isTrending: isTrending(bot.trendingUntil),
+        trendingUntil: bot.trendingUntil,
         author: bot.author.username,
         urls: getBotUrls(bot, baseUrl),
       })),

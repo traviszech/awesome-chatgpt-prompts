@@ -158,6 +158,12 @@
     "promptPrivate": "私有",
     "feature": "精选",
     "featured": "已精选",
+    "trending": "热门",
+    "markTrending": "设为热门",
+    "trendingUntil": "热门至 {date}",
+    "trendingForDays": "{count, plural, other {热门 # 天}}",
+    "stopTrending": "取消热门",
+    "trendingUpdateFailed": "无法更新热门状态",
     "unlist": "取消列出",
     "relist": "重新列出",
     "adminArea": "管理员区域",
@@ -584,6 +590,7 @@
         "private": "私密",
         "unlisted": "未列出",
         "featured": "精选",
+        "trending": "热门",
         "reported": "已举报",
         "deleted": "已删除"
       }
@@ -788,6 +795,7 @@
     "newest": "最新",
     "oldest": "最早",
     "mostUpvoted": "最多点赞",
+    "trendingOnly": "仅看热门",
     "search": "搜索",
     "clear": "清除",
     "found": "找到 {count} 个",

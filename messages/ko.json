@@ -161,6 +161,12 @@
     "promptPrivate": "비공개",
     "feature": "추천",
     "featured": "추천됨",
+    "trending": "트렌딩",
+    "markTrending": "트렌딩으로 지정",
+    "trendingUntil": "{date}까지 트렌딩",
+    "trendingForDays": "{count, plural, other {#일 동안 트렌딩}}",
+    "stopTrending": "트렌딩 해제",
+    "trendingUpdateFailed": "트렌딩 상태를 업데이트할 수 없습니다",
     "unlist": "숨기기",
     "relist": "다시 표시",
     "adminArea": "관리자 영역",
@@ -584,6 +590,7 @@
         "private": "비공개",
         "unlisted": "목록 제외",
         "featured": "추천",
+        "trending": "트렌딩",
         "reported": "신고됨",
         "deleted": "삭제됨"
       }
@@ -788,6 +795,7 @@
     "newest": "최신",
     "oldest": "오래된",
     "mostUpvoted": "추천순",
+    "trendingOnly": "트렌딩만",
     "search": "검색",
     "clear": "지우기",
     "found": "{count}개 찾음",

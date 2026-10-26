@@ -161,6 +161,12 @@
     "promptPrivate": "Приватный",
     "feature": "Выделить",
     "featured": "Избранный",
+    "trending": "В тренде",
+    "markTrending": "Отметить как трендовый",
+    "trendingUntil": "В тренде до {date}",
+    "trendingForDays": "{count, plural, one {В тренде # день} few {В тренде # дня} many {В тренде # дней} other {В тренде # дня}}",
+    "stopTrending": "Убрать из трендов",
+    "trendingUpdateFailed": "Не удалось обновить статус тренда",
     "unlist": "Скрыть",
     "relist": "Показать",
     "adminArea": "Админ-зона",
@@ -584,6 +590,7 @@
         "private": "Приватные",
         "unlisted": "Скрытые",
         "featured": "Избранные",
+        "trending": "В тренде",
         "reported": "С жалобами",
         "deleted": "Удалённые"
       }
@@ -788,6 +795,7 @@
     "newest": "Новые",
     "oldest": "Старые",
     "mostUpvoted": "Популярные",
+    "trendingOnly": "Только в тренде",
     "search": "Поиск",
     "clear": "Очистить",
     "found": "Найдено: {count}",

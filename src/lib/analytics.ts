@@ -238,6 +238,23 @@ export const analyticsPrompt = {
       prompt_id: promptId,
     });
   },
+
+  setTrending: (promptId: string, days: number) => {
+    trackEvent({
+      action: "set_trending_prompt",
+      category: "prompt",
+      prompt_id: promptId,
+      value: days,
+    });
+  },
+
+  clearTrending: (promptId: string) => {
+    trackEvent({
+      action: "clear_trending_prompt",
+      category: "prompt",
+      prompt_id: promptId,
+    });
+  },
 };
 
 // ============================================================================

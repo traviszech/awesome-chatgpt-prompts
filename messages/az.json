@@ -161,6 +161,12 @@
     "promptPrivate": "Şəxsi",
     "feature": "Xüsusi",
     "featured": "Seçilmiş",
+    "trending": "Trenddə",
+    "markTrending": "Trend kimi işarələ",
+    "trendingUntil": "{date} tarixinədək trenddə",
+    "trendingForDays": "{count, plural, other {# gün trenddə}}",
+    "stopTrending": "Trenddən çıxar",
+    "trendingUpdateFailed": "Trend statusu yenilənmədi",
     "unlist": "Siyahıdan çıxar",
     "relist": "Yenidən siyahıya al",
     "adminArea": "Admin Sahəsi",
@@ -584,6 +590,7 @@
         "private": "Şəxsi",
         "unlisted": "Siyahıda yox",
         "featured": "Seçilmiş",
+        "trending": "Trenddə",
         "reported": "Şikayət edilmiş",
         "deleted": "Silinmiş"
       }
@@ -788,6 +795,7 @@
     "newest": "Ən yeni",
     "oldest": "Ən köhnə",
     "mostUpvoted": "Ən çox bəyənilən",
+    "trendingOnly": "Yalnız trenddə olanlar",
     "search": "Axtar",
     "clear": "Təmizlə",
     "found": "{count} tapıldı",
