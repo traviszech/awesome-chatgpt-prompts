@@ -4,6 +4,7 @@ import { getTranslations } from "next-intl/server";
 import { ArrowRight, Bell, FolderOpen, Sparkles } from "lucide-react";
 import { auth } from "@/lib/auth";
 import { db } from "@/lib/db";
+import { NON_BOT_PROMPTS } from "@/lib/prompt-list";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { PromptList } from "@/components/prompts/prompt-list";
@@ -47,6 +48,7 @@ export default async function FeedPage() {
           isPrivate: false,
           isUnlisted: false,
           deletedAt: null,
+          ...NON_BOT_PROMPTS,
           categoryId: { in: subscribedCategoryIds },
         },
         orderBy: { createdAt: "desc" },
@@ -96,7 +98,7 @@ export default async function FeedPage() {
     orderBy: { name: "asc" },
     include: {
       _count: {
-        select: { prompts: true },
+        select: { prompts: { where: NON_BOT_PROMPTS } },
       },
     },
   });

@@ -8,6 +8,7 @@ import { generatePromptEmbedding, findAndSaveRelatedPrompts } from "@/lib/ai/emb
 import { generatePromptSlug } from "@/lib/slug";
 import { checkPromptQuality } from "@/lib/ai/quality-check";
 import { isSimilarContent, normalizeContent } from "@/lib/similarity";
+import { promptListTypeWhere } from "@/lib/prompt-list";
 import { isTrending, trendingWhere } from "@/lib/trending";
 import { BOT_PLATFORMS, EMPTY_BOT_CONFIG, botColorSchema, botConfigSchema, botIconSchema, botPlatformsData, botPlatformsSchema, installUrlSchema } from "@/lib/bots/schema";
 
@@ -370,9 +371,7 @@ export async function GET(request: Request) {
       incomingConnections: { none: { label: { not: "related" } } },
     };
 
-    if (type) {
-      where.type = type;
-    }
+    Object.assign(where, promptListTypeWhere(type));
 
     if (trending === "1" || trending === "true") {
       Object.assign(where, trendingWhere());

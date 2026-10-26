@@ -2,6 +2,7 @@ import OpenAI from "openai";
 import { Prisma } from "@prisma/client";
 import { db } from "@/lib/db";
 import { getConfig } from "@/lib/config";
+import { NON_BOT_PROMPTS } from "@/lib/prompt-list";
 import { loadPrompt, getSystemPrompt } from "./load-prompt";
 
 const queryTranslatorPrompt = loadPrompt("src/lib/ai/query-translator.prompt.yml");
@@ -230,6 +231,7 @@ export async function semanticSearch(
       isPrivate: false,
       deletedAt: null,
       embedding: { not: Prisma.DbNull },
+      ...NON_BOT_PROMPTS,
     },
     select: {
       id: true,

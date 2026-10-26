@@ -2,9 +2,11 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Bot } from "lucide-react";
 import { auth } from "@/lib/auth";
 import { db } from "@/lib/db";
+import { countBots } from "@/lib/bots";
+import { NON_BOT_PROMPTS } from "@/lib/prompt-list";
 import config from "@/../prompts.config";
 import { Button } from "@/components/ui/button";
 import { PromptList } from "@/components/prompts/prompt-list";
@@ -26,6 +28,7 @@ const visiblePromptFilter = {
   isPrivate: false,
   isUnlisted: false,
   deletedAt: null,
+  ...NON_BOT_PROMPTS,
 };
 
 export async function generateMetadata({ params, searchParams }: CategoryPageProps): Promise<Metadata> {
@@ -105,6 +108,7 @@ export default async function CategoryPage({ params, searchParams }: CategoryPag
     isPrivate: false,
     isUnlisted: false,
     deletedAt: null,
+    ...NON_BOT_PROMPTS,
     ...(q && {
       OR: [
         { title: { contains: q, mode: "insensitive" as const } },
@@ -127,8 +131,11 @@ export default async function CategoryPage({ params, searchParams }: CategoryPag
     }
   };
 
-  // Count total prompts for pagination
-  const totalPrompts = await db.prompt.count({ where: whereClause });
+  // Count total prompts for pagination; bots are listed on /bots
+  const [totalPrompts, botCount] = await Promise.all([
+    db.prompt.count({ where: whereClause }),
+    countBots({ categorySlug: category.slug }),
+  ]);
   const totalPages = Math.ceil(totalPrompts / PROMPTS_PER_PAGE);
 
   // Pages past the end would be empty duplicates of the listing
@@ -234,6 +241,15 @@ export default async function CategoryPage({ params, searchParams }: CategoryPag
               <span>{t("categories.promptCount", { count: totalPrompts })}</span>
               <span>•</span>
               <span>{t("categories.subscriberCount", { count: category._count.subscribers })}</span>
+              {botCount > 0 && (
+                <>
+                  <span>•</span>
+                  <Link href={`/bots?category=${category.slug}`} prefetch={false} className="inline-flex items-center gap-1 hover:text-foreground hover:underline">
+                    <Bot className="h-3.5 w-3.5" />
+                    {t("bots.count", { count: botCount })}
+                  </Link>
+                </>
+              )}
             </div>
           </div>
           <div className="hidden md:flex items-center gap-2">

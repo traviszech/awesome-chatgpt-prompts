@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { db } from "@/lib/db";
+import { NON_BOT_PROMPTS } from "@/lib/prompt-list";
 
 function escapeCSVField(field: string): string {
   if (!field) return "";
@@ -32,6 +33,7 @@ export async function GET() {
         isPrivate: false,
         isUnlisted: false, // Exclude unlisted prompts from CSV export
         deletedAt: null,
+        ...NON_BOT_PROMPTS,
       },
       select: {
         title: true,

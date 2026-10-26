@@ -5,6 +5,7 @@ import { unstable_cache } from "next/cache";
 import { FolderOpen, ChevronRight } from "lucide-react";
 import { auth } from "@/lib/auth";
 import { db } from "@/lib/db";
+import { NON_BOT_PROMPTS } from "@/lib/prompt-list";
 import { SubscribeButton } from "@/components/categories/subscribe-button";
 import { buildPageMetadata } from "@/lib/seo";
 
@@ -13,6 +14,7 @@ const visiblePromptFilter = {
   isPrivate: false,
   isUnlisted: false,
   deletedAt: null,
+  ...NON_BOT_PROMPTS,
 };
 
 // Cached categories query with filtered prompt counts

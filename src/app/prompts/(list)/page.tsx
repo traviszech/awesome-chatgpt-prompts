@@ -15,6 +15,7 @@ import { db } from "@/lib/db";
 import { isAISearchEnabled, semanticSearch } from "@/lib/ai/embeddings";
 import { isAIGenerationEnabled } from "@/lib/ai/generation";
 import { buildPageMetadata } from "@/lib/seo";
+import { promptListTypeWhere } from "@/lib/prompt-list";
 import { trendingWhere } from "@/lib/trending";
 import config from "@/../prompts.config";
 
@@ -290,9 +291,7 @@ export default async function PromptsPage({ searchParams }: PromptsPageProps) {
       }
     }
     
-    if (params.type) {
-      where.type = params.type;
-    }
+    Object.assign(where, promptListTypeWhere(params.type));
 
     if (params.trending === "1") {
       Object.assign(where, trendingWhere());

@@ -160,6 +160,11 @@ export async function listBots({ skip = 0, take = 24, ...filters }: BotListFilte
   return { bots: records.map(toBotView), total };
 }
 
+/** Public bots matching the same filters /bots applies, for linking to a filtered /bots listing */
+export function countBots(filters: Omit<BotListFilters, "sort"> = {}) {
+  return db.prompt.count({ where: botListWhere(filters) });
+}
+
 /** A user's bots for their profile; private ones only for the owner */
 export async function listBotsByAuthor(
   authorId: string,

@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
 import { db } from "@/lib/db";
+import { NON_BOT_PROMPTS } from "@/lib/prompt-list";
 import { getAllChapters } from "@/lib/book/chapters";
 import { getBotUrl, getPromptUrl } from "@/lib/urls";
 import { getBaseUrl, toSitemapImageUrl } from "@/lib/seo";
@@ -21,6 +22,9 @@ const visiblePromptFilter = {
   isUnlisted: false,
   deletedAt: null,
 };
+
+// Prompt listings (/prompts, categories, tags) leave bots to /bots
+const listedPromptFilter = { ...visiblePromptFilter, ...NON_BOT_PROMPTS };
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = getBaseUrl();
@@ -58,19 +62,19 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   try {
     const [latestPrompt, categories, categoryUpdates, prompts, bots, tags, authors] = await Promise.all([
       db.prompt.findFirst({
-        where: visiblePromptFilter,
+        where: listedPromptFilter,
         orderBy: { updatedAt: "desc" },
         select: { updatedAt: true },
       }),
       db.category.findMany({ select: { id: true, slug: true } }),
       db.prompt.groupBy({
         by: ["categoryId"],
-        where: { ...visiblePromptFilter, categoryId: { not: null } },
+        where: { ...listedPromptFilter, categoryId: { not: null } },
         _count: true,
         _max: { updatedAt: true },
       }),
       db.prompt.findMany({
-        where: { ...visiblePromptFilter, type: { not: "BOT" } },
+        where: listedPromptFilter,
         select: { id: true, slug: true, type: true, mediaUrl: true, updatedAt: true },
         orderBy: { updatedAt: "desc" },
         take: MAX_PROMPTS,
@@ -85,7 +89,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         select: {
           slug: true,
           prompts: {
-            where: { prompt: visiblePromptFilter },
+            where: { prompt: listedPromptFilter },
             select: { prompt: { select: { updatedAt: true } } },
           },
         },

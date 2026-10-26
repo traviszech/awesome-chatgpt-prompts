@@ -3,6 +3,7 @@ import { getTranslations } from "next-intl/server";
 import { DiscoveryPrompts } from "@/components/prompts/discovery-prompts";
 import { JsonLd, breadcrumbSchema, collectionPageSchema } from "@/components/seo/structured-data";
 import { db } from "@/lib/db";
+import { NON_BOT_PROMPTS } from "@/lib/prompt-list";
 import { buildPageMetadata } from "@/lib/seo";
 import { getPromptUrl } from "@/lib/urls";
 
@@ -24,6 +25,7 @@ export default async function DiscoverPage() {
       isPrivate: false,
       isUnlisted: false,
       deletedAt: null,
+      ...NON_BOT_PROMPTS,
     },
     orderBy: {
       votes: { _count: "desc" },

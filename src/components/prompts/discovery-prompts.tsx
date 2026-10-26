@@ -2,6 +2,7 @@ import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 import { ArrowRight, Clock, Flame, RefreshCw, Star, Users } from "lucide-react";
 import { db } from "@/lib/db";
+import { NON_BOT_PROMPTS } from "@/lib/prompt-list";
 import { Button } from "@/components/ui/button";
 import { Masonry } from "@/components/ui/masonry";
 import { PromptCard } from "@/components/prompts/prompt-card";
@@ -54,6 +55,7 @@ export async function DiscoveryPrompts({ isHomepage = false }: DiscoveryPromptsP
         isPrivate: false,
         isUnlisted: false,
         deletedAt: null,
+        ...NON_BOT_PROMPTS,
         isFeatured: true,
       },
       orderBy: { featuredAt: "desc" },
@@ -66,6 +68,7 @@ export async function DiscoveryPrompts({ isHomepage = false }: DiscoveryPromptsP
         isPrivate: false,
         isUnlisted: false,
         deletedAt: null,
+        ...NON_BOT_PROMPTS,
         votes: {
           some: {
             createdAt: {
@@ -87,6 +90,7 @@ export async function DiscoveryPrompts({ isHomepage = false }: DiscoveryPromptsP
         isPrivate: false,
         isUnlisted: false,
         deletedAt: null,
+        ...NON_BOT_PROMPTS,
       },
       orderBy: { createdAt: "desc" },
       take: limit,
@@ -97,6 +101,7 @@ export async function DiscoveryPrompts({ isHomepage = false }: DiscoveryPromptsP
         isPrivate: false,
         isUnlisted: false,
         deletedAt: null,
+        ...NON_BOT_PROMPTS,
       },
       orderBy: { updatedAt: "desc" },
       take: limit,
@@ -107,6 +112,7 @@ export async function DiscoveryPrompts({ isHomepage = false }: DiscoveryPromptsP
         isPrivate: false,
         isUnlisted: false,
         deletedAt: null,
+        ...NON_BOT_PROMPTS,
       },
       orderBy: {
         contributors: {

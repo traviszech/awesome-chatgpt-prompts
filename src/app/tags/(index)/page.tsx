@@ -4,6 +4,7 @@ import { getTranslations } from "next-intl/server";
 import { unstable_cache } from "next/cache";
 import { Tag } from "lucide-react";
 import { db } from "@/lib/db";
+import { NON_BOT_PROMPTS } from "@/lib/prompt-list";
 import { buildPageMetadata } from "@/lib/seo";
 
 // Cached tags query
@@ -19,6 +20,7 @@ const getTags = unstable_cache(
                   isPrivate: false,
                   isUnlisted: false,
                   deletedAt: null,
+                  ...NON_BOT_PROMPTS,
                 },
               },
             },

@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
-import { ArrowLeft, Tag } from "lucide-react";
+import { ArrowLeft, Bot, Tag } from "lucide-react";
 import { db } from "@/lib/db";
+import { countBots } from "@/lib/bots";
+import { NON_BOT_PROMPTS } from "@/lib/prompt-list";
 import { auth } from "@/lib/auth";
 import config from "@/../prompts.config";
 import { Button } from "@/components/ui/button";
@@ -33,7 +35,7 @@ export async function generateMetadata({ params, searchParams }: TagPageProps): 
       name: true,
       _count: {
         select: {
-          prompts: { where: { prompt: { isPrivate: false, isUnlisted: false, deletedAt: null } } },
+          prompts: { where: { prompt: { isPrivate: false, isUnlisted: false, deletedAt: null, ...NON_BOT_PROMPTS } } },
         },
       },
     },
@@ -61,6 +63,7 @@ export default async function TagPage({ params, searchParams }: TagPageProps) {
   const t = await getTranslations("tags");
   const tPrompts = await getTranslations("prompts");
   const tSeo = await getTranslations("seo");
+  const tBots = await getTranslations("bots");
 
   const tag = await db.tag.findUnique({
     where: { slug },
@@ -80,13 +83,14 @@ export default async function TagPage({ params, searchParams }: TagPageProps) {
     },
     isUnlisted: false,
     deletedAt: null,
+    ...NON_BOT_PROMPTS,
     OR: session?.user
       ? [{ isPrivate: false }, { authorId: session.user.id }]
       : [{ isPrivate: false }],
   };
 
-  // Fetch prompts with this tag
-  const [promptsRaw, total] = await Promise.all([
+  // Fetch prompts with this tag; bots are listed on /bots
+  const [promptsRaw, total, botCount] = await Promise.all([
     db.prompt.findMany({
       where,
       orderBy: { createdAt: "desc" },
@@ -125,6 +129,7 @@ export default async function TagPage({ params, searchParams }: TagPageProps) {
       },
     }),
     db.prompt.count({ where }),
+    countBots({ tagSlugs: [tag.slug] }),
   ]);
 
   const prompts = promptsRaw.map((p) => ({
@@ -178,6 +183,12 @@ export default async function TagPage({ params, searchParams }: TagPageProps) {
             <span className="text-sm text-muted-foreground">
               {total} {t("prompts")}
             </span>
+            {botCount > 0 && (
+              <Link href={`/bots?tag=${tag.slug}`} prefetch={false} className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground hover:underline">
+                <Bot className="h-3.5 w-3.5" />
+                {tBots("count", { count: botCount })}
+              </Link>
+            )}
           </div>
           {config.features.mcp !== false && <McpServerPopup initialTags={[slug]} showOfficialBranding={!config.homepage?.useCloneBranding} />}
         </div>

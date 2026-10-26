@@ -12,6 +12,7 @@ import { db } from "@/lib/db";
 import { isValidApiKeyFormat } from "@/lib/api-key";
 import { parseSkillFiles, serializeSkillFiles, sanitizeFilename, DEFAULT_SKILL_FILE } from "@/lib/skill-files";
 import appConfig from "@/../prompts.config";
+import { NON_BOT_PROMPTS, promptListTypeWhere } from "@/lib/prompt-list";
 import {
   mcpGeneralLimiter,
   mcpToolCallLimiter,
@@ -131,6 +132,7 @@ function createServer(options: ServerOptions = {}) {
     const baseFilter: Record<string, unknown> = {
       isUnlisted: false,
       deletedAt: null,
+      ...NON_BOT_PROMPTS,
     };
 
     // Handle visibility: public prompts OR authenticated user's own prompts
@@ -317,7 +319,7 @@ function createServer(options: ServerOptions = {}) {
           ],
         };
 
-        if (type) where.type = type;
+        Object.assign(where, promptListTypeWhere(type));
         if (category) where.category = { slug: category };
         if (tag) where.tags = { some: { tag: { slug: tag } } };
 
