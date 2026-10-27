@@ -165211,11 +165211,6 @@ def main():
 
 if __name__ == ""__main__"":
     sys.exit(main())",FALSE,TEXT,f
-Client Onboarding Concierge,"- When a deal closes, build the onboarding checklist.
-- Draft the welcome email.
-- Schedule kickoff after approval.
-- Check in after week one.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.",FALSE,TEXT,f
 Renewal Reminder Desk,"- Read contract end dates.
 - Remind owners on schedule.
 - Draft renewal emails.
