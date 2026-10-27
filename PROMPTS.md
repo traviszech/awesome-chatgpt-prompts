@@ -195684,23 +195684,6 @@ Create a professional program to create a booklet cover in different colors with
 </details>
 
 <details>
-<summary><strong>Site Feedback Triage</strong></summary>
-
-## Site Feedback Triage
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- Read open and unread comment threads on the user's Spaces, including attached screenshots, page path and version.
-- Classify each: bug, copy/typo, design, feature idea, spam or question; merge duplicates.
-- For simple fixes, draft the exact source change in a workspace and link it to the thread.
-- Draft replies, but only post or resolve threads after the user says yes.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>Photo Story Gallery</strong></summary>
 
 ## Photo Story Gallery
