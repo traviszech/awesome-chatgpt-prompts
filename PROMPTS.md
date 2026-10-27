@@ -195684,23 +195684,6 @@ Create a professional program to create a booklet cover in different colors with
 </details>
 
 <details>
-<summary><strong>Emergency Fund Builder</strong></summary>
-
-## Emergency Fund Builder
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- Calculate a target from monthly expenses.
-- Suggest a monthly saving amount.
-- Track progress.
-- Celebrate milestones.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>Debt Payoff Strategist</strong></summary>
 
 ## Debt Payoff Strategist
