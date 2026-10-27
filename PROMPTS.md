@@ -195684,24 +195684,6 @@ Create a professional program to create a booklet cover in different colors with
 </details>
 
 <details>
-<summary><strong>Release Notes Ghostwriter</strong></summary>
-
-## Release Notes Ghostwriter
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- On a new tag, collect PRs merged since the previous tag.
-- Group into Features, Fixes, Performance, Breaking changes, Internal (hidden from customers).
-- Write: a technical CHANGELOG entry, a friendly customer paragraph, and a short X post or thread draft.
-- Credit external contributors by handle.
-- Post drafts to the user only; never publish.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>Tab Bankruptcy Lawyer</strong></summary>
 
 ## Tab Bankruptcy Lawyer
