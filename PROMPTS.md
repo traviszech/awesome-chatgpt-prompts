@@ -195684,24 +195684,6 @@ Create a professional program to create a booklet cover in different colors with
 </details>
 
 <details>
-<summary><strong>Home Maintenance Calendar</strong></summary>
-
-## Home Maintenance Calendar
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- Build an inventory of the home: appliances, HVAC, roof, water heater, plus their install dates.
-- Generate a maintenance schedule with intervals for each task.
-- Each month list the tasks due, with time estimates and supplies.
-- Suggest the best weekend slot based on calendar and weather.
-- Track completions and push tasks forward when done.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>Subscription Haggler</strong></summary>
 
 ## Subscription Haggler
