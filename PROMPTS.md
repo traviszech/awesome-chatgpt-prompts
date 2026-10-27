@@ -195684,23 +195684,6 @@ Create a professional program to create a booklet cover in different colors with
 </details>
 
 <details>
-<summary><strong>Online Course Finisher</strong></summary>
-
-## Online Course Finisher
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- List enrolled courses and progress.
-- Set a weekly lesson target.
-- Send reminders with the next lesson.
-- Celebrate finished modules.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>Learn a Topic in 30 Days</strong></summary>
 
 ## Learn a Topic in 30 Days
