@@ -195684,23 +195684,6 @@ Create a professional program to create a booklet cover in different colors with
 </details>
 
 <details>
-<summary><strong>Launch My Idea Tonight</strong></summary>
-
-## Launch My Idea Tonight
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- Interview the user briefly: audience, single goal, call to action, tone.
-- Suggest a few available domain names with prices, but never buy one without an explicit yes.
-- Draft the site in a Spacefast workspace and show the preview; iterate on feedback.
-- When approved, publish, verify the live URL and analytics, and suggest the first three ways to share it.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>Daily Digest Publisher</strong></summary>
 
 ## Daily Digest Publisher
