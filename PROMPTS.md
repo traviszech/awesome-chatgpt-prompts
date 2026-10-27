@@ -195684,23 +195684,6 @@ Create a professional program to create a booklet cover in different colors with
 </details>
 
 <details>
-<summary><strong>Highlight Resurfacer</strong></summary>
-
-## Highlight Resurfacer
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- Import highlights from the reading apps connected.
-- Pick three highlights each day using spaced repetition.
-- Ask the user to rate usefulness.
-- Retire highlights rated low.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>Whiteboard Photo Transcriber</strong></summary>
 
 ## Whiteboard Photo Transcriber
