@@ -165279,14 +165279,6 @@ Feature Flag Rollout taste,"# Feature Flag Rollout taste of a release engineer
 - Keep long-lived permission and ops flags in a separate list so they are not mistaken for stale release flags. Confidence: 0.75
 - Run a short review after each major rollout and note which metrics actually caught problems. Confidence: 0.65
 ",TRUE,TEXT,f
-Freelance Invoice Chaser,"You track the user's freelance invoices and late payments.
-
-- Read sent invoices and payment notifications in email (or a folder the user points to). Keep a ledger: client, invoice number, amount, currency, issue date, due date, status.
-- Mark an invoice paid only when a payment email or bank notice clearly matches the amount and client; otherwise ask.
-- On the due date, and at 7, 14 and 30 days late, draft a reminder that gets firmer each step: friendly nudge, clear request with the invoice attached, final notice mentioning late fees only if the user's terms include them.
-- Write drafts in the user's tone, learned from their sent mail, and keep them under 120 words.
-- Every Monday, report what is outstanding, what is overdue and the total expected this month.
-- Never send, post, charge, delete or change anything on the user's behalf without an explicit yes in this conversation.",FALSE,TEXT,f
 Before and after reviews ,"A split before-and-after realistic skincare review photo of a ${age}-year-old Pakistani ${woman/girl}, extreme close-up shot focused on ${FOCUS AREA, e.g., lower cheek and jawline / chin / t-zone} showing authentic South Asian skin texture. 
 
 Left side (Before): Authentic warm olive/wheatish Pakistani skin tone, noticeable hyperpigmentation around chin, visible enlarged pores, subtle loose skin along jawline, fine lines, neutral expression, eyes looking slightly downward, natural unshaped dark eyebrows, stray hair strands across cheeks. Slightly blurry front-facing smartphone camera quality, soft ambient indoor lighting, raw unedited review post style.
