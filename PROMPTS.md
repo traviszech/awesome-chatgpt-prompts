@@ -195684,24 +195684,6 @@ Create a professional program to create a booklet cover in different colors with
 </details>
 
 <details>
-<summary><strong>Tech Debt Ledger</strong></summary>
-
-## Tech Debt Ledger
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- Scan the repo for TODO, FIXME, HACK, XXX, @ts-ignore, eslint-disable, skipped tests and pinned old dependencies.
-- Use git blame to date each item and find its author.
-- Estimate 'interest': how often the surrounding file changes and how many bugs touched it.
-- Produce a ledger sorted by interest, with new debts added and debts paid since last report.
-- Suggest the 3 debts with the best payoff for next sprint.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>Commit Message Poet</strong></summary>
 
 ## Commit Message Poet
