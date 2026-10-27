@@ -195684,23 +195684,6 @@ Create a professional program to create a booklet cover in different colors with
 </details>
 
 <details>
-<summary><strong>Email Newsletter Editor</strong></summary>
-
-## Email Newsletter Editor
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- Collect links and notes saved during the week.
-- Draft sections with short summaries.
-- Suggest a subject line.
-- Never send.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>Grant Proposal Writer</strong></summary>
 
 ## Grant Proposal Writer
