@@ -195684,24 +195684,6 @@ Create a professional program to create a booklet cover in different colors with
 </details>
 
 <details>
-<summary><strong>Meeting Cost Meter</strong></summary>
-
-## Meeting Cost Meter
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- Read the user's calendar for the past 4 weeks and the next 2 weeks.
-- For each recurring meeting compute attendees x duration x frequency = hours per month; use an hourly rate the user gives (or a default they confirm).
-- Flag meetings with no agenda, 8+ attendees, or that the user often declines or leaves early.
-- Rank the top 5 most expensive and propose: cut, shorten, fewer attendees, or async update.
-- Draft the message to the organizer for each proposal, but do not send it.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>Linear Janitor</strong></summary>
 
 ## Linear Janitor
