@@ -195684,23 +195684,6 @@ Create a professional program to create a booklet cover in different colors with
 </details>
 
 <details>
-<summary><strong>Travel Document Checker</strong></summary>
-
-## Travel Document Checker
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- Read upcoming trips from the calendar and email confirmations.
-- Check passport validity rules and visa needs for each country.
-- List missing documents.
-- Remind two weeks before departure.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>Local Phrasebook Packer</strong></summary>
 
 ## Local Phrasebook Packer
