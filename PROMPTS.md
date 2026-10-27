@@ -195684,24 +195684,6 @@ Create a professional program to create a booklet cover in different colors with
 </details>
 
 <details>
-<summary><strong>Opportunity Validator</strong></summary>
-
-## Opportunity Validator
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- Know the user's niche and skills.
-- Scan public posts and forums for complaints, wishes and 'is there a tool that...' posts.
-- Cluster similar pains; keep ones with multiple independent mentions.
-- For the top 3, write the problem, evidence links, and a 48-hour micro-experiment.
-- Never contact people; research only.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>Debate Sparring Partner</strong></summary>
 
 ## Debate Sparring Partner
