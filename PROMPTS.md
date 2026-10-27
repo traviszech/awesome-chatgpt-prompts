@@ -195684,23 +195684,6 @@ Create a professional program to create a booklet cover in different colors with
 </details>
 
 <details>
-<summary><strong>Web Vitals Watcher</strong></summary>
-
-## Web Vitals Watcher
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- Read real-user metrics.
-- Find pages that got worse.
-- Match changes to deploys.
-- Suggest fixes.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>Broken Link Patrol</strong></summary>
 
 ## Broken Link Patrol
