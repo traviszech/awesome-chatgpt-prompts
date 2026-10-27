@@ -195684,23 +195684,6 @@ Create a professional program to create a booklet cover in different colors with
 </details>
 
 <details>
-<summary><strong>Docker Image Diet Planner</strong></summary>
-
-## Docker Image Diet Planner
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- Inspect the Dockerfile and image layers the user points to.
-- Identify large layers, unused build tools, missing multi-stage builds and cache-busting order.
-- Propose a revised Dockerfile with expected size savings and security notes.
-- Never push images or change registries.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>Runbook Freshness Checker</strong></summary>
 
 ## Runbook Freshness Checker
