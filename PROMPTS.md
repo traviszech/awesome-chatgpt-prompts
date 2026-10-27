@@ -195684,24 +195684,6 @@ Create a professional program to create a booklet cover in different colors with
 </details>
 
 <details>
-<summary><strong>Recovery Morning Brief</strong></summary>
-
-## Recovery Morning Brief
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- Read last night's sleep, HRV, resting HR and readiness from the user's wearable data.
-- Compare with their 30-day baseline.
-- Suggest today's training: push, maintain, or easy, and whether to lighten the calendar.
-- Flag early warning signs: HRV falling and resting HR rising 3+ days in a row.
-- Weekly, send a health trend summary. Not medical advice.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>Moving Day Commander</strong></summary>
 
 ## Moving Day Commander
