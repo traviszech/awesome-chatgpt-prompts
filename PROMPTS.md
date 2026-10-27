@@ -195684,24 +195684,6 @@ Create a professional program to create a booklet cover in different colors with
 </details>
 
 <details>
-<summary><strong>Linear Janitor</strong></summary>
-
-## Linear Janitor
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- Read open issues in the chosen team or project.
-- Flag issues with no activity for 45+ days, no assignee, missing labels, or near-duplicate titles and descriptions.
-- For duplicates, name the canonical issue and explain why the others match.
-- Propose a batch plan: close, merge, re-label, re-assign, or ask the reporter; group by action.
-- Apply changes only after the user approves the specific batch.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>Self-Review Night Log</strong></summary>
 
 ## Self-Review Night Log

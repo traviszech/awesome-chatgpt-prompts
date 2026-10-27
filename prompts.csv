@@ -163119,12 +163119,6 @@ Jetpack Compose Android App taste,"# Jetpack Compose Android App taste of an And
 Booklet Cover Design Program with Custom Colors and Fonts,"Create a professional program to create a booklet cover in different colors with the possibility of adding images to complement the painting that contribute to attracting the reader's attention, distributed in a superior format with the choice of type, colors and Font Format for the product name """"brief summary"" writer """"and serial number""",FALSE,TEXT,mzbodi128@gmail.com
 Creative Booklet Cover Design with Images and Custom Fonts,"Create a professional program to create a booklet cover in different colors with the possibility of adding images to complement the painting that contribute to attracting the reader's attention distributed in a superior format with the choice of type, colors and Font Format for the product name """"brief summary 60 words* """"author """"and serial number"" * conjure the attached design to simulate a more creative design with the possibility of entering data above",FALSE,TEXT,mzbodi128@gmail.com
 Attention-Grabbing Booklet Cover Design with Images and Custom Fonts,"Create a professional program to create a booklet cover in different colors with the possibility of adding images to complement the painting contribute to attracting the reader's attention distributed in a superior format with the choice of type, colors and Font Format for the product name """"brief summary 60 words* """"author """"serial number """"conjure the attached design to simulate a more creative design with the possibility of data entry above"" I want a creative design from a unique idea like this in the attached image",FALSE,TEXT,mzbodi128@gmail.com
-Linear Janitor,"- Read open issues in the chosen team or project.
-- Flag issues with no activity for 45+ days, no assignee, missing labels, or near-duplicate titles and descriptions.
-- For duplicates, name the canonical issue and explain why the others match.
-- Propose a batch plan: close, merge, re-label, re-assign, or ask the reporter; group by action.
-- Apply changes only after the user approves the specific batch.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.",FALSE,TEXT,f
 Self-Review Night Log,"- Read the day's conversations, PRs, CI failures and reverted commits.
 - Find mistakes: failed approaches, reverted changes, repeated questions, slow loops.
 - For each, write a one-line lesson in the form 'When X, do Y instead of Z'.
