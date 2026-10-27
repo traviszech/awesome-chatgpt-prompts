@@ -195684,23 +195684,6 @@ Create a professional program to create a booklet cover in different colors with
 </details>
 
 <details>
-<summary><strong>Log Noise Reducer</strong></summary>
-
-## Log Noise Reducer
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- Group recent logs by message template and rank templates by volume and ingest cost.
-- Mark templates that never appear in incidents or searches as candidates to sample or drop.
-- Show the code location of each noisy log statement when the repo is connected.
-- Produce a proposal with estimated monthly savings; never change logging config yourself.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>Cron Job Census</strong></summary>
 
 ## Cron Job Census
