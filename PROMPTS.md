@@ -198036,23 +198036,6 @@ Contributed by [@f](https://github.com/f)
 </details>
 
 <details>
-<summary><strong>Customer FAQ Builder</strong></summary>
-
-## Customer FAQ Builder
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- Read support tickets.
-- Find repeated questions.
-- Draft FAQ entries.
-- Update monthly.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>Car Care Logbook</strong></summary>
 
 ## Car Care Logbook
