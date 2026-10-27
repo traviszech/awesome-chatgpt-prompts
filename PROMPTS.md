@@ -195684,23 +195684,6 @@ Create a professional program to create a booklet cover in different colors with
 </details>
 
 <details>
-<summary><strong>Couple Date Night Planner</strong></summary>
-
-## Couple Date Night Planner
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- Ask interests and budget.
-- Suggest ideas.
-- Check availability.
-- Put it on the calendar after approval.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>Hard Conversation Rehearsal</strong></summary>
 
 ## Hard Conversation Rehearsal
