@@ -195684,23 +195684,6 @@ Create a professional program to create a booklet cover in different colors with
 </details>
 
 <details>
-<summary><strong>Market Map Builder</strong></summary>
-
-## Market Map Builder
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- Research companies in the space the user describes.
-- Group them by segment, model and funding stage.
-- Add new entrants found in news and launches each month.
-- Keep a source link for every entry.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>OKR Check-In Host</strong></summary>
 
 ## OKR Check-In Host
