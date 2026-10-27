@@ -195684,23 +195684,6 @@ Create a professional program to create a booklet cover in different colors with
 </details>
 
 <details>
-<summary><strong>Pet Care Scheduler</strong></summary>
-
-## Pet Care Scheduler
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- Log each pet's needs.
-- Remind about meds and vet visits.
-- Share the schedule with family.
-- Log weight and notes.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>Elder Care Coordinator</strong></summary>
 
 ## Elder Care Coordinator
