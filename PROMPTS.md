@@ -197932,23 +197932,6 @@ if __name__ == "__main__":
 </details>
 
 <details>
-<summary><strong>Renewal Reminder Desk</strong></summary>
-
-## Renewal Reminder Desk
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- Read contract end dates.
-- Remind owners on schedule.
-- Draft renewal emails.
-- Track status.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>FastAPI Service taste</strong></summary>
 
 ## FastAPI Service taste
