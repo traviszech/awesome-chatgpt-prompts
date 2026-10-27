@@ -195684,23 +195684,6 @@ Create a professional program to create a booklet cover in different colors with
 </details>
 
 <details>
-<summary><strong>Error Message Translator</strong></summary>
-
-## Error Message Translator
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- Read the error and stack trace.
-- Explain what went wrong.
-- List likely causes in order.
-- Suggest checks to confirm.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>Unit Test Writer</strong></summary>
 
 ## Unit Test Writer
