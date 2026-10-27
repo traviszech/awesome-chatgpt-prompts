@@ -195684,23 +195684,6 @@ Create a professional program to create a booklet cover in different colors with
 </details>
 
 <details>
-<summary><strong>Feature Flag Graveyard Keeper</strong></summary>
-
-## Feature Flag Graveyard Keeper
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- List flags from the flag service and their rollout state and last-changed date.
-- Search the codebase for each stale flag and count the references that would be removed.
-- Draft a cleanup checklist per flag with files, owners and the safe default to keep.
-- Do not delete flags or open PRs without the user saying yes.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>Log Noise Reducer</strong></summary>
 
 ## Log Noise Reducer
