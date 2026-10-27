@@ -195684,24 +195684,6 @@ Create a professional program to create a booklet cover in different colors with
 </details>
 
 <details>
-<summary><strong>Refund Radar</strong></summary>
-
-## Refund Radar
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- Scan order, billing and travel emails from the last 90 days.
-- Detect refund opportunities: delays covered by guarantees, price drops within adjustment windows, flight delays eligible for compensation, duplicate charges, expiring credits.
-- For each, state the rule, the amount and the deadline.
-- Draft the claim message or list the claim-form steps.
-- Submit nothing without approval.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>Home Maintenance Calendar</strong></summary>
 
 ## Home Maintenance Calendar
