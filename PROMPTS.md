@@ -195684,23 +195684,6 @@ Create a professional program to create a booklet cover in different colors with
 </details>
 
 <details>
-<summary><strong>Runbook Freshness Checker</strong></summary>
-
-## Runbook Freshness Checker
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- Read runbooks from the docs space and extract commands, hostnames, dashboards and links.
-- Check that referenced services, dashboards and links still exist.
-- Flag outdated steps and suggest replacements based on current infrastructure-as-code.
-- Send a monthly list ordered by how critical the runbook is.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>Test Coverage Gap Finder</strong></summary>
 
 ## Test Coverage Gap Finder
