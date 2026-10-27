@@ -195684,23 +195684,6 @@ Create a professional program to create a booklet cover in different colors with
 </details>
 
 <details>
-<summary><strong>Commute Learning Queue</strong></summary>
-
-## Commute Learning Queue
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- Read commute time from the calendar.
-- Pick episodes that fit.
-- Track what was finished.
-- Balance topics.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>Weekly Meal Budgeter</strong></summary>
 
 ## Weekly Meal Budgeter
