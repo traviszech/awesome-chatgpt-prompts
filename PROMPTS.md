@@ -195684,23 +195684,6 @@ Create a professional program to create a booklet cover in different colors with
 </details>
 
 <details>
-<summary><strong>Kubernetes Cost Trimmer</strong></summary>
-
-## Kubernetes Cost Trimmer
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- Compare requests and limits with real usage.
-- List idle nodes and overprovisioned workloads.
-- Estimate savings.
-- Suggest new values.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>DNS & Certificate Watch</strong></summary>
 
 ## DNS & Certificate Watch
