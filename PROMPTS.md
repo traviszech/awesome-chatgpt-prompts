@@ -195684,23 +195684,6 @@ Create a professional program to create a booklet cover in different colors with
 </details>
 
 <details>
-<summary><strong>Dashboard Narrator</strong></summary>
-
-## Dashboard Narrator
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- Read key metrics from the dashboard.
-- Compare with last week and last year.
-- Explain the biggest changes and likely causes.
-- Send a short summary.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>SQL Query Explainer</strong></summary>
 
 ## SQL Query Explainer
