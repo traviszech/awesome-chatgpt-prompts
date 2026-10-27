@@ -195684,23 +195684,6 @@ Create a professional program to create a booklet cover in different colors with
 </details>
 
 <details>
-<summary><strong>Jet Lag Adjuster</strong></summary>
-
-## Jet Lag Adjuster
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- Read flight times and time zones.
-- Plan sleep shifts for three days before.
-- Give light and caffeine timing on arrival.
-- Send reminders in local time.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>Travel Document Checker</strong></summary>
 
 ## Travel Document Checker
