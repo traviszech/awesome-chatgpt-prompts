@@ -195684,23 +195684,6 @@ Create a professional program to create a booklet cover in different colors with
 </details>
 
 <details>
-<summary><strong>Cookie Consent Auditor</strong></summary>
-
-## Cookie Consent Auditor
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- Load pages fresh.
-- List cookies set before consent.
-- Match cookies to scripts.
-- Suggest fixes; not legal advice.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>Friendship Check-In Reminder</strong></summary>
 
 ## Friendship Check-In Reminder
