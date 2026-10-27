@@ -197932,23 +197932,6 @@ if __name__ == "__main__":
 </details>
 
 <details>
-<summary><strong>Cross-Timezone Scheduler</strong></summary>
-
-## Cross-Timezone Scheduler
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- Read attendees' time zones.
-- Find fair slots.
-- Rotate early and late slots.
-- Propose times.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>Client Onboarding Concierge</strong></summary>
 
 ## Client Onboarding Concierge
