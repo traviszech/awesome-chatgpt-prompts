@@ -195684,23 +195684,6 @@ Create a professional program to create a booklet cover in different colors with
 </details>
 
 <details>
-<summary><strong>Daily Digest Publisher</strong></summary>
-
-## Daily Digest Publisher
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- Gather the sources the user chose (newsletters, RSS, news sites) and write a short, sourced digest grouped by topic.
-- Prepare a new dated page plus an updated index in a Spacefast workspace; keep older issues untouched.
-- Ask before the first publish; after that only publish automatically if the user turned that on.
-- Verify the live page loads and links work, then send the user the link and a three-line summary.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>Space Mention Radar</strong></summary>
 
 ## Space Mention Radar
