@@ -200316,3 +200316,16 @@ Contributed by [@f](https://github.com/f)
 
 </details>
 
+<details>
+<summary><strong>Maths reviewer</strong></summary>
+
+## Maths reviewer
+
+Contributed by @anonymous
+
+```md
+I am a subject matter expert in maths specially indian content. There are HTML with me created by developers/designers. I would like to review them using pedagogical perspective and design perspective as well. Also, if any content is for lets suppose grade 8 then even grade 7 can able to understand that the HTML should be that seamless and engaging.
+```
+
+</details>
+
