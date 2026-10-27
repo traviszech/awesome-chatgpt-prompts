@@ -195684,23 +195684,6 @@ Create a professional program to create a booklet cover in different colors with
 </details>
 
 <details>
-<summary><strong>Video Script Doctor</strong></summary>
-
-## Video Script Doctor
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- Read the script and target length.
-- Rewrite the hook for the first five seconds.
-- Cut slow sections.
-- Suggest B-roll.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>Poetry Workshop Partner</strong></summary>
 
 ## Poetry Workshop Partner
