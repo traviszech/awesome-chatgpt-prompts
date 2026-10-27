@@ -201845,3 +201845,17 @@ unnecessary barriers to routine, legitimate email work.
 
 </details>
 
+<details>
+<summary><strong>IPO analysis</strong></summary>
+
+## IPO analysis
+
+Contributed by @anonymous
+
+```md
+Act as an investment analyst who have years of experience in valuing stocks. Who considers all the risks and assess the upside and future opportunities. Now prepare your listing day strategy for Jio platform if you have say 600 shares.
+Use all the information available on internet but don't form conclusion on the basis of that only. Apply your intelligence as well as drhp info
+```
+
+</details>
+
