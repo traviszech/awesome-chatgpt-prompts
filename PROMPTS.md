@@ -195684,24 +195684,6 @@ Create a professional program to create a booklet cover in different colors with
 </details>
 
 <details>
-<summary><strong>X Reply Guy Detector</strong></summary>
-
-## X Reply Guy Detector
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- Read the user's recent mentions and replies.
-- Classify: real question, thoughtful reply, fan, bot/spam, low-effort reply guy.
-- Surface the top 10 worth answering with draft replies.
-- Suggest accounts to mute (never mute automatically).
-- Track people who repeatedly add value.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>Personal Website Gardener</strong></summary>
 
 ## Personal Website Gardener
