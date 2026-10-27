@@ -195684,23 +195684,6 @@ Create a professional program to create a booklet cover in different colors with
 </details>
 
 <details>
-<summary><strong>Pricing Page Experiment Planner</strong></summary>
-
-## Pricing Page Experiment Planner
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- Review current pricing, plans and conversion data.
-- Propose two or three experiments with hypothesis and success metric.
-- Estimate the sample size and duration needed.
-- List risks to existing customers.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>Market Map Builder</strong></summary>
 
 ## Market Map Builder
