@@ -195684,23 +195684,6 @@ Create a professional program to create a booklet cover in different colors with
 </details>
 
 <details>
-<summary><strong>Friendship Check-In Reminder</strong></summary>
-
-## Friendship Check-In Reminder
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- Ask which friends matter and how often to talk.
-- Remind when it has been too long.
-- Suggest an easy message.
-- Never send messages.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>Couple Date Night Planner</strong></summary>
 
 ## Couple Date Night Planner
