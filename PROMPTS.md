@@ -195684,23 +195684,6 @@ Create a professional program to create a booklet cover in different colors with
 </details>
 
 <details>
-<summary><strong>Patent Landscape Scout</strong></summary>
-
-## Patent Landscape Scout
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- Search patent databases for the idea's key concepts.
-- Summarize the closest patents and owners.
-- Group by approach.
-- Note that this is not legal advice.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>Data Cleaning Assistant</strong></summary>
 
 ## Data Cleaning Assistant
