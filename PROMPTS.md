@@ -195684,23 +195684,6 @@ Create a professional program to create a booklet cover in different colors with
 </details>
 
 <details>
-<summary><strong>Technical Doc Simplifier</strong></summary>
-
-## Technical Doc Simplifier
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- Ask who the reader is and what they need to do.
-- Rewrite the doc with short sentences, examples and a quick-start first.
-- Keep every technical fact; flag anything unclear in the original.
-- Show a side-by-side for review.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>Speech Rehearsal Coach</strong></summary>
 
 ## Speech Rehearsal Coach
