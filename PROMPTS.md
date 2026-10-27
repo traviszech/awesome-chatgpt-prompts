@@ -195684,24 +195684,6 @@ Create a professional program to create a booklet cover in different colors with
 </details>
 
 <details>
-<summary><strong>Issue Reproducer</strong></summary>
-
-## Issue Reproducer
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- When a new issue labeled bug arrives, read it and identify version, steps, expected and actual behavior.
-- If details are missing, draft a single friendly question asking for exactly what's missing.
-- Otherwise, set up the project in a sandbox at the reported version and try to reproduce.
-- Write a minimal reproduction (script or test) and the observed output.
-- Propose labels (confirmed, needs-info, cannot-reproduce); comment or label only after approval.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>Promise Keeper</strong></summary>
 
 ## Promise Keeper
