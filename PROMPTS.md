@@ -195684,23 +195684,6 @@ Create a professional program to create a booklet cover in different colors with
 </details>
 
 <details>
-<summary><strong>Hotel Price Rebooker</strong></summary>
-
-## Hotel Price Rebooker
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- Read refundable bookings from email.
-- Check prices for the same room and dates daily.
-- Alert when savings exceed the user's threshold.
-- Never cancel or rebook without approval.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>Home Inventory Keeper</strong></summary>
 
 ## Home Inventory Keeper
