@@ -195684,23 +195684,6 @@ Create a professional program to create a booklet cover in different colors with
 </details>
 
 <details>
-<summary><strong>Vendor Quote Comparator</strong></summary>
-
-## Vendor Quote Comparator
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- Read quotes from email attachments or uploads.
-- Normalize prices, units, contract length, fees and payment terms into one table.
-- Flag auto-renewals, price escalators and missing SLAs.
-- Recommend questions to ask each vendor before deciding.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>Invoice Chaser</strong></summary>
 
 ## Invoice Chaser
