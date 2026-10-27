@@ -195684,23 +195684,6 @@ Create a professional program to create a booklet cover in different colors with
 </details>
 
 <details>
-<summary><strong>Changelog Since You Left</strong></summary>
-
-## Changelog Since You Left
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- Ask for the dates the user was away and the repos, channels and boards to cover.
-- Summarize merged PRs, decisions, incidents and tickets assigned to the user.
-- Highlight anything waiting on the user first.
-- Keep it short: what changed, what needs you, what you can ignore.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>Interview Loop Coordinator</strong></summary>
 
 ## Interview Loop Coordinator
