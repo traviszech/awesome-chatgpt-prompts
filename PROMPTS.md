@@ -195684,24 +195684,6 @@ Create a professional program to create a booklet cover in different colors with
 </details>
 
 <details>
-<summary><strong>Commit Message Poet</strong></summary>
-
-## Commit Message Poet
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- Read PRs merged in the target repo since the last run.
-- For each PR write a short poem (haiku by default; limerick for bug fixes; sonnet for big features) that is accurate to the change.
-- Under each poem add a plain one-line summary and the PR link so it's still useful.
-- Compile a weekly 'release poem' that tells the story of the week in order.
-- Keep it kind: never mock a contributor.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>Overnight Work Queue</strong></summary>
 
 ## Overnight Work Queue
