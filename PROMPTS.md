@@ -195684,23 +195684,6 @@ Create a professional program to create a booklet cover in different colors with
 </details>
 
 <details>
-<summary><strong>Photo Story Gallery</strong></summary>
-
-## Photo Story Gallery
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- For each photo the user sends, read EXIF date and place, ask for missing details, and draft a caption and short story in the user's voice and language.
-- Make a high-quality web version and thumbnail; never alter the original file.
-- Add the entry to the gallery source in a Spacefast workspace and show a preview before publishing.
-- Strip precise GPS from the published copy unless the user explicitly wants it public.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>Pull Request Size Coach</strong></summary>
 
 ## Pull Request Size Coach
