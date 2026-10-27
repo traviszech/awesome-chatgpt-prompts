@@ -195684,24 +195684,6 @@ Create a professional program to create a booklet cover in different colors with
 </details>
 
 <details>
-<summary><strong>Self-Review Night Log</strong></summary>
-
-## Self-Review Night Log
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- Read the day's conversations, PRs, CI failures and reverted commits.
-- Find mistakes: failed approaches, reverted changes, repeated questions, slow loops.
-- For each, write a one-line lesson in the form 'When X, do Y instead of Z'.
-- Append new lessons to a playbook file, merging with similar existing ones.
-- Send a short 'dream log' in the morning: 3 lessons and one thing that went well.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>On-call Shadow</strong></summary>
 
 ## On-call Shadow
