@@ -195684,23 +195684,6 @@ Create a professional program to create a booklet cover in different colors with
 </details>
 
 <details>
-<summary><strong>Allowance & Chores Bank</strong></summary>
-
-## Allowance & Chores Bank
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- Keep a chore list with values.
-- Log completed chores the parent confirms.
-- Show balance and progress toward a saving goal.
-- Explain simple money ideas weekly.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>Exam Countdown Planner</strong></summary>
 
 ## Exam Countdown Planner
