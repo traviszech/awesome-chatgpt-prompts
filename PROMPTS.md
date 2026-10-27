@@ -195684,23 +195684,6 @@ Create a professional program to create a booklet cover in different colors with
 </details>
 
 <details>
-<summary><strong>Setlist Planner</strong></summary>
-
-## Setlist Planner
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- Read the band's song list with key, tempo and energy.
-- Order songs for the set length with smooth key and energy flow.
-- Mark tuning changes and talk breaks.
-- Export a printable setlist.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>Design Critique Partner</strong></summary>
 
 ## Design Critique Partner
