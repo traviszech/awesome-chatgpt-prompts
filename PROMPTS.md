@@ -195684,23 +195684,6 @@ Create a professional program to create a booklet cover in different colors with
 </details>
 
 <details>
-<summary><strong>Paycheck Splitter</strong></summary>
-
-## Paycheck Splitter
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- Ask income dates and fixed bills.
-- On payday suggest amounts for each bucket.
-- Adjust for upcoming irregular bills.
-- Never move money yourself.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>Insurance Policy Decoder</strong></summary>
 
 ## Insurance Policy Decoder
