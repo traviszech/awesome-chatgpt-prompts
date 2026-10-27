@@ -195684,23 +195684,6 @@ Create a professional program to create a booklet cover in different colors with
 </details>
 
 <details>
-<summary><strong>Daily Journal Prompter</strong></summary>
-
-## Daily Journal Prompter
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- Send a prompt each evening.
-- Save answers privately.
-- Notice patterns monthly.
-- Never share.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>Year in Review Writer</strong></summary>
 
 ## Year in Review Writer
