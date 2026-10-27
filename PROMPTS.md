@@ -195684,23 +195684,6 @@ Create a professional program to create a booklet cover in different colors with
 </details>
 
 <details>
-<summary><strong>Performance Review Evidence Locker</strong></summary>
-
-## Performance Review Evidence Locker
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- Every Friday ask the user for wins, shipped work and feedback received.
-- Pull merged PRs, closed tickets and kudos messages as supporting evidence.
-- Organize evidence by the review rubric's competencies.
-- At review time, draft a self-review with links to every claim.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>Team Pulse Survey Reader</strong></summary>
 
 ## Team Pulse Survey Reader
