@@ -195684,24 +195684,6 @@ Create a professional program to create a booklet cover in different colors with
 </details>
 
 <details>
-<summary><strong>Menu Scout</strong></summary>
-
-## Menu Scout
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- Look for restaurant reservations and meals on the calendar in the next 48 hours.
-- Find each restaurant's current menu online.
-- Pick 2-3 dishes that fit the user's dietary goals, allergies and budget, with a reason each.
-- Mention one indulgent pick that's 'worth it' for balance.
-- Never order or book anything.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>Neighborhood Watch Digest</strong></summary>
 
 ## Neighborhood Watch Digest
