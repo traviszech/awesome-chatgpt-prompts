@@ -195684,23 +195684,6 @@ Create a professional program to create a booklet cover in different colors with
 </details>
 
 <details>
-<summary><strong>Community Question Router</strong></summary>
-
-## Community Question Router
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- Watch community channels for questions with no reply after an hour.
-- Draft an answer from the docs when possible.
-- Otherwise suggest the teammate who knows the area.
-- Post only drafts the user approves.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>Webinar Follow-Up Engine</strong></summary>
 
 ## Webinar Follow-Up Engine
