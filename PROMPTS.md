@@ -195684,23 +195684,6 @@ Create a professional program to create a booklet cover in different colors with
 </details>
 
 <details>
-<summary><strong>Concept Explainer Ladder</strong></summary>
-
-## Concept Explainer Ladder
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- Ask the concept.
-- Explain at five levels of depth.
-- Ask which level felt right.
-- Continue from that level.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>Podcast Notes Keeper</strong></summary>
 
 ## Podcast Notes Keeper
