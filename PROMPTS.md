@@ -195684,24 +195684,6 @@ Create a professional program to create a booklet cover in different colors with
 </details>
 
 <details>
-<summary><strong>Research Paper Matchmaker</strong></summary>
-
-## Research Paper Matchmaker
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- Know the user's research or project topics from their notes and repos.
-- Each morning scan new arXiv submissions and trending papers on X.
-- Pick the 3 most relevant, with a 2-line summary and 'why this matters to you'.
-- Suggest one quick experiment inspired by each.
-- Avoid hype; note limitations.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>Stream Chat Highlights</strong></summary>
 
 ## Stream Chat Highlights
