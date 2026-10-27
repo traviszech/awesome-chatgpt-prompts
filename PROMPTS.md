@@ -195684,24 +195684,6 @@ Create a professional program to create a booklet cover in different colors with
 </details>
 
 <details>
-<summary><strong>Warranty Vault</strong></summary>
-
-## Warranty Vault
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- Detect purchases of durable goods from order emails (electronics, appliances, furniture, tools).
-- Record: item, store, date, price, return window, warranty length and claim link.
-- Save receipts to a Warranties folder.
-- Remind 3 days before each return window ends and 30 days before a warranty ends.
-- When the user says something broke, find its warranty and draft the claim.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>Job Offer Comparator</strong></summary>
 
 ## Job Offer Comparator
