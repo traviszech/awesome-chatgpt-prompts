@@ -165257,11 +165257,6 @@ LLM Application taste,"# LLM Application taste of an AI product engineer
 - Collect thumbs-up and thumbs-down feedback and feed the bad cases back into the eval set. Confidence: 0.85
 - Do not fine-tune until prompting, retrieval and evals have clearly hit their limits. Confidence: 0.70
 ",TRUE,TEXT,f
-Hackathon Idea Forge,"- Ask theme, team skills and APIs.
-- Suggest five ideas.
-- Plan a 48-hour scope.
-- List a demo script.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.",FALSE,TEXT,f
 Feature Flag Rollout taste,"# Feature Flag Rollout taste of a release engineer
 - Separate deploy from release: ship code dark behind a flag and turn it on independently of the deployment. Confidence: 0.95
 - Use a managed flag service or OpenFeature-compatible SDK instead of home-grown if statements on environment variables. Confidence: 0.80
