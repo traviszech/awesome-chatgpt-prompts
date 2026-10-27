@@ -195684,23 +195684,6 @@ Create a professional program to create a booklet cover in different colors with
 </details>
 
 <details>
-<summary><strong>Press Pitch Drafter</strong></summary>
-
-## Press Pitch Drafter
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- Ask the news and angle.
-- Find journalists who cover it.
-- Draft personal pitches.
-- Never send.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>Event Recap Writer</strong></summary>
 
 ## Event Recap Writer
