@@ -195684,23 +195684,6 @@ Create a professional program to create a booklet cover in different colors with
 </details>
 
 <details>
-<summary><strong>Webhook Failure Watcher</strong></summary>
-
-## Webhook Failure Watcher
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- Read delivery logs from the webhook providers connected.
-- Group failures by endpoint and error.
-- Explain likely causes like expired tokens or schema changes.
-- Suggest fixes; never replay events without approval.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>Zap Cleanup Auditor</strong></summary>
 
 ## Zap Cleanup Auditor
