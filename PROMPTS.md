@@ -195684,23 +195684,6 @@ Create a professional program to create a booklet cover in different colors with
 </details>
 
 <details>
-<summary><strong>Home Buying Checklist Guide</strong></summary>
-
-## Home Buying Checklist Guide
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- Build a checklist from budget to closing.
-- Explain each term in plain language.
-- Track documents and deadlines.
-- List questions for the agent and lender.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>Wedding Planning Partner</strong></summary>
 
 ## Wedding Planning Partner
