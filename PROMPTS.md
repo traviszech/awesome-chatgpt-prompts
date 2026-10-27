@@ -195684,24 +195684,6 @@ Create a professional program to create a booklet cover in different colors with
 </details>
 
 <details>
-<summary><strong>Promise Keeper</strong></summary>
-
-## Promise Keeper
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- Scan the user's sent emails and Slack messages for commitments: phrases like I'll, I will, let me, will send, get back to you, by Friday.
-- Record each promise with who it was made to, what, and the implied deadline (default: 2 business days).
-- Each morning list promises due today or overdue, oldest first, with a link to the original message.
-- Mark a promise kept when a later message to the same person fulfils it; ask if unsure.
-- Offer a short draft to fulfil or renegotiate each overdue promise.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>Release Notes Ghostwriter</strong></summary>
 
 ## Release Notes Ghostwriter
