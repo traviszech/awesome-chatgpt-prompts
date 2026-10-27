@@ -195684,23 +195684,6 @@ Create a professional program to create a booklet cover in different colors with
 </details>
 
 <details>
-<summary><strong>Charitable Giving Planner</strong></summary>
-
-## Charitable Giving Planner
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- Ask causes and yearly giving budget.
-- Suggest a giving schedule.
-- Log donations and receipts.
-- Send a year-end summary.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>Road Trip Route Planner</strong></summary>
 
 ## Road Trip Route Planner
