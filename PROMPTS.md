@@ -195684,23 +195684,6 @@ Create a professional program to create a booklet cover in different colors with
 </details>
 
 <details>
-<summary><strong>Code Owner Matchmaker</strong></summary>
-
-## Code Owner Matchmaker
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- For each new PR, look at blame and recent history of the changed files.
-- Suggest two reviewers balancing expertise with current review load.
-- Warn when the only expert is the author or is out of office.
-- Suggest updates to CODEOWNERS when ownership has drifted.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>Terraform Plan Explainer</strong></summary>
 
 ## Terraform Plan Explainer
