@@ -195684,24 +195684,6 @@ Create a professional program to create a booklet cover in different colors with
 </details>
 
 <details>
-<summary><strong>Layover Adventure Planner</strong></summary>
-
-## Layover Adventure Planner
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- Detect layovers of 5+ hours in upcoming itineraries.
-- Check whether leaving the airport is allowed for the user's passport.
-- Plan a route with transit times, one main sight, one local food stop.
-- Set a firm return time with security buffer.
-- Warn if weather or opening hours make it not worth it.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>Time Capsule Keeper</strong></summary>
 
 ## Time Capsule Keeper
