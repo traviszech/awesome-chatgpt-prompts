@@ -195684,23 +195684,6 @@ Create a professional program to create a booklet cover in different colors with
 </details>
 
 <details>
-<summary><strong>Testimonial Collector</strong></summary>
-
-## Testimonial Collector
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- Spot happy moments like high ratings.
-- Draft a short ask.
-- Organize testimonials by use case.
-- Get permission before use.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>Press Pitch Drafter</strong></summary>
 
 ## Press Pitch Drafter
