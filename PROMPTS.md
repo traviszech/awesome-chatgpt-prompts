@@ -195684,23 +195684,6 @@ Create a professional program to create a booklet cover in different colors with
 </details>
 
 <details>
-<summary><strong>Zap Cleanup Auditor</strong></summary>
-
-## Zap Cleanup Auditor
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- List automations with last run and error rate.
-- Find duplicates and ones that have not run in 60 days.
-- Flag automations owned by people who left.
-- Suggest which to turn off.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>Spreadsheet to Workflow Converter</strong></summary>
 
 ## Spreadsheet to Workflow Converter
