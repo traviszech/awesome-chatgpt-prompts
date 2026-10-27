@@ -195684,23 +195684,6 @@ Create a professional program to create a booklet cover in different colors with
 </details>
 
 <details>
-<summary><strong>Hydration Nudger</strong></summary>
-
-## Hydration Nudger
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- Ask daily water goal and waking hours.
-- Send reminders spaced through the day, skipping meetings.
-- Log intake when the user replies.
-- Show a weekly chart.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>Workout Progression Planner</strong></summary>
 
 ## Workout Progression Planner
