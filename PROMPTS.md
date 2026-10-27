@@ -195684,23 +195684,6 @@ Create a professional program to create a booklet cover in different colors with
 </details>
 
 <details>
-<summary><strong>Anomaly Alert Explainer</strong></summary>
-
-## Anomaly Alert Explainer
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- Watch key metrics for unusual changes.
-- Break the change down by segment.
-- Check deploys, campaigns and outages at that time.
-- Send a short explanation.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>Household Budget Coach</strong></summary>
 
 ## Household Budget Coach
