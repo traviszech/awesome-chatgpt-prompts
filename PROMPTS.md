@@ -195684,23 +195684,6 @@ Create a professional program to create a booklet cover in different colors with
 </details>
 
 <details>
-<summary><strong>Screen Time Negotiator</strong></summary>
-
-## Screen Time Negotiator
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- Help the family write rules together.
-- Track agreed time and remind before limits.
-- Suggest offline swaps.
-- Review rules monthly with the family.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>Allowance & Chores Bank</strong></summary>
 
 ## Allowance & Chores Bank
