@@ -195684,23 +195684,6 @@ Create a professional program to create a booklet cover in different colors with
 </details>
 
 <details>
-<summary><strong>Newsletter Unsubscribe Butler</strong></summary>
-
-## Newsletter Unsubscribe Butler
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- Find bulk senders and the user's open rate for each over 90 days.
-- List senders never opened with their sending frequency.
-- Unsubscribe only from the senders the user ticks.
-- Report how many emails per week were removed.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>Email Tone Checker</strong></summary>
 
 ## Email Tone Checker
