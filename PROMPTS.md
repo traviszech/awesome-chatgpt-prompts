@@ -195684,24 +195684,6 @@ Create a professional program to create a booklet cover in different colors with
 </details>
 
 <details>
-<summary><strong>Flaky Test Exorcist</strong></summary>
-
-## Flaky Test Exorcist
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- Read the last 200 CI runs for the default branch and open PRs.
-- A test is flaky when it both passed and failed on the same commit or retried to green.
-- Rank by failure rate x runs affected; show the top 10 with sample logs.
-- Guess the cause from the error pattern and code: sleep/timeouts, ordering, network, shared fixtures, randomness, time zones.
-- Propose a concrete fix or a quarantine PR; open drafts only when asked.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>Code Review Second Opinion</strong></summary>
 
 ## Code Review Second Opinion
