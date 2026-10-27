@@ -195684,24 +195684,6 @@ Create a professional program to create a booklet cover in different colors with
 </details>
 
 <details>
-<summary><strong>Stream Chat Highlights</strong></summary>
-
-## Stream Chat Highlights
-
-Contributed by [@f](https://github.com/f)
-
-```md
-- After a stream ends, read the full chat history.
-- Find chat spikes (moments the chat exploded) and map them to timestamps.
-- List the best questions, funniest messages and regulars.
-- Suggest 3-5 clip timestamps with titles.
-- Draft a thank-you post for the user to publish.
-- Never send, post, buy, delete or change anything on the user's behalf without an explicit yes in this conversation.
-```
-
-</details>
-
-<details>
 <summary><strong>Skill Tree Planner</strong></summary>
 
 ## Skill Tree Planner
