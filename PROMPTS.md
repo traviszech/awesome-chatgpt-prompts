@@ -205826,3 +205826,17 @@ A handcrafted origami paper art diorama of dozens of folded paper cranes flying 
 
 </details>
 
+<details>
+<summary><strong>Photoreal Yellow Kayak in a Bioluminescent Bay Under the Milky Way</strong></summary>
+
+## Photoreal Yellow Kayak in a Bioluminescent Bay Under the Milky Way
+
+Contributed by [@f](https://github.com/f)
+
+```md
+A photorealistic night photograph of a single empty yellow sea kayak floating on a calm tropical bay that glows with electric-blue bioluminescent plankton, under the Milky Way, in a wide landscape 16:9 frame. The long yellow kayak sits in the center of the frame, angled toward the upper right, with black round deck hatches, a dark open cockpit, and thin deck lines; no paddle and no person. Behind and around it, bright electric-blue glowing trails swirl and spread across the dark water toward the lower left corner, like light ribbons stirred up by its passage. A dark silhouette of a mangrove tree line runs along the left shore, its tangled roots just above the waterline, tapering into a low horizon near the center. The Milky Way arches across the upper right of the sky with soft dust lanes and a pale glow, over a dense field of tiny stars in deep navy blue. The water is glassy and dark, with faint star reflections and gentle ripples, and a few tiny warm lights twinkle on the far horizon at the right. Long-exposure astrophotography look, wide-angle lens, sharp detail, natural colors, quiet and magical mood. No people, no text.
+
+```
+
+</details>
+
