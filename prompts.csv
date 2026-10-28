@@ -173896,3 +173896,547 @@ def main(argv=None):
 
 if __name__ == ""__main__"":
     sys.exit(main())",FALSE,TEXT,f
+Meal Prep Storage and Use-By Planner,"---
+name: meal-prep-storage-and-use-by-planner
+description: Plans where every batch-cooked portion lives after a meal prep session: which stay in the fridge, which go in the freezer on prep day, when to move each to the fridge to thaw, and what goes on the labels, using conservative USDA fridge and freezer times. Flags meals planned past the use-by date, foods that do not freeze, shortfalls, leftovers and a full fridge. Includes a stdlib Python planner with --self-test.
+---
+
+# Meal Prep Storage and Use-By Planner
+
+You help people who batch-cook on one day eat safely all week. Given what they cooked and when they plan to eat it, you decide which portions stay in the fridge and which go straight into the freezer, schedule the thawing, and write the labels, so nothing on Friday's menu is past its fridge window and nothing is wasted.
+
+## Files in this skill
+
+- `scripts/prep_storage.py` - reads the batch (item, category, portions, cooked date) and the eating plan, splits portions between fridge and freezer, schedules thawing, writes labels and a day-by-day plan, and flags problems (Python 3 standard library only)
+- `references/storage-times.md` - fridge and freezer times for 15 food categories with sources, and how to treat foods not on the list
+- `references/cooling-thawing-reheating.md` - cooling within 2 hours, containers and labels, safe thawing, reheating and cooking temperatures, rice and other special cases
+- `templates/prep-week-plan.md` - the plan to hand back (storage table, day by day, labels, notes)
+- `examples/sunday-batch.csv` - a Sunday prep session: 7 items, 31 portions
+- `examples/week-plan.csv` - Monday to Saturday meals that use them
+
+## Workflow
+
+### 1. Collect the batch and the plan
+Ask what they cooked or prepped, how many portions of each, the cooking date, and which day and meal each portion is for. Map every item to a category (`python3 scripts/prep_storage.py --categories`); when unsure, pick the shorter-lived one. Ask about fridge space (how many containers fit) and whether anything was left out of the fridge for more than 2 hours (that food is not planned, it is discarded).
+
+### 2. Run the planner
+```
+python3 scripts/prep_storage.py examples/sunday-batch.csv examples/week-plan.csv --fridge-capacity 16
+python3 scripts/prep_storage.py batch.csv plan.csv --json
+python3 scripts/prep_storage.py --categories
+python3 scripts/prep_storage.py --self-test
+```
+Day 0 is the cooking day. Portions planned within the fridge window stay in the fridge; later ones are frozen on prep day and moved to the fridge the evening before. Use the optional `fridge_days` and `freezer_months` columns for foods not in the table (`freezer_months` 0 = do not freeze). Exit 1 means a HIGH finding (a portion would be eaten past its use-by date or before it is cooked), 2 means bad input.
+
+### 3. Fix the plan
+Resolve every finding (see `references/storage-times.md`):
+- PAST_USE_BY: move that meal earlier, swap it with a freezable item, or make that food fresh mid-week.
+- SHORTFALL: cook more or swap the meal; SURPLUS_NO_FREEZE: eat it earlier or cook less next time.
+- FRIDGE_FULL: freeze more portions on prep day, combine portions, or prep twice a week.
+Re-run until there are no HIGH findings.
+
+### 4. Deliver
+Fill `templates/prep-week-plan.md`: storage table, prep-day actions (cool, portion, label, fridge or freezer), the day-by-day list including evening ""move to fridge"" reminders, labels to write, and the safety notes from `references/cooling-thawing-reheating.md` that apply to this batch.
+
+## Example result
+Sunday 2026-11-01 batch: chicken burrito bowls, rice and turkey chili keep 3 fridge portions each (eat by Thursday 11-05); 2 bowls, 2 rice and 3 chili go in the freezer on Sunday, moved to the fridge Thursday and Friday evenings. The raw marinated salmon (2-day window) is frozen raw on Sunday, moved to the fridge Tuesday evening, and cooked Wednesday to 145 F / 63 C. Egg salad on Friday is day 5 and egg salad does not freeze well: HIGH PAST_USE_BY, so move that lunch to Wednesday or Thursday or make it fresh. Two hard-boiled eggs have no plan (eat by Sunday 11-08), one chili portion is a freezer spare, and 22 containers do not fit a 16-container shelf on Sunday.
+
+## Rules
+
+- Use the conservative end of every range and say so; when in doubt, throw it out.
+- Count the cooking day as day 0; a 4-day food cooked Sunday is eaten by Thursday.
+- Freezer times are for quality, not safety; fridge times are for safety. Never extend fridge times because food ""looks fine"".
+- Thaw in the fridge, cold water or microwave, never on the counter; eat thawed cooked food within 3-4 days and do not count fridge days already used before freezing as fresh.
+- Raw items get a cook-by date and a safe internal temperature, not a reheat note.
+- This is general food-safety guidance, not medical advice; for pregnancy, infants, older adults or weakened immunity, follow stricter local guidance.
+FILE:references/storage-times.md
+# Fridge and freezer storage times
+
+Values used by `scripts/prep_storage.py`. Fridge at 40 F / 4 C or colder, freezer at 0 F / -18 C. Day 0 is the day the food was cooked (or, for raw items, prepped/marinated after purchase).
+
+Sources: USDA FSIS / FoodSafety.gov ""Cold Food Storage Chart"" and the USDA FoodKeeper app. Where a range is given, the planner uses the shorter fridge time.
+
+| Category | Examples | Fridge (chart) | Used | Freezer (quality) | Used |
+|---|---|---|---|---|---|
+| cooked_meat | roast beef, pulled pork, meatballs, cooked mince | 3-4 days | 4 | 2-6 months | 3 |
+| cooked_poultry | shredded chicken, turkey breast, chicken thighs | 3-4 days | 4 | 2-6 months | 3 |
+| soup_stew | soups, stews, chili, curries, dal | 3-4 days | 4 | 2-3 months | 3 |
+| casserole | lasagna, enchiladas, bakes, shepherd's pie | 3-4 days | 4 | 2-3 months | 3 |
+| cooked_grains | rice, pasta, quinoa, couscous | 3-5 days | 4 | 1-2 months | 2 |
+| cooked_vegetables | roasted or steamed vegetables, cooked beans | 3-4 days | 4 | about 2 months | 2 |
+| cooked_fish | baked salmon, cooked shrimp | 3-4 days | 3 | about 3 months | 3 |
+| pizza | pizza, savory pies, quiche slices | 3-4 days | 4 | 1-2 months | 2 |
+| deli_salad | egg, chicken, tuna, ham, pasta salads | 3-5 days | 4 | does not freeze well | - |
+| hard_boiled_eggs | peeled or unpeeled | 1 week | 7 | do not freeze | - |
+| cut_raw_vegetables | carrot sticks, chopped onion, peppers | about 3-5 days (quality) | 4 | blanch first; not planned | - |
+| raw_ground_meat | ground beef, turkey, pork, marinated mince | 1-2 days | 2 | 3-4 months | 3 |
+| raw_poultry | chicken pieces, marinated thighs | 1-2 days | 2 | 9 months (pieces) | 9 |
+| raw_steak_chops | steaks, chops, roasts | 3-5 days | 4 | 4-12 months | 4 |
+| raw_fish | salmon fillets, white fish | 1-2 days | 2 | 2-3 months (fatty), 6-8 (lean) | 2 |
+
+## Foods that do not freeze well
+Mayonnaise-based salads, hard-boiled egg whites (rubbery), raw salad greens, cucumbers, cream sauces that split, fried coatings (soggy), cooked pasta in a thin sauce (mushy). Freeze sauce and pasta separately when possible.
+
+## Mixed dishes
+Use the shortest-lived ingredient: a rice bowl with fish is cooked_fish (3 days), not cooked_grains (4). Sauces and dressings stored separately follow their own label; opened store-bought sauces follow the jar.
+
+## Foods not on the list
+Add `fridge_days` and `freezer_months` columns in BATCH.csv from FoodKeeper or the product label. If no source is available, use 3 fridge days and do not freeze.
+
+## Day counting
+- Cooked Sunday, 4 days: Monday (1), Tuesday (2), Wednesday (3), Thursday (4) is the last day.
+- Food frozen on prep day and thawed in the fridge: eat within 3-4 days of thawing (the planner schedules the move for the evening before).
+- Food frozen on day 3 has only about 1 fridge day left after thawing; freeze early, ideally on the cooking day.
+
+## Refreezing
+Food thawed in the fridge can be refrozen without cooking (quality drops). Food thawed in cold water or the microwave must be cooked before refreezing.
+FILE:references/cooling-thawing-reheating.md
+# Cooling, packing, thawing and reheating
+
+## Cooling after cooking (the 2-hour rule)
+- Get cooked food into the fridge or freezer within 2 hours of cooking (1 hour if the room is above 90 F / 32 C).
+- Bacteria grow fastest between 40 F and 140 F (4-60 C). Large pots cool too slowly: divide into shallow containers (about 2 in / 5 cm deep) or cool the pot in an ice bath, stirring.
+- Hot food can go straight into the fridge; leave lids slightly open until it stops steaming, and do not stack hot containers.
+- Rice and other starches: cool and refrigerate quickly. Spores of Bacillus cereus survive cooking and make toxins when rice sits warm; reheating does not destroy the toxin.
+
+## Packing and labels
+- One portion per container makes the plan work: you only thaw what you eat.
+- Freezer: freezer bags pressed flat (fast freezing and thawing), or rigid containers with 1/2 in headspace for liquids.
+- Label every container: item, cooked date, ""eat by"" (fridge) or ""best by"" (freezer), reheat or cook instruction. Masking tape and a marker are enough.
+- Keep raw items on the bottom shelf, below ready-to-eat food.
+
+## Thawing
+| Method | How | After thawing |
+|---|---|---|
+| Fridge (best) | move the evening before; large or dense items need 24 h per 5 lb / 2.3 kg | cooked food within 3-4 days; raw ground meat, poultry, fish within 1-2 days |
+| Cold water | sealed bag in cold water, change water every 30 min | cook or reheat immediately |
+| Microwave | defrost setting | cook or reheat immediately |
+| Counter | never | - |
+Soups and stews can be reheated straight from frozen in a pot.
+
+## Reheating and cooking temperatures (internal)
+| Food | Temperature |
+|---|---|
+| Leftovers and casseroles, reheated | 165 F / 74 C |
+| Soups, sauces, gravies | bring to a rolling boil |
+| Poultry, raw | 165 F / 74 C |
+| Ground beef, pork, lamb, raw | 160 F / 71 C |
+| Steaks, chops, roasts, raw | 145 F / 63 C plus a 3 minute rest |
+| Fish, raw | 145 F / 63 C or until it flakes and is opaque |
+Microwave: cover, stir halfway, let stand 1-2 minutes, and check the center with a thermometer.
+
+## Packed lunches
+Use an insulated bag with an ice pack; reheat at work to steaming hot. Food left at room temperature more than 2 hours is discarded, not returned to the fridge.
+
+## Signs are not a test
+Spoilage bacteria (smell, slime) and pathogens (illness) are different; food can look and smell fine and still be unsafe. Follow the dates, not the nose.
+
+## Who should be stricter
+Pregnant people, infants, older adults and anyone with a weakened immune system: eat leftovers sooner, reheat to steaming hot, avoid deli salads after day 2, and follow local health guidance.
+FILE:templates/prep-week-plan.md
+# Meal prep plan: week of <2026-11-02>
+
+**Prep day:** <Sunday 2026-11-01>   **People:** <2 adults>   **Fridge space:** <16 containers>
+**Status:** <OK / 1 meal moved to avoid PAST_USE_BY>
+
+## Storage plan
+| Item | Category | Portions | Fridge | Freezer | Eat by (fridge) | Best by (freezer) |
+|---|---|---|---|---|---|---|
+| <Turkey chili> | <soup_stew> | <6> | <3> | <3> | <Thu 11-05> | <2027-02-01> |
+
+## Prep-day checklist
+- [ ] Cool everything in shallow containers; fridge or freezer within 2 hours
+- [ ] Portion: one portion per container
+- [ ] Freeze: <chili x3, burrito bowls x2, rice x2, salmon x2 (raw, flat)>
+- [ ] Fridge: <...>
+- [ ] Label every container (item, cooked date, eat by / best by, reheat or cook to)
+
+## Day by day
+| Day | Breakfast | Lunch | Dinner | Evening: move to fridge |
+|---|---|---|---|---|
+| <Mon 11-02> | <hard-boiled eggs x2> | <burrito bowl + rice> | <turkey chili x2> | <-> |
+
+## Labels
+| Container | Label text |
+|---|---|
+| <Turkey chili (fridge)> | <TURKEY CHILI - cooked Sun 11/01 - eat by Thu 11/05 - reheat to 165 F> |
+
+## Changes made
+- <Egg salad lunch moved from Fri to Wed (day 5 is past the 4-day limit)>
+
+## Spares and leftovers
+- <1 chili portion in the freezer, best by 2027-02-01>
+
+## Safety notes for this batch
+- <rice: cool fast, reheat once, steaming hot>
+- <salmon: thaw in the fridge Tue evening, cook Wed to 145 F / 63 C>
+FILE:examples/sunday-batch.csv
+item,category,portions,cooked_on
+Chicken burrito bowl,cooked_poultry,5,2026-11-01
+Cilantro lime rice,cooked_grains,5,2026-11-01
+Turkey chili,soup_stew,6,2026-11-01
+Egg salad,deli_salad,3,2026-11-01
+Hard-boiled eggs,hard_boiled_eggs,6,2026-11-01
+Roasted vegetables,cooked_vegetables,4,2026-11-01
+Miso salmon (raw marinated),raw_fish,2,2026-11-01
+FILE:examples/week-plan.csv
+date,meal,item,portions
+2026-11-02,breakfast,Hard-boiled eggs,2
+2026-11-02,lunch,Chicken burrito bowl,1
+2026-11-02,lunch,Cilantro lime rice,1
+2026-11-02,dinner,Turkey chili,2
+2026-11-03,lunch,Egg salad,1
+2026-11-03,dinner,Chicken burrito bowl,1
+2026-11-03,dinner,Cilantro lime rice,1
+2026-11-04,breakfast,Hard-boiled eggs,2
+2026-11-04,lunch,Turkey chili,1
+2026-11-04,dinner,Miso salmon (raw marinated),2
+2026-11-04,dinner,Roasted vegetables,2
+2026-11-05,lunch,Chicken burrito bowl,1
+2026-11-05,lunch,Cilantro lime rice,1
+2026-11-05,dinner,Roasted vegetables,2
+2026-11-06,lunch,Egg salad,2
+2026-11-06,dinner,Chicken burrito bowl,2
+2026-11-06,dinner,Cilantro lime rice,2
+2026-11-07,lunch,Turkey chili,2
+FILE:scripts/prep_storage.py
+#!/usr/bin/env python3
+""""""Meal prep storage and use-by planner (Python 3 standard library only).
+
+Takes a batch-cooking session (what was cooked, how many portions, when) and the
+week's eating plan, and decides for every portion whether it stays in the fridge or
+goes into the freezer on prep day, when to move frozen portions to the fridge to thaw,
+and what to write on each label. Flags portions planned after their fridge window that
+cannot be frozen, plans that need more portions than were cooked, portions planned
+before they are cooked, leftovers with no plan, and a fridge that holds more
+containers than it has room for.
+
+Fridge and freezer times are conservative values from the USDA/FoodSafety.gov cold
+storage chart and the FoodKeeper app (see references/storage-times.md). Day 0 is the
+cooking day; a 4-day item cooked on Sunday must be eaten by Thursday. Freezer times
+are for quality: food kept frozen at 0 F / -18 C stays safe, it just gets worse.
+
+Usage:
+  python3 prep_storage.py BATCH.csv PLAN.csv [--fridge-capacity 12] [--json]
+  python3 prep_storage.py --categories
+  python3 prep_storage.py --self-test
+BATCH.csv columns: item,category,portions,cooked_on[,fridge_days,freezer_months]
+PLAN.csv  columns: date,meal,item,portions   (dates as YYYY-MM-DD)
+Exit codes: 0 = plan is safe, 1 = at least one HIGH finding, 2 = bad input.
+""""""
+import argparse, csv, datetime as dt, io, json, sys
+
+SEV_ORDER = {""HIGH"": 0, ""MEDIUM"": 1, ""LOW"": 2, ""INFO"": 3}
+MEAL_ORDER = {""prep"": 0, ""breakfast"": 1, ""lunch"": 2, ""snack"": 3, ""dinner"": 4, ""evening"": 5}
+SERVE_COLD = {""deli_salad"", ""hard_boiled_eggs"", ""cut_raw_vegetables""}
+# safe minimum internal temperatures for raw categories (cook on the planned day)
+COOK_TEMP = {""raw_ground_meat"": ""160 F / 71 C"", ""raw_poultry"": ""165 F / 74 C"",
+             ""raw_steak_chops"": ""145 F / 63 C plus 3 min rest"", ""raw_fish"": ""145 F / 63 C""}
+# category: (fridge_days, freezer_months or None if it does not freeze well, note)
+CATEGORIES = {
+    ""cooked_meat"":       (4, 3, ""cooked beef, pork, lamb; chart 3-4 days / 2-6 months""),
+    ""cooked_poultry"":    (4, 3, ""cooked chicken, turkey; chart 3-4 days / 2-6 months""),
+    ""soup_stew"":         (4, 3, ""soups, stews, chili, curries; chart 3-4 days / 2-3 months""),
+    ""casserole"":         (4, 3, ""casseroles, lasagna, bakes; 3-4 days / 2-3 months""),
+    ""cooked_grains"":     (4, 2, ""cooked rice, pasta, quinoa; cool fast; 3-5 days / 1-2 months""),
+    ""cooked_vegetables"": (4, 2, ""roasted or steamed vegetables, cooked beans; 3-4 days used""),
+    ""cooked_fish"":       (3, 3, ""cooked fish and seafood; 3-4 days, 3 used""),
+    ""pizza"":             (4, 2, ""pizza, savory pies; chart 3-4 days / 1-2 months""),
+    ""deli_salad"":        (4, None, ""egg, chicken, tuna, pasta salads; chart 3-5 days, does not freeze well""),
+    ""hard_boiled_eggs"":  (7, None, ""hard-cooked eggs; chart 1 week, do not freeze""),
+    ""cut_raw_vegetables"": (4, None, ""washed and cut raw vegetables; quality guide 3-5 days; blanch before freezing""),
+    ""raw_ground_meat"":   (2, 3, ""raw ground meat or marinated mince; chart 1-2 days / 3-4 months""),
+    ""raw_poultry"":       (2, 9, ""raw chicken or turkey pieces, marinated; chart 1-2 days / 9 months""),
+    ""raw_steak_chops"":   (4, 4, ""raw steaks, chops, roasts; chart 3-5 days / 4-12 months""),
+    ""raw_fish"":          (2, 2, ""raw fish; chart 1-2 days / 2-3 months fatty, 6-8 months lean""),
+}
+
+
+class InputError(Exception):
+    pass
+
+
+def parse_date(s, where):
+    try:
+        return dt.date.fromisoformat(s.strip())
+    except ValueError:
+        raise InputError(f""{where}: date '{s}' is not YYYY-MM-DD"")
+
+
+def parse_int(s, where, minimum=0):
+    try:
+        v = int(str(s).strip())
+    except ValueError:
+        raise InputError(f""{where}: '{s}' is not a whole number"")
+    if v < minimum:
+        raise InputError(f""{where}: {v} must be at least {minimum}"")
+    return v
+
+
+def read_rows(text, required, name):
+    rows = list(csv.DictReader(io.StringIO(text.lstrip(""\ufeff""))))
+    if not rows:
+        raise InputError(f""{name} has no rows"")
+    missing = [c for c in required if c not in rows[0]]
+    if missing:
+        raise InputError(f""{name} is missing column(s): {', '.join(missing)}"")
+    return [{k.strip(): (v or """").strip() for k, v in r.items() if k} for r in rows if any((v or """").strip() for v in r.values())]
+
+
+def load_batch(text):
+    items = {}
+    for i, r in enumerate(read_rows(text, [""item"", ""category"", ""portions"", ""cooked_on""], ""BATCH""), 2):
+        where = f""BATCH line {i}""
+        cat = r[""category""].lower()
+        if cat not in CATEGORIES and not r.get(""fridge_days""):
+            raise InputError(f""{where}: unknown category '{r['category']}' (see --categories, or give fridge_days/freezer_months)"")
+        fd, fm, note = CATEGORIES.get(cat, (None, None, ""custom""))
+        if r.get(""fridge_days""):
+            fd = parse_int(r[""fridge_days""], where, 1)
+        if r.get(""freezer_months"") is not None and r.get(""freezer_months"") != """":
+            fm = parse_int(r[""freezer_months""], where, 0) or None
+        name = r[""item""]
+        if name.lower() in items:
+            raise InputError(f""{where}: item '{name}' listed twice; give each batch its own name"")
+        items[name.lower()] = {""item"": name, ""category"": cat, ""portions"": parse_int(r[""portions""], where, 1),
+                               ""cooked_on"": parse_date(r[""cooked_on""], where), ""fridge_days"": fd,
+                               ""freezer_months"": fm, ""note"": note}
+    return items
+
+
+def load_plan(text, items):
+    plan = []
+    for i, r in enumerate(read_rows(text, [""date"", ""meal"", ""item"", ""portions""], ""PLAN""), 2):
+        where = f""PLAN line {i}""
+        key = r[""item""].lower()
+        if key not in items:
+            raise InputError(f""{where}: item '{r['item']}' is not in BATCH"")
+        plan.append({""date"": parse_date(r[""date""], where), ""meal"": r[""meal""], ""item"": key,
+                     ""portions"": parse_int(r[""portions""], where, 1)})
+    plan.sort(key=lambda p: p[""date""])
+    return plan
+
+
+def add_months(d, months):
+    y, m = divmod(d.month - 1 + months, 12)
+    y, m = d.year + y, m + 1
+    last = (dt.date(y + (m == 12), m % 12 + 1, 1) - dt.timedelta(days=1)).day
+    return dt.date(y, m, min(d.day, last))
+
+
+def plan_storage(items, plan, fridge_capacity=None):
+    findings, timeline, labels = [], {}, []
+
+    def add(sev, code, item, detail):
+        findings.append({""severity"": sev, ""code"": code, ""item"": item, ""detail"": detail})
+
+    def ev(day, slot, text):
+        timeline.setdefault(day, []).append((MEAL_ORDER.get(slot.lower(), 3), text))
+
+    summary = {}
+    for key, it in items.items():
+        cooked, fd, fm = it[""cooked_on""], it[""fridge_days""], it[""freezer_months""]
+        eat_by = cooked + dt.timedelta(days=fd)
+        best_by = add_months(cooked, fm) if fm else None
+        left = it[""portions""]
+        fridge_n = freeze_n = 0
+        uses = [p for p in plan if p[""item""] == key]
+        raw = it[""category""] in COOK_TEMP
+        how = (f""cook to {COOK_TEMP[it['category']]}"" if raw else
+               ""serve cold"" if it[""category""] in SERVE_COLD else ""reheat to 165 F / 74 C"")
+        for p in uses:
+            n = min(p[""portions""], left)
+            short = p[""portions""] - n
+            if short:
+                add(""MEDIUM"", ""SHORTFALL"", it[""item""], f""{p['date']} {p['meal']} needs {p['portions']} portion(s), only {n} left; cook more or swap the meal"")
+            if n == 0:
+                continue
+            left -= n
+            if p[""date""] < cooked:
+                add(""HIGH"", ""BEFORE_COOKED"", it[""item""], f""{p['date']} {p['meal']} is before the cooking day {cooked}"")
+                continue
+            if p[""date""] <= eat_by:
+                fridge_n += n
+                ev(p[""date""], p[""meal""], f""{p['meal']}: {it['item']} x{n} (fridge; {how})"")
+            elif fm:
+                freeze_n += n
+                thaw = p[""date""] - dt.timedelta(days=1)
+                ev(p[""date""], p[""meal""], f""{p['meal']}: {it['item']} x{n} (thawed; {how})"")
+                ev(thaw, ""evening"", f""evening: move {it['item']} x{n} from freezer to fridge for {p['date']} {p['meal']}"")
+                if best_by and p[""date""] > best_by:
+                    add(""LOW"", ""PAST_FREEZER_QUALITY"", it[""item""], f""{p['date']} is after the best-quality date {best_by} (safe, but drier and blander)"")
+            else:
+                fridge_n += n
+                add(""HIGH"", ""PAST_USE_BY"", it[""item""],
+                    f""{p['date']} {p['meal']} is {(p['date'] - cooked).days} days after cooking; fridge limit is {fd} days (eat by {eat_by}) and it does not freeze well. Move the meal earlier or cook it fresh."")
+        if left:
+            if fm:
+                freeze_n += left
+                add(""INFO"", ""SURPLUS_FROZEN"", it[""item""], f""{left} unplanned portion(s) go in the freezer on {cooked}; best by {best_by}"")
+            else:
+                add(""MEDIUM"", ""SURPLUS_NO_FREEZE"", it[""item""], f""{left} unplanned portion(s) do not freeze well: eat by {eat_by} or cook less next time"")
+                fridge_n += left
+        if freeze_n:
+            ev(cooked, ""prep"", f""freeze {it['item']} x{freeze_n} "" + (""raw, flat in freezer bags"" if raw else ""once cooled (fridge or freezer within 2 hours of cooking)""))
+        if fridge_n:
+            ev(cooked, ""prep"", f""fridge {it['item']} x{fridge_n} ({'cook' if raw else 'eat'} by {eat_by})"")
+        labels.append({""item"": it[""item""], ""cooked_on"": str(cooked),
+                       ""fridge"": f""x{fridge_n}, eat by {eat_by}"" if fridge_n else ""-"",
+                       ""freezer"": f""x{freeze_n}, best by {best_by}"" if freeze_n else ""-""})
+        summary[it[""item""]] = {""category"": it[""category""], ""portions"": it[""portions""], ""fridge"": fridge_n,
+                               ""freezer"": freeze_n, ""eat_by"": str(eat_by), ""best_by"": str(best_by) if best_by else None,
+                               ""fridge_days"": fd, ""freezer_months"": fm}
+
+    if fridge_capacity:
+        days = sorted(set([it[""cooked_on""] for it in items.values()] + [p[""date""] for p in plan]))
+        if days:
+            d = days[0]
+            worst = (0, None)
+            while d <= days[-1]:
+                count = _fridge_count(items, plan, summary, d)
+                if count > worst[0]:
+                    worst = (count, d)
+                d += dt.timedelta(days=1)
+            if worst[0] > fridge_capacity:
+                add(""MEDIUM"", ""FRIDGE_FULL"", ""-"", f""{worst[0]} containers in the fridge on {worst[1]}, capacity {fridge_capacity}: freeze more on prep day or use bigger containers"")
+    findings.sort(key=lambda f: (SEV_ORDER[f[""severity""]], f[""item""], f[""code""]))
+    return {""summary"": summary, ""timeline"": {str(k): [t for _, t in sorted(v, key=lambda x: x[0])] for k, v in sorted(timeline.items())},
+            ""labels"": labels, ""findings"": findings}
+
+
+def _fridge_count(items, plan, summary, day):
+    """"""Containers in the fridge at the end of `day` (one portion = one container).""""""
+    total = 0
+    for key, it in items.items():
+        if day < it[""cooked_on""]:
+            continue
+        eat_by = it[""cooked_on""] + dt.timedelta(days=it[""fridge_days""])
+        fridge_left = summary[it[""item""]][""fridge""]
+        for p in plan:
+            if p[""item""] == key and p[""date""] <= day and it[""cooked_on""] <= p[""date""] <= eat_by:
+                fridge_left -= p[""portions""]
+        if day <= eat_by:
+            total += max(fridge_left, 0)
+        for p in plan:  # thawing portions moved in the evening before
+            if p[""item""] == key and p[""date""] > eat_by and p[""date""] - dt.timedelta(days=1) == day and it[""freezer_months""]:
+                total += p[""portions""]
+    return total
+
+
+def render_md(res):
+    out = [""# Meal prep storage plan"", """", ""| Item | Category | Portions | Fridge | Freezer | Eat by (fridge) | Best by (freezer) |"",
+           ""|---|---|---|---|---|---|---|""]
+    for name, s in res[""summary""].items():
+        out.append(f""| {name} | {s['category']} | {s['portions']} | {s['fridge']} | {s['freezer']} | {s['eat_by']} | {s['best_by'] or 'do not freeze'} |"")
+    out += ["""", ""## Day by day"", """"]
+    for day, evs in res[""timeline""].items():
+        d = dt.date.fromisoformat(day)
+        out.append(f""- **{d.strftime('%a')} {day}**: "" + ""; "".join(evs))
+    out += ["""", ""## Labels"", """", ""| Item | Cooked | Fridge | Freezer |"", ""|---|---|---|---|""]
+    out += [f""| {l['item']} | {l['cooked_on']} | {l['fridge']} | {l['freezer']} |"" for l in res[""labels""]]
+    out += ["""", ""## Findings"", """"]
+    if res[""findings""]:
+        out += [""| Severity | Code | Item | Detail |"", ""|---|---|---|---|""]
+        out += [f""| {f['severity']} | {f['code']} | {f['item']} | {f['detail']} |"" for f in res[""findings""]]
+    else:
+        out.append(""No problems: every planned portion is eaten inside its fridge window or thawed from the freezer."")
+    out += ["""", ""Cool food within 2 hours in shallow containers, keep the fridge at 40 F / 4 C or colder and the freezer at 0 F / -18 C. When in doubt, throw it out.""]
+    return ""\n"".join(out)
+
+
+# ---------------------------------------------------------------- self-test
+def self_test():
+    B = ""item,category,portions,cooked_on\nChili,soup_stew,5,2026-11-01\nEgg salad,deli_salad,3,2026-11-01\nRice,cooked_grains,4,2026-11-01\n""
+    P = (""date,meal,item,portions\n2026-11-02,lunch,Chili,1\n2026-11-03,lunch,Chili,1\n2026-11-06,dinner,Chili,2\n""
+         ""2026-11-02,lunch,Egg salad,1\n2026-11-04,lunch,Egg salad,1\n2026-11-03,dinner,Rice,2\n"")
+    def run(b=B, p=P, cap=None):
+        items = load_batch(b)
+        return plan_storage(items, load_plan(p, items), cap)
+    codes = lambda r: [f[""code""] for f in r[""findings""]]
+    cases = [
+        (""categories table sane"", lambda: all(v[0] >= 1 for v in CATEGORIES.values())),
+        (""add_months end of month"", lambda: add_months(dt.date(2026, 1, 31), 1) == dt.date(2026, 2, 28)),
+        (""add_months over year"", lambda: add_months(dt.date(2026, 11, 15), 3) == dt.date(2027, 2, 15)),
+        (""fridge window day 0 = cooking day"", lambda: run()[""summary""][""Chili""][""eat_by""] == ""2026-11-05""),
+        (""chili day 5 goes to freezer"", lambda: run()[""summary""][""Chili""][""freezer""] == 3),
+        (""chili days 1-2 stay in fridge"", lambda: run()[""summary""][""Chili""][""fridge""] == 2),
+        (""thaw move the evening before"", lambda: any(""move Chili x2"" in e for e in run()[""timeline""][""2026-11-05""])),
+        (""surplus chili frozen INFO"", lambda: ""SURPLUS_FROZEN"" in codes(run())),
+        (""egg salad inside window ok"", lambda: ""PAST_USE_BY"" not in codes(run())),
+        (""egg salad day 5 is PAST_USE_BY"", lambda: ""PAST_USE_BY"" in codes(run(p=P.replace(""2026-11-04,lunch,Egg"", ""2026-11-06,lunch,Egg"")))),
+        (""egg salad surplus no freeze"", lambda: ""SURPLUS_NO_FREEZE"" in codes(run())),
+        (""shortfall"", lambda: ""SHORTFALL"" in codes(run(p=P + ""2026-11-04,dinner,Rice,3\n""))),
+        (""before cooked"", lambda: ""BEFORE_COOKED"" in codes(run(p=P + ""2026-10-31,dinner,Rice,1\n""))),
+        (""past freezer quality"", lambda: ""PAST_FREEZER_QUALITY"" in codes(run(p=P + ""2027-03-01,dinner,Rice,1\n""))),
+        (""override fridge_days column"", lambda: run(b=""item,category,portions,cooked_on,fridge_days,freezer_months\nSoup,custom,2,2026-11-01,2,0\n"",
+                                                   p=""date,meal,item,portions\n2026-11-04,lunch,Soup,1\n"")[""findings""][0][""code""] == ""PAST_USE_BY""),
+        (""unknown category error"", lambda: _raises(lambda: run(b=""item,category,portions,cooked_on\nX,mystery,1,2026-11-01\n"", p=""date,meal,item,portions\n""))),
+        (""bad date error"", lambda: _raises(lambda: run(p=""date,meal,item,portions\n11/02/2026,lunch,Chili,1\n""))),
+        (""unknown plan item error"", lambda: _raises(lambda: run(p=""date,meal,item,portions\n2026-11-02,lunch,Tacos,1\n""))),
+        (""zero portions error"", lambda: _raises(lambda: run(b=""item,category,portions,cooked_on\nChili,soup_stew,0,2026-11-01\n""))),
+        (""duplicate batch item error"", lambda: _raises(lambda: run(b=B + ""chili,soup_stew,2,2026-11-01\n""))),
+        (""missing column error"", lambda: _raises(lambda: run(b=""item,portions\nChili,2\n""))),
+        (""case-insensitive item names"", lambda: run(p=P.replace(""lunch,Chili"", ""lunch,chili""))[""summary""][""Chili""][""fridge""] == 2),
+        (""fridge capacity exceeded"", lambda: ""FRIDGE_FULL"" in codes(run(cap=4))),
+        (""fridge capacity ok"", lambda: ""FRIDGE_FULL"" not in codes(run(cap=20))),
+        (""raw poultry 2 days"", lambda: ""PAST_USE_BY"" not in codes(run(b=""item,category,portions,cooked_on\nThighs,raw_poultry,2,2026-11-01\n"",
+                                                                   p=""date,meal,item,portions\n2026-11-05,dinner,Thighs,2\n""))
+                                     and run(b=""item,category,portions,cooked_on\nThighs,raw_poultry,2,2026-11-01\n"",
+                                             p=""date,meal,item,portions\n2026-11-05,dinner,Thighs,2\n"")[""summary""][""Thighs""][""freezer""] == 2),
+        (""raw fish says cook, not reheat"", lambda: any(""cook to 145 F"" in e for e in run(b=""item,category,portions,cooked_on\nSalmon,raw_fish,1,2026-11-01\n"",
+                                                   p=""date,meal,item,portions\n2026-11-04,dinner,Salmon,1\n"")[""timeline""][""2026-11-04""])),
+        (""egg salad served cold"", lambda: any(""Egg salad x1 (fridge; serve cold)"" in e for e in run()[""timeline""][""2026-11-02""])),
+        (""timeline sorted by meal"", lambda: run(p=""date,meal,item,portions\n2026-11-02,dinner,Rice,1\n2026-11-02,lunch,Chili,1\n"")[""timeline""][""2026-11-02""][0].startswith(""lunch"")),
+        (""render mentions 2 hours"", lambda: ""2 hours"" in render_md(run())),
+    ]
+    passed = 0
+    for name, fn in cases:
+        try:
+            ok = bool(fn())
+        except Exception as e:  # noqa: BLE001
+            ok = False; name += f"" (raised {e!r})""
+        passed += ok
+        print((""PASS "" if ok else ""FAIL "") + name)
+    print(f""{passed}/{len(cases)} passed"")
+    return 0 if passed == len(cases) else 1
+
+
+def _raises(fn):
+    try:
+        fn()
+    except InputError:
+        return True
+    return False
+
+
+def main():
+    ap = argparse.ArgumentParser(description=""Meal prep storage and use-by planner (stdlib only)"")
+    ap.add_argument(""batch"", nargs=""?""); ap.add_argument(""plan"", nargs=""?"")
+    ap.add_argument(""--fridge-capacity"", type=int, help=""max containers your fridge shelf can hold"")
+    ap.add_argument(""--json"", action=""store_true"")
+    ap.add_argument(""--categories"", action=""store_true"", help=""list categories and storage times"")
+    ap.add_argument(""--self-test"", action=""store_true"")
+    a = ap.parse_args()
+    if a.self_test:
+        return self_test()
+    if a.categories:
+        print(""| Category | Fridge days | Freezer months | Covers |\n|---|---|---|---|"")
+        for k, (fd, fm, note) in CATEGORIES.items():
+            print(f""| {k} | {fd} | {fm if fm else 'do not freeze'} | {note} |"")
+        return 0
+    if not (a.batch and a.plan):
+        ap.error(""need BATCH.csv PLAN.csv (or --self-test / --categories)"")
+    try:
+        with open(a.batch, encoding=""utf-8"") as f1, open(a.plan, encoding=""utf-8"") as f2:
+            items = load_batch(f1.read())
+            plan = load_plan(f2.read(), items)
+        res = plan_storage(items, plan, a.fridge_capacity)
+    except (OSError, UnicodeDecodeError, InputError) as e:
+        print(f""error: {e}"", file=sys.stderr)
+        return 2
+    print(json.dumps(res, indent=2) if a.json else render_md(res))
+    return 1 if any(f[""severity""] == ""HIGH"" for f in res[""findings""]) else 0
+
+
+if __name__ == ""__main__"":
+    sys.exit(main())",FALSE,TEXT,f
