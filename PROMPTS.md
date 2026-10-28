@@ -205840,3 +205840,17 @@ A photorealistic night photograph of a single empty yellow sea kayak floating on
 
 </details>
 
+<details>
+<summary><strong>Medieval Illuminated Manuscript Page of a Beekeeper Tending Straw Skeps</strong></summary>
+
+## Medieval Illuminated Manuscript Page of a Beekeeper Tending Straw Skeps
+
+Contributed by [@f](https://github.com/f)
+
+```md
+A medieval illuminated manuscript page on aged, stained vellum showing a hooded beekeeper tending three woven straw bee skeps in a walled garden, in a wide landscape 16:9 page view. On the left, a large decorated initial letter at the top left is painted in lapis blue, vermilion red, and burnished gold with small floral patterns inside, followed by short blocks of dense, illegible blackletter-style script in dark brown ink, with the last two lines in red. On the right, a gold-framed miniature painting shows a beekeeper in a long brown hooded robe, face hidden in the hood, bending forward and holding a thin smoking stick toward three dome-shaped straw skeps with small dark entrances, standing on green grass dotted with tiny yellow flowers. Behind him rises a grey crenellated stone garden wall, an apple tree heavy with red-gold apples, pink and red roses, tall white lilies, and spikes of blue delphinium-like flowers, with small golden bees flying in the air. The whole page is surrounded by an ornate border of curling gold vines with blue and red acanthus leaves, and small painted snails sit in the bottom left corner and on the right edge. Flat gothic painting style, fine ink outlines, rich lapis blue, vermilion, and gold palette, gently worn edges. No legible text, no modern elements.
+
+```
+
+</details>
+
