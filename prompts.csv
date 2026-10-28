@@ -171828,3 +171828,20 @@ Tauri Desktop App taste,"# Tauri Desktop App taste of a cross-platform desktop d
 - Log to a rotating file in the app log folder and give users a one-click way to export logs for bug reports. Confidence: 0.75
 ",TRUE,TEXT,f
 Qwen 3.7 analyse and assess with pros and cons the promptschat library,ANALYSE AND ASSESS CHATSPEOMPTS AI LIBRARY..I DO NOT WANT TO WAIT ALL DAY,FALSE,TEXT,malcolmjamesufo2000@gmail.com
+Spotify Vibe ,"---
+name: spotify-vibe
+description: For Spotify Vibe 
+---
+
+# My Skill
+
+Describe what this skill does and how the agent should use it.
+
+## Instructions
+
+- Step 1: ...
+- Step 2: ...
+FILE:README.md gf
+
+FILE:README.md golden brown background
+",FALSE,TEXT,asasane325@gmail.com

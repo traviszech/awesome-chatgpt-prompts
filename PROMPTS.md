@@ -205052,3 +205052,32 @@ ANALYSE AND ASSESS CHATSPEOMPTS AI LIBRARY..I DO NOT WANT TO WAIT ALL DAY
 
 </details>
 
+<details>
+<summary><strong>Spotify Vibe </strong></summary>
+
+## Spotify Vibe 
+
+Contributed by @anonymous
+
+```md
+---
+name: spotify-vibe
+description: For Spotify Vibe 
+---
+
+# My Skill
+
+Describe what this skill does and how the agent should use it.
+
+## Instructions
+
+- Step 1: ...
+- Step 2: ...
+FILE:README.md gf
+
+FILE:README.md golden brown background
+
+```
+
+</details>
+
