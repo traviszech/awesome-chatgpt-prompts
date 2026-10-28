@@ -205904,3 +205904,17 @@ Rules: no people, animals that must move convincingly, vehicles, or modern turbi
 
 </details>
 
+<details>
+<summary><strong>Five Brick Windmills Along a Misty Dutch Canal at Sunrise</strong></summary>
+
+## Five Brick Windmills Along a Misty Dutch Canal at Sunrise
+
+Contributed by [@f](https://github.com/f)
+
+```md
+Five traditional brick windmills stand in a row along the left bank of a long, straight, calm Dutch polder canal at sunrise, seen from a low viewpoint at the water's edge, in a wide landscape 16:9 frame. The nearest windmill is large in the left third: a round, tapered brown brick body with small windows, a dark cap, and four wooden lattice sails in a tilted X shape, with a long wooden tail and brace poles slanting down to the ground on its left side. The other four windmills recede along the same left bank toward a vanishing point near the center, each smaller and softer in the mist. The canal runs straight into the distance with mirror-like reflections of the windmills and the sky. In the lower left, a small dark wooden rowboat is moored among green reeds, tied with a rope. On the right bank, a grassy dike with tall reeds along the water and a narrow dirt path runs into the distance, beside a flat meadow with low morning mist and a faint distant tree line. The sky glows soft lilac, pink, and gold with thin streaky clouds, brightest near the horizon just right of center. Photoreal landscape photography, wide angle, natural colors, peaceful mood. No people, no text, no logos.
+
+```
+
+</details>
+
