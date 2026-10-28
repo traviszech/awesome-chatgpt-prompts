@@ -174485,3 +174485,25 @@ Serverless Functions taste,"# Serverless Functions taste of a cloud backend engi
 - Avoid chaining functions that call each other synchronously; use events or a workflow engine like Step Functions instead. Confidence: 0.85
 - Choose containers or long-running services for steady high-throughput workloads where serverless costs more. Confidence: 0.75
 ",TRUE,TEXT,f
+Realtime WebSocket taste,"# Realtime WebSocket taste of a realtime systems engineer
+- Use plain WebSockets or a thin library like ws for simple cases, and reach for Socket.IO only when you need its fallbacks and rooms. Confidence: 0.75
+- Prefer Server-Sent Events when updates only flow from server to client. Confidence: 0.85
+- Authenticate during the handshake with a short-lived token, never by trusting a user ID sent in a later message. Confidence: 0.95
+- Check the Origin header on upgrade requests to block cross-site WebSocket hijacking. Confidence: 0.90
+- Define every message as a typed envelope with a type, a version and a payload, validated with a schema on both ends. Confidence: 0.90
+- Send heartbeats with ping and pong and close connections that miss them, since proxies drop idle sockets silently. Confidence: 0.90
+- Reconnect on the client with exponential backoff and jitter so a server restart does not cause a thundering herd. Confidence: 0.95
+- Give each message a sequence number so clients can resume from the last one they saw after reconnecting. Confidence: 0.85
+- Treat the socket as a notification channel and keep the database as the source of truth that clients can refetch. Confidence: 0.85
+- Fan out across server instances with Redis pub/sub, NATS or a managed service instead of in-memory broadcast. Confidence: 0.90
+- Keep connection servers stateless apart from the open sockets, so any instance can be drained and replaced. Confidence: 0.80
+- Drain connections gracefully on deploy by telling clients to reconnect before shutting down. Confidence: 0.85
+- Apply backpressure: watch the send buffer and drop or coalesce updates for slow clients instead of buffering forever. Confidence: 0.85
+- Rate limit incoming messages per connection and cap message size. Confidence: 0.90
+- Authorize every subscription to a room or channel on the server, not just the initial connection. Confidence: 0.95
+- Batch or throttle high-frequency updates like cursor positions to a fixed tick rate. Confidence: 0.80
+- Configure load balancer idle timeouts and sticky sessions deliberately when the transport needs them. Confidence: 0.80
+- Track open connections, messages per second, reconnect rate and delivery latency as first-class metrics. Confidence: 0.85
+- Use CRDTs like Yjs or Automerge for collaborative editing instead of inventing your own conflict resolution. Confidence: 0.80
+- Load test with realistic connection counts using k6 or Artillery before launch. Confidence: 0.80
+",TRUE,TEXT,f
