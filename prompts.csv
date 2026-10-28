@@ -174462,3 +174462,26 @@ SvelteKit App taste,"# SvelteKit App taste of a full-stack web developer
 - Test components with Vitest and @testing-library/svelte, and cover the main flows with Playwright. Confidence: 0.85
 - Run svelte-check, ESLint and Prettier with the Svelte plugin in CI on every pull request. Confidence: 0.85
 ",TRUE,TEXT,f
+Serverless Functions taste,"# Serverless Functions taste of a cloud backend engineer
+- Keep each function small and focused on one trigger, but group closely related HTTP routes in one handler to cut cold starts. Confidence: 0.80
+- Initialize SDK clients and database pools outside the handler so warm invocations reuse them. Confidence: 0.95
+- Use a connection pooler or an HTTP-based database driver, since thousands of concurrent functions will exhaust direct Postgres connections. Confidence: 0.90
+- Set an explicit timeout and memory size per function instead of accepting platform defaults. Confidence: 0.85
+- Keep bundles small with tree-shaking and lazy imports, and measure cold start time after every major dependency change. Confidence: 0.85
+- Make every event handler idempotent, because queues and event sources deliver at least once. Confidence: 0.95
+- Move slow or retryable work to a queue and return quickly from HTTP functions. Confidence: 0.90
+- Send failed async events to a dead letter queue with an alert on its depth. Confidence: 0.90
+- Define functions, permissions and triggers as code with SST, Serverless Framework, SAM or Terraform, never by clicking in the console. Confidence: 0.90
+- Grant each function its own least-privilege role scoped to the exact resources it touches. Confidence: 0.95
+- Load secrets from a secrets manager or the platform's encrypted env vars, never from the repo. Confidence: 0.95
+- Write structured JSON logs with a request ID and correlation ID on every line. Confidence: 0.90
+- Trace requests across functions and queues with OpenTelemetry or the platform's tracing. Confidence: 0.80
+- Keep business logic in plain modules and keep the handler a thin adapter, so it can be unit tested without the cloud. Confidence: 0.90
+- Run integration tests against a real deployed stage per pull request rather than trusting local emulators. Confidence: 0.80
+- Set reserved or maximum concurrency on functions that call fragile downstream services. Confidence: 0.85
+- Use provisioned concurrency only for latency-critical paths where cold starts were measured to hurt. Confidence: 0.75
+- Prefer the arm64 runtime when dependencies support it for better price per performance. Confidence: 0.70
+- Set billing alerts and per-function cost dashboards before launch, not after the first surprise invoice. Confidence: 0.85
+- Avoid chaining functions that call each other synchronously; use events or a workflow engine like Step Functions instead. Confidence: 0.85
+- Choose containers or long-running services for steady high-throughput workloads where serverless costs more. Confidence: 0.75
+",TRUE,TEXT,f
