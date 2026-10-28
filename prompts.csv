@@ -174440,3 +174440,25 @@ def main():
 
 if __name__ == ""__main__"":
     sys.exit(main())",FALSE,TEXT,f
+SvelteKit App taste,"# SvelteKit App taste of a full-stack web developer
+- Start every project with the official sv create template, TypeScript enabled and strict mode on. Confidence: 0.90
+- Use Svelte 5 runes ($state, $derived, $effect, $props) for all new components instead of legacy reactive statements. Confidence: 0.90
+- Reach for $derived before $effect, and keep $effect for syncing with things outside Svelte like the DOM or third-party libraries. Confidence: 0.90
+- Load data in +page.server.ts when it needs secrets or the database, and use universal +page.ts only for public fetches. Confidence: 0.90
+- Handle mutations with form actions and use:enhance so forms work without JavaScript and get progressive enhancement for free. Confidence: 0.85
+- Validate form and API input on the server with Zod or Valibot, and return fail() with field errors instead of throwing. Confidence: 0.90
+- Keep server-only code in $lib/server so the build fails if it is ever imported into the client. Confidence: 0.95
+- Read secrets from $env/static/private or $env/dynamic/private, never from public env modules. Confidence: 0.95
+- Put authentication and session lookup in hooks.server.ts and expose the user through event.locals. Confidence: 0.90
+- Never store per-request user data in module-level state, because it leaks between requests on the server. Confidence: 0.95
+- Share client state through context or small rune-based modules in .svelte.ts files, not a global store for everything. Confidence: 0.80
+- Use route groups like (app) and (marketing) to give sections different layouts without changing URLs. Confidence: 0.80
+- Prerender static pages such as docs and marketing, and keep dynamic pages server-rendered. Confidence: 0.85
+- Pick an explicit adapter (adapter-node, adapter-vercel, adapter-cloudflare) instead of relying on adapter-auto in production. Confidence: 0.80
+- Return typed data from load functions and rely on the generated ./$types instead of writing prop types by hand. Confidence: 0.90
+- Use +error.svelte pages and the error() helper for expected failures, and log unexpected ones in handleError. Confidence: 0.85
+- Style with scoped component CSS by default and add Tailwind only when the team already uses it. Confidence: 0.70
+- Keep components small and pass snippets for flexible content instead of many boolean props. Confidence: 0.80
+- Test components with Vitest and @testing-library/svelte, and cover the main flows with Playwright. Confidence: 0.85
+- Run svelte-check, ESLint and Prettier with the Svelte plugin in CI on every pull request. Confidence: 0.85
+",TRUE,TEXT,f
