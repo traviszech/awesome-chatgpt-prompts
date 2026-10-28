@@ -172115,3 +172115,8 @@ OUTPUT
 TONE & LENGTH
 Professional but friendly, and as short as possible while staying audit-ready. Aim for about half the current length.",FALSE,TEXT,rmostakin@klosconsulting.com
 Bikers,"First-person POV cinematic video from inside a motorcycle helmet. Riding a modern sport motorcycle on an asphalt highway during sunset. Another biker approaches from the opposite direction. The rider lowers their left hand, making the classic two-finger biker salute (V sign) toward the ground. Hyper-realistic, 4k, photorealistic textures, motion blur, anamorphic lens flare, cinematic lighting.",FALSE,TEXT,betito21mvl@gmail.com
+"Support log triage: show only the problem window and ERROR or FATAL lines, quoted exactly","From the log below, show only the lines from [10] minutes before to
+[10] minutes after [time and time zone], plus any line anywhere marked
+ERROR or FATAL. Quote each line exactly and keep the original order.
+Tell me how many lines you left out. Don't summarize yet.
+[paste the log]",FALSE,TEXT,draftfirstcs
