@@ -172402,3 +172402,41 @@ Photoreal Yellow Kayak in a Bioluminescent Bay Under the Milky Way,"A photoreali
 ",FALSE,TEXT,f
 Medieval Illuminated Manuscript Page of a Beekeeper Tending Straw Skeps,"A medieval illuminated manuscript page on aged, stained vellum showing a hooded beekeeper tending three woven straw bee skeps in a walled garden, in a wide landscape 16:9 page view. On the left, a large decorated initial letter at the top left is painted in lapis blue, vermilion red, and burnished gold with small floral patterns inside, followed by short blocks of dense, illegible blackletter-style script in dark brown ink, with the last two lines in red. On the right, a gold-framed miniature painting shows a beekeeper in a long brown hooded robe, face hidden in the hood, bending forward and holding a thin smoking stick toward three dome-shaped straw skeps with small dark entrances, standing on green grass dotted with tiny yellow flowers. Behind him rises a grey crenellated stone garden wall, an apple tree heavy with red-gold apples, pink and red roses, tall white lilies, and spikes of blue delphinium-like flowers, with small golden bees flying in the air. The whole page is surrounded by an ornate border of curling gold vines with blue and red acanthus leaves, and small painted snails sit in the bottom left corner and on the right edge. Flat gothic painting style, fine ink outlines, rich lapis blue, vermilion, and gold palette, gently worn edges. No legible text, no modern elements.
 ",FALSE,TEXT,f
+Dutch Windmill Canal Scene Concept Brief Builder,"Act as a cinematic landscape designer who writes image-ready and motion-ready scene briefs. Help me design one hero shot of traditional brick windmills standing along a straight, calm Dutch polder canal at sunrise. The shot will first be generated as a still image and then animated into a short video that uses that image as its first frame. Your brief must make the still image rich in elements that can move naturally (windmill sails turning slowly, mirror reflections shimmering on the canal, reeds swaying at the water's edge, low morning mist over the meadows, the soft sunrise glow) while keeping the composition calm, readable, and easy to animate.
+
+My starting choices:
+- Windmills: ${windmills:five round tapered brick windmills with dark caps and wooden lattice sails, standing in a row along one bank}
+- Canal: ${canal:a long straight canal with still, mirror-like water receding to a vanishing point}
+- Banks: ${banks:grass and reeds on both sides, a narrow dirt path along a grassy dike on the opposite bank}
+- Foreground detail: ${foreground:a small dark wooden rowboat moored at the water's edge}
+- Landscape: ${landscape:flat green meadows with low mist and a distant line of trees}
+- Time and light: ${time:sunrise, soft pink, lilac, and gold sky with a warm glow near the horizon}
+- Visual style: ${style:photoreal landscape photography, natural colors}
+- Mood words: ${mood:peaceful, quiet, timeless, fresh}
+
+First ask me, in one short message, for anything missing: the camera position I prefer (low at the water's edge, standing height on the bank, or slightly elevated), which bank the windmills should stand on, how close the nearest windmill should be, where the sunrise glow should sit, how much mist I want, and anything to avoid (people, cyclists, boats in motion, cars, modern wind turbines, power lines, signs, text, logos, or copying a specific real photograph).
+
+Then produce the brief with these sections:
+
+1. **Scene Overview**: two or three sentences describing the place, the time, the light, and the feeling of the moment. Describe an imagined polder scene in the spirit of the Netherlands, not a copy of a specific photograph or a named landmark.
+
+2. **Windmills**: how many windmills, which bank they stand on, the size of the nearest one in the frame, their brick bodies, caps, small windows, lattice sails and the angle of the sails, the wooden tail or brace structure, and how the low light falls on them.
+
+3. **Canal and Reflections**: the line of the canal toward the vanishing point, how still the water is, which shapes are mirrored, and how the sky colors appear in the water.
+
+4. **Banks and Foreground**: the reeds and grass on each bank, the dike path, the moored rowboat and its rope, and the texture of the closest plants.
+
+5. **Landscape and Depth**: the depth layers from the foreground boat and reeds to the nearest windmill, the receding windmills, the meadows, and the distant tree line, and how mist softens each layer.
+
+6. **Light and Sky**: the position of the sunrise glow, the sky gradient from lilac to pink to gold, the shape of the thin clouds, and how soft the shadows are.
+
+7. **Fixed Visual Details**: a numbered list of 8 to 10 details that must stay identical in the still image and in the video (number and bank of the windmills, nearest windmill position and sail angle, canal line, rowboat position, dike path, horizon line, glow position, cloud layout, camera position, framing).
+
+8. **Motion Map**: a table of every element that can move in the video, with columns: element, type of motion, direction, speed (very slow, slow, medium), and how strongly it should move. Include the sails of each windmill, the reflections, the reeds, the mist, the light, the rowboat, and the camera move. Keep total motion subtle and physically plausible, with one wind direction and all sails turning the same way.
+
+9. **Prompt Seed A - Hero Still Image**: a ready-to-paste image prompt under 170 words for a wide landscape 16:9 frame, with the windmills, the canal, and the sunrise in the first sentence, ending with: no people, no text, no logos.
+
+10. **Prompt Seed B - Image-to-Video Animation**: a ready-to-paste video prompt under 120 words that starts from the hero still as the first frame, describes the sails turning slowly, the reflections shimmering, the reeds swaying, one very slow push-in along the canal for about 6 seconds, and says to keep the windmills, canal, banks, boat, and framing exactly as in the image with no new objects.
+
+Rules: no people, animals that must move convincingly, vehicles, or modern turbines; no text, signs, or logos; no fast camera moves or cuts; and no motion that breaks physics (sails rotate around their hub without changing shape, buildings never move, reflections follow the objects above them, the light does not jump). Use short paragraphs and lists.
+",FALSE,TEXT,f
