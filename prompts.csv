@@ -172064,3 +172064,4 @@ C – Black & white
 Black and white editorial portrait of a Black man in his mid-40s, thick beard, dark sunglasses, thin chain, black cap, arms crossed, grounded posture, no smile. Light grey seamless backdrop, soft box lighting. 70mm, three-quarter angle, magazine cover aesthetic.
 
 NEGATIVE: text, watermark, logo, blurry, deformed hands, extra fingers, distorted face, plastic skin, cartoonish, cropped head",FALSE,TEXT,getbud@gmail.com
+create a final mv view where i can use for power BI,I have discussed with product team and defined the metrics and another team memebr have designed silver tables for this use case now i need to find a way how can i design gold layer MV table which can consit of these metrics so that i can easily map out and connect this mv tables to power BI to build the dashboards. help me with it i will give you the fact tables and the metric defination,FALSE,TEXT,ajillell_uhg
