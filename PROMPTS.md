@@ -205918,3 +205918,17 @@ Five traditional brick windmills stand in a row along the left bank of a long, s
 
 </details>
 
+<details>
+<summary><strong>Dutch Windmill Canal at Sunrise (Image-to-Video Animation)</strong></summary>
+
+## Dutch Windmill Canal at Sunrise (Image-to-Video Animation)
+
+Contributed by [@f](https://github.com/f)
+
+```md
+Start from the step 2 image "Five Brick Windmills Along a Misty Dutch Canal at Sunrise" as the exact first frame, and animate it into a calm ${duration:6}-second cinematic shot. Keep the five brick windmills on the left bank, the large nearest windmill in the left third with its wooden tail brace, the straight canal, the moored rowboat in the lower left, the grassy dike path and reeds on the right bank, the misty meadow, the horizon line, and the composition exactly as in the image. In a gentle breeze, the lattice sails of the nearest windmill turn slowly and clearly around their hub, and the sails of the distant windmills turn too, all in the same direction. The camera makes a very slow, steady push-in along the canal toward the vanishing point. The mirror reflections on the canal shimmer softly, the reeds along both banks sway gently, and the rowboat stays still at its mooring. The light stays a soft pink and gold sunrise glow. Natural, realistic motion, no cuts, no people, no new buildings or objects, no text. Soft sound of a light breeze, creaking sails, and distant birdsong.
+
+```
+
+</details>
+
