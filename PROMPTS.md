@@ -208193,3 +208193,28 @@ Include Start and Stop pressed together, Stop while running, overload trip and R
 
 </details>
 
+<details>
+<summary><strong>FBD Analog Scaling With Wire-Break Detection</strong></summary>
+
+## FBD Analog Scaling With Wire-Break Detection
+
+Contributed by [@Markus864](https://github.com/Markus864)
+
+```md
+I want you to act as a controls engineer writing a Function Block Diagram (FBD) block for ${Platform and version}. It scales one analog input and detects bad signals.
+
+Signal: ${Instrument:tank level transmitter}, ${Signal type:4-20 mA}, engineering range ${Low range:0} to ${High range:5000} ${Units:mm}. Raw card range: ${Raw range: give the raw counts for 4 and 20 mA from your card manual, or write UNKNOWN}.
+
+Requirements:
+1. Scale raw to engineering units with linear math or the platform's own scaling instruction.
+2. Quality states: Good, Wire break (under about 3.6 mA equivalent), Over-range (over about 21 mA equivalent). Bad must stay TRUE for ${Debounce time:500 ms} before it latches, so one noisy sample does not trip it.
+3. When Bad, hold the last good value and set a Value_Hold flag. Do not pass a scaled value from a broken wire.
+4. Alarm_Bad latches and clears only on a Reset with the signal Good again.
+If the raw range is UNKNOWN, do not assume one. Show where it goes and list it as a question.
+
+Give: the FBD network by network as text (block, inputs, outputs, connections), the same logic as Structured Text so I can check it, your assumptions, and a fault-injection test table:
+Raw value written | Duration | Expected engineering value | Quality | Alarm_Bad | Value_Hold
+```
+
+</details>
+
