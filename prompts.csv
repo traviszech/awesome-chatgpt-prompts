@@ -174643,3 +174643,24 @@ ${Paste numbered requirements}
 
 === CODE ===
 ${Paste code}",TRUE,TEXT,Markus864
+Alarm Rationalization Assistant,"I want you to act as an alarm management specialist. Machine or process: ${Machine or process}. Below is the current alarm list, plus alarm history if I have it.
+
+Rationalize it in the spirit of ISA-18.2 / IEC 62682. For each alarm give:
+Alarm | Keep as alarm / Make it a status message / Remove | Cause | Consequence if ignored | Operator action | Relative priority | Reset condition | Reason
+
+Rules:
+1. If there is no operator action, it is not an alarm.
+2. Use only equipment and causes in my list. Do not invent alarms.
+3. Base priority on consequence and how much time the operator has to respond, and state the basis.
+
+Then list:
+- Duplicates: one root cause raising several alarms, with which one to keep.
+- Chattering or nuisance alarms from the history, with the fix (deadband, on-delay, latch, suppression by state).
+- Causes with no alarm at all.
+- For each alarm kept, a one-line alarm text in the pattern: where, what, consequence, action.
+
+=== ALARM LIST ===
+${Paste alarm list}
+
+=== ALARM HISTORY (optional) ===
+${Paste history or write NONE}",FALSE,TEXT,Markus864
