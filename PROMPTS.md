@@ -208864,3 +208864,16 @@ A quiet stepping-stone footpath runs straight ahead through a tall bamboo forest
 
 </details>
 
+<details>
+<summary><strong>Bamboo Forest Fireflies at Dusk (Image-to-Video Animation)</strong></summary>
+
+## Bamboo Forest Fireflies at Dusk (Image-to-Video Animation)
+
+Contributed by [@f](https://github.com/f)
+
+```md
+Start from the step 2 image "Bamboo Forest Footpath with Fireflies and a Wooden Footbridge at Dusk" as the exact first frame, and animate it into a calm ${duration:6}-second cinematic shot. Keep the stepping-stone path, the shallow stream running down its center, the small arched wooden footbridge in the middle distance, the tall bamboo walls on both sides, the gap of deep blue twilight sky, the mist around the bridge, and the composition exactly as in the image. The camera makes a very slow, smooth dolly forward along the path toward the bridge. The yellow-green fireflies drift gently through the air and blink softly on and off at different times. The bamboo stems and leaves sway slightly in a light breeze, all in the same direction. Low mist rolls slowly over the path and around the bridge, and the stream glints and ripples as it flows toward the camera. The cool blue twilight light stays steady. Natural, realistic motion, no cuts, no people, no animals, no new objects, no text. Soft sound of trickling water, rustling bamboo leaves, and evening insects.
+```
+
+</details>
+
