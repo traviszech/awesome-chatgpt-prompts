@@ -177193,3 +177193,26 @@ Rails App taste,"# Rails App taste of a pragmatic Ruby on Rails developer
 - Deploy with Kamal or a managed platform using a Docker image built in CI, and run migrations as a separate release step. Confidence: 0.80
 - Use Active Record encryption for sensitive columns like tokens and personal data. Confidence: 0.80
 ",TRUE,TEXT,f
+Browser Extension taste,"# Browser Extension taste of a cross-browser extension developer
+- Build on Manifest V3 and plan around service workers that can be stopped at any time. Confidence: 0.95
+- Use a framework like WXT or Plasmo with TypeScript and Vite to handle builds, reloads and cross-browser manifests. Confidence: 0.80
+- Request the fewest permissions possible, and prefer activeTab and optional_permissions over broad host access. Confidence: 0.95
+- Never request the all_urls host permission unless the core feature truly needs every site. Confidence: 0.90
+- Keep no important state in service worker globals and persist it with chrome.storage instead. Confidence: 0.95
+- Use chrome.storage.session for temporary secrets and chrome.storage.local or sync for user settings, with a typed wrapper and defaults. Confidence: 0.85
+- Use chrome.alarms for scheduled work instead of setInterval in the background. Confidence: 0.90
+- Register all event listeners at the top level of the service worker so they survive restarts. Confidence: 0.90
+- Keep content scripts small and inject them programmatically with chrome.scripting when possible. Confidence: 0.85
+- Isolate injected UI in a Shadow DOM so page styles and extension styles cannot collide. Confidence: 0.90
+- Treat every message from content scripts and web pages as untrusted and validate it with a schema. Confidence: 0.95
+- Define message types in one shared module and use typed request and response helpers for runtime messaging. Confidence: 0.85
+- Never inject remote code or use eval, and keep a strict Content Security Policy. Confidence: 0.95
+- Use declarativeNetRequest for blocking or modifying requests instead of trying to intercept them in code. Confidence: 0.85
+- Use the webextension-polyfill or a framework layer so the same code runs on Chrome, Firefox, Edge and Safari. Confidence: 0.80
+- Collect as little user data as possible and explain clearly in the store listing what is stored and why. Confidence: 0.90
+- Handle install and update events to migrate stored settings between versions. Confidence: 0.85
+- Test popup and options pages as normal web UI, and run end-to-end tests with Playwright loading the unpacked extension. Confidence: 0.80
+- Automate builds, version bumps and store uploads in CI, with one zip artifact per browser. Confidence: 0.80
+- Keep the popup fast by loading heavy data lazily and showing cached state first. Confidence: 0.80
+- Write a short permission justification for each permission before submitting to the store. Confidence: 0.85
+",TRUE,TEXT,f
