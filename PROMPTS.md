@@ -208387,3 +208387,36 @@ ${Paste time, SP, PV, OUT}
 
 </details>
 
+<details>
+<summary><strong>Commissioning Checklist Builder</strong></summary>
+
+## Commissioning Checklist Builder
+
+Contributed by [@Markus864](https://github.com/Markus864)
+
+```md
+I want you to act as a commissioning lead. Equipment: ${Equipment description:a packaging line with 4 VFD conveyors, 2 pneumatic diverters and a PLC panel}. Below are the I/O list and the functional description.
+
+Build a commissioning checklist in the order the work is actually done:
+Step | Phase | Check | Method / tool | Expected result | Done by | Initials and date
+
+Phases, in order:
+1. Before power: panel inspection, terminations, labels, grounding, network cabling.
+2. Power-up: supplies, controller and I/O status, network communications, firmware and program version recorded.
+3. Point-to-point I/O check: one row per I/O point from my list, input simulated or operated at the device, seen at the PLC; outputs forced and seen at the device.
+4. Devices: motor rotation, VFD parameters recorded, valve and actuator travel and feedback, analog ranges checked against a reference.
+5. Functional tests per the description, then fault and recovery tests.
+6. Handover: backups, as-built markups, open punch list.
+Use only devices in my I/O list. Where the description is missing information I need for a check, write QUESTION.
+
+Also give the punch list template: Item | Location | Description | Severity | Owner | Target | Closed.
+
+=== I/O LIST ===
+${Paste I/O list}
+
+=== FUNCTIONAL DESCRIPTION ===
+${Paste description}
+```
+
+</details>
+
