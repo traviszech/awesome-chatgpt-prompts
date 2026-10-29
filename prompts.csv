@@ -177169,3 +177169,27 @@ Authentication taste,"# Authentication taste of a security-minded backend engine
 - Store signing keys in a secrets manager and support key rotation with a kid header from day one. Confidence: 0.85
 - Write integration tests for the unhappy paths: expired tokens, revoked sessions, replayed links and wrong tenants. Confidence: 0.85
 ",TRUE,TEXT,f
+Rails App taste,"# Rails App taste of a pragmatic Ruby on Rails developer
+- Start new apps on the latest Rails with PostgreSQL, and stick to the defaults unless there is a clear reason to swap a piece out. Confidence: 0.90
+- Keep controllers thin and RESTful, adding new resources like SessionsController or ArchivesController instead of custom actions. Confidence: 0.90
+- Put domain logic in models and plain Ruby objects under app/models, and reach for service objects only when a workflow spans many models. Confidence: 0.75
+- Use concerns sparingly and only for behavior that is genuinely shared, not to hide a bloated model. Confidence: 0.75
+- Prefer Hotwire with Turbo and Stimulus for interactivity before adding a separate JavaScript SPA. Confidence: 0.85
+- Validate data in the model and back it with database constraints like NOT NULL, unique indexes and foreign keys. Confidence: 0.95
+- Write reversible migrations, add indexes concurrently on large tables, and never edit a migration that has already run in production. Confidence: 0.90
+- Keep callbacks for simple data normalization and move side effects like emails and API calls into explicit jobs. Confidence: 0.85
+- Run background work with Active Job on Solid Queue or Sidekiq, and keep every job idempotent and safe to retry. Confidence: 0.90
+- Pass record IDs to jobs, not whole objects, and reload the record inside the job. Confidence: 0.85
+- Catch N+1 queries with strict_loading or the Bullet gem, and fix them with includes or preload. Confidence: 0.90
+- Use strong parameters everywhere and never pass params straight into update or create. Confidence: 0.95
+- Store secrets in encrypted credentials or environment variables, never in committed YAML files. Confidence: 0.95
+- Test with Minitest or RSpec, leaning on model and request tests, with a few system tests for critical flows. Confidence: 0.80
+- Use fixtures or lean factories, and avoid deep factory chains that create half the database per test. Confidence: 0.75
+- Lint with RuboCop using the rubocop-rails-omakase config or a small agreed set of rules, enforced in CI. Confidence: 0.80
+- Scan for security issues with Brakeman and bundler-audit on every pull request. Confidence: 0.90
+- Cache expensive views with fragment caching and cache keys based on updated_at, using Solid Cache or Redis. Confidence: 0.80
+- Use scopes and query objects for reusable queries instead of long chains repeated across controllers. Confidence: 0.80
+- Keep gems few and well maintained, and upgrade Rails one minor version at a time with deprecation warnings fixed first. Confidence: 0.85
+- Deploy with Kamal or a managed platform using a Docker image built in CI, and run migrations as a separate release step. Confidence: 0.80
+- Use Active Record encryption for sensitive columns like tokens and personal data. Confidence: 0.80
+",TRUE,TEXT,f
