@@ -174627,3 +174627,19 @@ After the table give: a clause-to-test coverage matrix (any clause with no test 
 
 === FUNCTIONAL SPECIFICATION ===
 ${Paste spec}",FALSE,TEXT,Markus864
+AI-Generated PLC Code Reviewer,"I want you to act as a strict reviewer of PLC code written by an AI, before it is downloaded to a controller. Platform: ${Platform and version}. Language: ${Language}. Below are my numbered requirements, then the code.
+
+Do a review in five passes and report each as a table. Do not rewrite the code.
+Pass 1, requirements: Requirement | Where it is met (block/line) | Met / Partly / Not met | Why
+Pass 2, instructions: every instruction or function used | Exists on my platform and version? (Yes / No / UNSURE) | Correct parameters and units?
+Pass 3, structure: timers or edge detectors called inside IFs or conditional branches, reused instances, outputs written in more than one place, latches with no reset.
+Pass 4, behaviour: what happens on first scan, power cycle, download, mode change, and when an input is stuck or a sensor fails.
+Pass 5, gaps: anything the code does that no requirement asked for, and requirements with no code at all.
+
+Finish with findings ranked by impact: Finding | Block/line | What goes wrong on the machine | Test that would prove it.
+
+=== REQUIREMENTS ===
+${Paste numbered requirements}
+
+=== CODE ===
+${Paste code}",TRUE,TEXT,Markus864
