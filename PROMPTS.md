@@ -208786,3 +208786,16 @@ A photorealistic macro photograph of a round glass bowl terrarium on a wooden de
 
 </details>
 
+<details>
+<summary><strong>Loose Watercolor of Venetian Gondolas on the Grand Canal at Dawn</strong></summary>
+
+## Loose Watercolor of Venetian Gondolas on the Grand Canal at Dawn
+
+Contributed by [@f](https://github.com/f)
+
+```md
+A loose, atmospheric watercolor painting of covered gondolas moored on the Grand Canal in Venice at dawn, in a landscape 4:3 frame on textured cold-press watercolor paper. In the lower left, three long black gondolas rest side by side, wrapped in dark blue-grey covers, one with a pale tan tarp, the front gondola's curved prow and metal prow ornament rising at the far left edge. Tall wooden mooring poles with red-and-white spiral stripes and small pointed caps stand in the water across the middle and right of the frame, some linked to the gondolas by sagging ropes and chains. Across the canal, a hazy, softly painted skyline of old palazzos stretches to the right, with a slender bell tower, and on the left a large domed baroque basilica with smaller domes and lanterns, in the spirit of Santa Maria della Salute, silhouetted against the light. The sky glows in soft peach, apricot, and lavender washes with drifting clouds. The calm water reflects the poles, gondolas, and sky in broken vertical strokes of violet, pink, and white. Visible brushstrokes, wet-in-wet blooms, granulating pigments, soft edges, and white paper showing through. Peaceful, romantic early-morning mood. No people, no text, no signature.
+```
+
+</details>
+
