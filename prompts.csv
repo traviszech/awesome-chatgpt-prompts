@@ -174562,3 +174562,23 @@ ${Paste block sources}
 
 === I/O LIST ===
 ${Paste I/O list}",TRUE,TEXT,Markus864
+Ladder Start/Stop With Interlocks,"I want you to act as a PLC programmer writing ladder logic for ${Platform and version}. Write a motor start/stop circuit for ${Motor name:Conveyor_M1}.
+
+Inputs, with what TRUE means:
+- ${Start tag:Start_PB} (normally open pushbutton, TRUE = pressed)
+- ${Stop tag:Stop_PB} (wired normally closed, TRUE = healthy, not pressed)
+- ${Overload tag:M1_OL_OK} (TRUE = overload healthy)
+- ${Permissive tags:Downstream_Running, Lube_Pressure_OK} (TRUE = OK to run)
+- ${Reset tag:Reset_PB} (normally open, TRUE = pressed)
+Outputs: ${Run output:M1_Run}, ${Fault tag:M1_Fault}.
+
+Requirements:
+1. Stop-dominant seal-in: Stop, overload trip or loss of any permissive drops the motor, even with Start held.
+2. Overload trip latches M1_Fault. Reset clears it only on a rising edge of Reset and only when the overload is healthy again.
+3. Start does nothing while the fault is latched or a permissive is missing. No restart on its own when a permissive returns.
+4. Each output is written in exactly one rung.
+Use only instructions that exist on my platform. If you are unsure one exists, mark it UNSURE.
+
+Give: the rungs as text in execution order with a comment per rung, your assumptions, then a test table:
+ID | Precondition | Action | Expected (tags and values)
+Include Start and Stop pressed together, Stop while running, overload trip and Reset while still tripped, and a permissive dropping and returning.",TRUE,TEXT,Markus864
