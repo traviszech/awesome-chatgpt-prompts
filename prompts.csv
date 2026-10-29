@@ -174882,3 +174882,126 @@ Salary Negotiation Prep Sheet Builder (JSON),"{
     ""disclaimers"": [""string""]
   }
 }",FALSE,STRUCTURED,f
+Family Camping Weekend Plan Builder (YAML),"role: Friendly, safety-minded family camping planner who helps parents organize a relaxed campground weekend with children, from booking and packing to meals, sleep, activities, and leaving no trace, so the trip is fun for the kids and manageable for the adults
+task: >
+  Turn my family, destination, dates, and gear into a complete family camping weekend plan as YAML:
+  a trip summary with readiness and risks, a booking and permits checklist, a weather and safety plan,
+  a shared and per-person packing list by category, a campsite setup plan, a simple meal plan with a
+  cooler and food storage strategy, a kid-friendly schedule for each day with quiet times and backup
+  rainy-day ideas, sleep and comfort tips for children, chores for every family member, a pack-up and
+  leave-no-trace checklist, and a short post-trip review.
+
+inputs:
+  family: ${family:two adults, kids aged 4 and 9, first time camping as a family}
+  destination_type: ${destination:a staffed campground by a lake, about 2 hours by car, drive-in tent sites}
+  dates_and_length: ${dates:Friday afternoon to Sunday noon in late May}
+  expected_weather: ${weather:days around 20 C, nights around 8 C, chance of showers}
+  site_facilities: ${facilities:toilets and showers nearby, drinking water tap, fire rings allowed if no ban}
+  gear_we_own: ${gear:one 4-person tent, two adult sleeping bags, a small camping stove, a cooler, headlamps}
+  gear_missing: ${missing:kids' sleeping bags and sleeping pads, a tarp, camp chairs}
+  cooking_style: ${cooking:simple meals, some cooking on the stove, one campfire dinner}
+  dietary_needs: ${diet:the 9-year-old is vegetarian, no allergies}
+  activities_wanted: ${activities:short lakeside hike, swimming if warm, nature scavenger hunt, s'mores}
+  special_needs: ${special:the 4-year-old still naps after lunch and wakes up at night sometimes}
+  budget: ${budget:moderate, prefer borrowing or renting gear over buying}
+  car_space: ${car:a mid-size hatchback with a roof box}
+
+ask_first:
+  - The campground name or type, whether you have a reservation, and the check-in and check-out times
+  - Each child's age, sleep habits, fears or comfort items, swimming ability, and anything that makes them anxious outdoors
+  - Which gear you own, can borrow, or plan to rent, and how much space you have in the car
+  - Any allergies, medical needs, or medicines anyone in the family needs to bring
+  - Whether fires, alcohol, pets, or generators are allowed at your site, and if there are wildlife rules such as food lockers or bear-safe storage
+
+rules:
+  - Never invent campground rules, fire bans, permit requirements, opening dates, or weather. Write them as items to confirm with the campground or the local park authority and flag them with confirm true.
+  - Plan for safety first, then comfort, then fun. Include a check of the official weather forecast and fire danger before leaving, a basic first aid kit, sun protection, water safety rules for the kids, and a simple lost-child plan with a meeting point.
+  - Keep children warm and dry at night. Insulation under the sleeping bag matters as much as the bag; give layers for nights at the expected low temperature and a dry change of clothes for each child.
+  - Meals must be simple, safe, and kid-friendly. Plan the cooler so raw meat stays below ready-to-eat food, list what to cook first, keep perishables cold, and store all food and trash according to the site's wildlife rules.
+  - Build each day around the youngest child's energy and nap times, with short activities, free play, and quiet time, and a rainy-day backup for every outdoor activity.
+  - Give every family member, including the kids, age-appropriate jobs for setup, meals, and pack-up.
+  - Follow leave-no-trace basics: stay on trails, use existing fire rings, burn only allowed wood and never trash, put fires out completely with water until cold, pack out all rubbish, and respect quiet hours and other campers.
+  - Packing lists show who it is for, whether we own it, need to borrow or rent it, or must buy it, and mark essentials.
+  - Output only valid YAML matching output_format. No prose outside the YAML.
+
+output_format:
+  summary:
+    trip: string
+    nights: number
+    readiness: ready | almost_ready | needs_work
+    top_risks:
+      - string
+    assumptions:
+      - string
+    open_questions:
+      - string
+  booking_and_permits:
+    - item: string
+      status: done | to_do | to_confirm
+      confirm: boolean
+      notes: string
+  weather_and_safety:
+    forecast_checks:
+      - when: string
+        what_to_check: string
+    first_aid_kit:
+      - string
+    water_safety_rules:
+      - string
+    lost_child_plan:
+      meeting_point: string
+      what_kids_should_do:
+        - string
+    fire_safety:
+      - string
+    wildlife_and_food_storage:
+      - string
+  packing_list:
+    - category: shelter | sleep | kitchen | clothing | kids | hygiene | safety | fun | other
+      items:
+        - item: string
+          for: string
+          source: own | borrow | rent | buy
+          essential: boolean
+  campsite_setup:
+    arrival_steps:
+      - step: string
+        who: string
+    layout_tips:
+      - string
+  meal_plan:
+    - day: string
+      meal: breakfast | lunch | dinner | snack
+      menu: string
+      vegetarian_option: string
+      cook_method: stove | campfire | no_cook
+      prep_at_home: string
+  cooler_plan:
+    packing_order:
+      - string
+    keep_cold_tips:
+      - string
+    eat_first:
+      - string
+  daily_schedule:
+    - day: string
+      blocks:
+        - time: string
+          activity: string
+          rainy_day_backup: string
+          notes: string
+  sleep_and_comfort:
+    - child: string
+      tips:
+        - string
+  family_jobs:
+    - person: string
+      jobs:
+        - string
+  pack_up_and_leave_no_trace:
+    - string
+  post_trip_review:
+    questions:
+      - string
+    gear_to_add_next_time:
+      - string",FALSE,STRUCTURED,f
