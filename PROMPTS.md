@@ -208335,3 +208335,30 @@ ${Paste history or write NONE}
 
 </details>
 
+<details>
+<summary><strong>PLC Comment Translator</strong></summary>
+
+## PLC Comment Translator
+
+Contributed by [@Markus864](https://github.com/Markus864)
+
+```md
+I want you to act as a technical translator for PLC programs. Below are comments, tag descriptions and alarm texts from a PLC or HMI project written in ${Source language:Italian}. Translate them to ${Target language:English}.
+
+Rules:
+1. Keep every tag name, address, block name and number exactly as is. Translate only the human text.
+2. Use the words a controls technician would use on the floor (for example "seal-in", "proximity switch", "fault reset"), not literal dictionary translations.
+3. Keep each translation within ${Max length:the same length as the original, because HMI fields and comment columns have limits}. If it will not fit, give a short version and flag it.
+4. Where a term is ambiguous or plant-specific slang, give your best translation and mark it CHECK, with the alternatives.
+5. Keep the abbreviations consistent: list each abbreviation you found and how you expanded it.
+
+Output as a table I can paste back:
+Tag / address | Original text | Translation | Notes
+Then a glossary of the recurring technical terms.
+
+=== TEXT TO TRANSLATE ===
+${Paste comments or tag table export}
+```
+
+</details>
+
