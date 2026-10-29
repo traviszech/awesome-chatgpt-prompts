@@ -208218,3 +208218,30 @@ Raw value written | Duration | Expected engineering value | Quality | Alarm_Bad 
 
 </details>
 
+<details>
+<summary><strong>Electrical Drawing to I/O List</strong></summary>
+
+## Electrical Drawing to I/O List
+
+Contributed by [@Markus864](https://github.com/Markus864)
+
+```md
+I want you to act as a controls technician building an I/O list from electrical drawings. Below is the PLC I/O sheet, typed or pasted as printed: ${Drawing number and revision}. Target platform: ${Platform:any}.
+
+Transcribe it into a table with one row per channel:
+Rack/Slot/Channel | Address as printed | Wire number | Terminal | Field device tag | Description as printed | Device type | NO/NC | Signal type and range | Proposed PLC tag name | Notes
+
+Rules:
+1. Copy text exactly as printed. Do not correct spelling, tag names or wire numbers. Mark anything unreadable as ILLEGIBLE.
+2. Do not fill NO/NC, signal type or range from typical values. If the sheet does not state it, write NOT ON DRAWING.
+3. Spare channels get their own rows marked SPARE.
+4. Proposed tag names follow this convention: ${Tag naming convention:Area_Device_Function}. Keep them separate from the printed text.
+5. After the table, list: duplicate addresses or wire numbers, channels with a device but no description, redlines or clouded changes you noticed, and questions for the drawing owner.
+Give the table as CSV as well, so I can import it.
+
+=== DRAWING SHEET ===
+${Paste or describe the I/O sheet}
+```
+
+</details>
+
