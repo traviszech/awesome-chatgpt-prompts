@@ -177144,3 +177144,28 @@ def main(argv=None):
 
 if __name__ == ""__main__"":
     sys.exit(main())",FALSE,TEXT,f
+Authentication taste,"# Authentication taste of a security-minded backend engineer
+- Use a well-maintained auth library or provider instead of hand-rolling login, sessions and token handling. Confidence: 0.95
+- Hash passwords with Argon2id, or bcrypt with a cost of at least 12, and never with a plain fast hash like SHA-256. Confidence: 0.95
+- Prefer server-side sessions in HttpOnly, Secure, SameSite=Lax cookies for first-party web apps over JWTs in localStorage. Confidence: 0.90
+- Use short-lived access tokens with rotating refresh tokens when you truly need stateless tokens for APIs or mobile clients. Confidence: 0.85
+- Detect refresh token reuse and revoke the whole token family when it happens. Confidence: 0.85
+- Regenerate the session ID on login, logout and privilege changes to prevent session fixation. Confidence: 0.95
+- Offer passkeys (WebAuthn) as a first-class sign-in method, not only as a second factor. Confidence: 0.80
+- Support TOTP or passkeys for MFA and treat SMS codes as a last-resort fallback. Confidence: 0.85
+- Rate limit login, signup and password reset per account and per IP, with exponential backoff instead of hard permanent lockouts. Confidence: 0.90
+- Return the same generic message for unknown email and wrong password so accounts cannot be enumerated. Confidence: 0.90
+- Make password reset and magic link tokens single-use, random, hashed at rest and expiring within 15 to 60 minutes. Confidence: 0.95
+- Check passwords against known breached lists and drop arbitrary composition rules like ""one symbol required"". Confidence: 0.85
+- Use OAuth 2.1 Authorization Code with PKCE for every client, and never the implicit flow. Confidence: 0.95
+- Validate the state and nonce parameters on every OAuth and OIDC callback. Confidence: 0.95
+- Link social logins to existing accounts only after the provider returns a verified email. Confidence: 0.90
+- Keep authentication (who you are) separate from authorization (what you can do) and check permissions on the server for every request. Confidence: 0.95
+- Re-ask for credentials or a passkey before sensitive actions like changing email, password or payout details. Confidence: 0.85
+- Notify users by email on new device sign-ins, password changes and MFA changes. Confidence: 0.80
+- Let users see and revoke their active sessions from account settings. Confidence: 0.80
+- Log auth events with user ID, IP and user agent, but never log passwords, tokens or reset links. Confidence: 0.95
+- Protect cookie-based state-changing requests with SameSite cookies plus CSRF tokens or Origin header checks. Confidence: 0.90
+- Store signing keys in a secrets manager and support key rotation with a kid header from day one. Confidence: 0.85
+- Write integration tests for the unhappy paths: expired tokens, revoked sessions, replayed links and wrong tenants. Confidence: 0.85
+",TRUE,TEXT,f
