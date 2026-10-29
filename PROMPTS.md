@@ -208799,3 +208799,55 @@ A loose, atmospheric watercolor painting of covered gondolas moored on the Grand
 
 </details>
 
+<details>
+<summary><strong>Bamboo Forest Firefly Path Scene Concept Brief Builder</strong></summary>
+
+## Bamboo Forest Firefly Path Scene Concept Brief Builder
+
+Contributed by [@f](https://github.com/f)
+
+```md
+Act as a cinematic landscape designer who writes image-ready and motion-ready scene briefs. Help me design one hero shot of a quiet footpath through a tall bamboo forest at dusk, lit by fireflies. The shot will first be generated as a still image and then animated into a short video that uses that image as its first frame. Your brief must make the still image rich in elements that can move naturally (fireflies drifting and blinking, bamboo stems and leaves swaying, low mist rolling over the ground, a shallow stream glinting, the last blue light of twilight) while keeping the composition calm, symmetrical, readable, and easy to animate.
+
+My starting idea: ${idea:a stone path between tall bamboo at dusk, with fireflies and a little wooden bridge}
+
+My starting choices:
+- Path: ${path:an old stepping-stone path running straight away from the camera toward the center of the frame}
+- Bamboo: ${bamboo:tall, dense green bamboo stems rising on both sides, their tops closing into a canopy with a gap of sky in the middle}
+- Water: ${water:a shallow stream trickling down the middle of the path over stones}
+- Focal point: ${focal:a small arched wooden footbridge with railings crossing in the middle distance}
+- Fireflies: ${fireflies:many small glowing yellow-green fireflies scattered through the air and the undergrowth}
+- Atmosphere: ${atmosphere:low mist hanging around the bridge and over the path}
+- Time and light: ${time:deep blue twilight just after sunset, a few clouds in the sky gap}
+- Visual style: ${style:photoreal night landscape photography, natural colors}
+- Mood words: ${mood:calm, magical, hushed, inviting}
+
+First ask me, in one short message, for anything missing: the camera height (low near the stones, standing eye level, or slightly raised), how centered and symmetrical I want the path, how bright and how many fireflies, how much mist, whether the bridge should be close or far, and anything to avoid (people, animals, lanterns, buildings, text, logos, or copying a specific real photograph or a named landmark).
+
+Then produce the brief with these sections:
+
+1. **Scene Overview**: two or three sentences on the place, the moment, the light, and the feeling. Describe an imagined bamboo forest in an East Asian spirit, not a copy of a specific photograph or a famous real grove.
+
+2. **Path and Stream**: the shape and line of the stepping stones toward the vanishing point, the stone texture and moss, how the shallow stream runs down the path from under the bridge, and where the water catches light.
+
+3. **Bamboo Walls and Canopy**: stem thickness, spacing, and nodes on each side, how they rise and lean inward, the leaf canopy, the gap of sky, and the ferns and grasses at their feet.
+
+4. **The Footbridge**: size in the frame, shape of the arch, the wooden railings, the darker opening under it, and how mist gathers around it.
+
+5. **Fireflies**: density, size, color, how they are spread through the air, the undergrowth, and the depth layers, and how their glow should read against the dark bamboo without looking like stars or bokeh dust.
+
+6. **Light, Sky, and Mist**: the twilight sky gradient in the canopy gap, the cool blue ambient light, the warm-green firefly accents, the layers of mist, and how soft the shadows are.
+
+7. **Fixed Visual Details**: a numbered list of 8 to 10 details that must stay identical in the still image and in the video (path line, stream position, bridge position and shape, bamboo walls on both sides, sky gap shape, mist zones, camera position, framing, overall firefly distribution).
+
+8. **Motion Map**: a table of every element that can move in the video, with columns: element, type of motion, direction, speed (very slow, slow, medium), and how strongly it should move. Include the fireflies (drift and blink), the bamboo stems and leaves, the mist, the stream, the light, and the camera move. Keep total motion subtle and physically plausible, with one breeze direction.
+
+9. **Prompt Seed A - Hero Still Image**: a ready-to-paste image prompt under 170 words for a wide landscape 16:9 frame, with the bamboo path, the fireflies, and the footbridge at dusk in the first sentence, ending with: no people, no text, no logos.
+
+10. **Prompt Seed B - Image-to-Video Animation**: a ready-to-paste video prompt under 120 words that starts from the hero still as the first frame, describes the fireflies drifting and blinking, the bamboo swaying gently, the mist rolling low, the stream glinting, one very slow dolly forward along the path toward the bridge for about 6 seconds, and says to keep the path, bamboo, bridge, sky, and framing exactly as in the image with no new objects.
+
+Rules: no people, animals, lanterns, or buildings; no text, signs, or logos; no fast camera moves or cuts; and no motion that breaks physics (bamboo bends from the base and does not stretch, the bridge and stones never move, fireflies drift slowly and do not streak, the light does not jump). Use short paragraphs and lists.
+```
+
+</details>
+
