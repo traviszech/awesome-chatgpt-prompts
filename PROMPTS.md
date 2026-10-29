@@ -208851,3 +208851,16 @@ Rules: no people, animals, lanterns, or buildings; no text, signs, or logos; no 
 
 </details>
 
+<details>
+<summary><strong>Bamboo Forest Footpath with Fireflies and a Wooden Footbridge at Dusk</strong></summary>
+
+## Bamboo Forest Footpath with Fireflies and a Wooden Footbridge at Dusk
+
+Contributed by [@f](https://github.com/f)
+
+```md
+A quiet stepping-stone footpath runs straight ahead through a tall bamboo forest at dusk, lit by hundreds of glowing fireflies, toward a small arched wooden footbridge in the middle distance, seen from a low, centered viewpoint at the start of the path, in a wide landscape 16:9 frame. Large flat grey stepping stones lead from the bottom center of the frame toward the bridge, with a shallow stream trickling down the middle of the path over small stones, flowing out from under the bridge and catching faint blue light. Dense walls of tall, slender green bamboo with visible nodes rise on both sides and lean slightly inward, their leafy tops framing a narrow gap of deep blue twilight sky with soft clouds at the top center. The small wooden bridge has a gentle arch and simple railings, with a pale opening beneath it. Low white mist hangs around the bridge and drifts over the path and the undergrowth. Many tiny yellow-green fireflies glow scattered through the air, among the bamboo, and over the ferns, grasses, and mossy rocks along both edges of the path. Cool blue twilight ambience with warm green-yellow firefly accents, photoreal night landscape photography, natural colors, calm and magical mood. No people, no text, no logos.
+```
+
+</details>
+
