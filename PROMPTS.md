@@ -208089,3 +208089,16 @@ A cinematic, magical Halloween neighborhood street decorated for a festive autum
 
 </details>
 
+<details>
+<summary><strong>Mobile App</strong></summary>
+
+## Mobile App
+
+Contributed by @anonymous
+
+```md
+Study the attached sheet and provide me with a summary of it in one slide and action plan on the another slide, go and study it and compare it to aldrees I want a full presentation that shows SWOT analysis of us, propose a full action plan and compare the list of benefits of it. I need it a full study as 
+```
+
+</details>
+
