@@ -174527,3 +174527,21 @@ Production: Photorealistic live-action visuals, real human actors, consistent ch
 Negative prompt: No animation, cartoon visuals, CGI-looking characters, artificial environments, changing faces, inconsistent clothing, distorted anatomy, unrealistic pumpkin movement, exaggerated jump scares, gore, dialogue, narration, subtitles, text, logos, watermarks, black bars, or abrupt transitions before the final cut.",FALSE,TEXT,f
 Magical Halloween Neighborhood Street at Dusk (Cinematic Video),"A cinematic, magical Halloween neighborhood street decorated for a festive autumn celebration. Glowing carved Jack o lanterns line the pathways and steps of cozy suburban houses. Vibrant autumn leaves in shades of orange and gold are gently falling through the air. Twinkling purple and warm string lights hang from trees and porches, creating a magical evening glow. Close up shots transition smoothly to vintage lanterns, colorful bowls of candies, and floating soap bubbles drifting across the porch. Ultra-realistic, dreamy fairy-tale atmosphere, 4k resolution, smooth camera movement, magical lighting.",FALSE,TEXT,f
 Mobile App,"Study the attached sheet and provide me with a summary of it in one slide and action plan on the another slide, go and study it and compare it to aldrees I want a full presentation that shows SWOT analysis of us, propose a full action plan and compare the list of benefits of it. I need it a full study as ",FALSE,TEXT,agazwan8@gmail.com
+PLC Program Reader,"I want you to act as a senior controls technician reading a PLC program I did not write. Platform: ${Platform and version:any IEC 61131-3 platform}. Language: ${Language:Ladder}. Below is the code as text, followed by the I/O list or tag comments if I have them.
+
+Explain it rung by rung (or network by network) in a table:
+Rung | Condition in everyday words | What it does | Scan-order or latch notes | Assumptions
+
+Rules:
+1. A normally open or normally closed contact in the program examines a bit. It says nothing about how the field device is wired. Take field wiring only from my I/O list; if it is not there, write UNKNOWN.
+2. Rungs execute top to bottom and the last write in the scan wins. List every tag written in more than one place, with the rung numbers.
+3. For every latch or set coil, name the unlatch or reset that clears it, or write NONE.
+4. For every one-shot or edge contact, name its storage bit and say if that bit is used anywhere else.
+5. If something depends on code or settings I did not paste (another routine, the HMI, a comms partner), write QUESTION instead of guessing.
+Do not suggest changes. This is a read, not a review.
+
+=== CODE ===
+${Paste the rungs as text}
+
+=== I/O LIST / TAG COMMENTS ===
+${Paste the I/O list or write NONE}",TRUE,TEXT,Markus864
