@@ -174465,3 +174465,46 @@ Realtime WebSocket taste,"# Realtime WebSocket taste of a realtime systems engin
 - Use CRDTs like Yjs or Automerge for collaborative editing instead of inventing your own conflict resolution. Confidence: 0.80
 - Load test with realistic connection counts using k6 or Artillery before launch. Confidence: 0.80
 ",TRUE,TEXT,f
+Halloween Horror Short: The Witch at the Bus Stop (Cinematic Video),"SCENE 1 — THE BUS STOP (0–10 seconds)
+
+On October 31, Halloween night, a young adult woman stands alone at a deserted bus stop surrounded by thick fog, dead trees, and flickering orange Halloween pumpkins. Suddenly, a terrifying witch appears behind her, with wild gray hair, glowing eyes, and an antique silver locket around her neck.
+
+The witch whispers, “You shouldn't be alone on Halloween night!” The woman turns, screams, and runs desperately into the fog.
+
+SCENE 2 — THE OLD MANSION (10–23 seconds)
+
+The woman discovers an ancient Victorian mansion and knocks on the door. An elderly woman opens it warmly and invites her inside. The candlelit room is cozy, with Halloween decorations, carved pumpkins, and an old fireplace.
+
+The elderly woman serves her hot soup and bread, speaking gently: “Come in, dear. You're safe here tonight.”
+
+The frightened woman begins to relax as thunder rumbles outside.
+
+SCENE 3 — THE SHOCKING DISCOVERY (23–38 seconds)
+
+While eating, the woman notices an old portrait hanging on the wall. It shows a beautiful young woman wearing the exact same silver locket as the terrifying witch at the bus stop.
+
+She slowly approaches the portrait, staring at the familiar face and identical necklace. Beneath the painting, an inscription reads: “OCTOBER 31 — 40 YEARS AGO.”
+
+Her face turns pale. She suddenly realizes that the woman in the portrait is the witch she encountered outside.
+
+She slowly turns her head toward the elderly woman standing behind her.
+
+SCENE 4 — THE FINAL SCARE
+
+The elderly woman stares at her with an unnatural, sinister smile. Her eyes suddenly glow yellow, her face transforms into the terrifying witch's face, and she bursts into a chilling, maniacal laugh.
+
+The camera rapidly pushes toward the witch's horrifying face as lightning flashes through the window.
+
+SMASH CUT TO BLACK.
+
+The witch's evil laughter echoes once in the darkness.
+
+END.
+
+VISUAL STYLE: Photorealistic live-action horror, cinematic Victorian mansion, realistic fog and rain, flickering candlelight, detailed facial expressions, practical supernatural transformations, dramatic shadows, and intense Halloween atmosphere.
+
+SOUND DESIGN: Howling wind, distant thunder, footsteps, creaking doors, eerie whispers, a sudden transformation sound, and terrifying witch laughter.
+
+CHARACTER CONSISTENCY: Maintain the same young woman, the same elderly woman, and the identical silver locket throughout. The witch's appearance must match the portrait's young woman before her transformation.
+
+NEGATIVE PROMPT: No cartoon, no anime, no cheap CGI, no inconsistent faces, no costume changes, no subtitles, no logos, no watermark, and no scenes after the final black screen.",FALSE,TEXT,f
