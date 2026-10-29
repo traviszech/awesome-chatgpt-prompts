@@ -174545,3 +174545,20 @@ ${Paste the rungs as text}
 
 === I/O LIST / TAG COMMENTS ===
 ${Paste the I/O list or write NONE}",TRUE,TEXT,Markus864
+PLC Fault Tracer From an Operator Symptom,"I want you to act as a controls troubleshooter. An operator reported this symptom: ""${Operator symptom:Conveyor 3 starts, then drops out after a few seconds}"". Platform: ${Platform and version}. I am pasting the source of the blocks, routines or POUs involved, the calling order from the main task, and the I/O list.
+
+Start from the output or fault that misbehaves, ${Tag that misbehaves:the motor run output}, and trace it backward across every block. Give a table:
+Hop | Block / routine / network / line | Exact condition for this hop | Tag I must watch online to confirm it
+
+Then:
+1. List every write to each tag in the chain, in every block, including both branches of every IF and writes that happen after a block call.
+2. Say which block calls which, and whether any call is conditional.
+3. Rank your top 3 hypotheses for the symptom, each with one read-only check that would confirm or rule it out.
+4. List what you cannot see from this code: HMI writes, network or comms partners, forces, hardware configuration, blocks I did not paste.
+Do not propose a fix yet. I will send back live values for your watch list first.
+
+=== CODE (all blocks involved) ===
+${Paste block sources}
+
+=== I/O LIST ===
+${Paste I/O list}",TRUE,TEXT,Markus864
