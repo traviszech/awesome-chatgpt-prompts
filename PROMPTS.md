@@ -208245,3 +208245,32 @@ ${Paste or describe the I/O sheet}
 
 </details>
 
+<details>
+<summary><strong>FAT Test Plan Writer</strong></summary>
+
+## FAT Test Plan Writer
+
+Contributed by [@Markus864](https://github.com/Markus864)
+
+```md
+I want you to act as a commissioning engineer writing a Factory Acceptance Test (FAT) plan. Machine: ${Machine description:a sorting conveyor with three diverters}. Below is the functional specification, numbered by clause.
+
+Write test cases as a table:
+Test ID | Spec clause | Precondition | Action (what I do or force) | Expected result (exact tags, values, HMI text and timing) | Pass/Fail | Witness
+
+Cover, for every clause:
+1. Normal operation: start, run, stop, mode changes.
+2. Each sensor stuck on, stuck off and flickering. Each actuator failing to move.
+3. Faults during stop and during reset. Two faults at once.
+4. Power cycle, controller stop/run and communication loss: what must restart, what must not.
+5. Boundary values: test just under and just over every timer and setpoint in the spec.
+Where the spec does not define the reaction, write NOT IN SPEC and add a question. Do not invent behaviour.
+
+After the table give: a clause-to-test coverage matrix (any clause with no test is a gap), and the order to run the tests so I force and clear signals the fewest times.
+
+=== FUNCTIONAL SPECIFICATION ===
+${Paste spec}
+```
+
+</details>
+
