@@ -208773,3 +208773,16 @@ A photorealistic photograph of a village blacksmith forging a glowing blade insi
 
 </details>
 
+<details>
+<summary><strong>Macro Photo of a Moss Terrarium with a Tiny Cabin and Waterfall</strong></summary>
+
+## Macro Photo of a Moss Terrarium with a Tiny Cabin and Waterfall
+
+Contributed by [@f](https://github.com/f)
+
+```md
+A photorealistic macro photograph of a round glass bowl terrarium on a wooden desk, holding a tiny moss landscape with a miniature cabin and a waterfall, in a square 1:1 frame. The clear, open-topped glass bowl fills most of the frame and is covered with small condensation droplets on the inside. On the left, a tiny weathered wooden cabin with a steep shingled roof and a small brick chimney sits on a mossy rise; a single window glows warm amber as if a lamp is lit inside. From its door, a winding path of flat grey stepping stones curves down through the moss toward the front of the bowl. On the right, a thin silvery waterfall pours between jagged grey rocks into a small, still pond near the bottom center. Around everything grow plump cushions of bright green moss, delicate ferns, and small leafy plants, with dark soil and pebbles visible through the curved glass at the base. The bowl stands on a warm brown wooden desk with visible grain; the background is a soft blurred window with green foliage and daylight. Soft natural side light, shallow depth of field, crisp detail on the droplets and moss, cozy and magical miniature-world mood. No people, no text, no logos.
+```
+
+</details>
+
