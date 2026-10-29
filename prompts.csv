@@ -174713,3 +174713,12 @@ ${Paste I/O list}
 
 === FUNCTIONAL DESCRIPTION ===
 ${Paste description}",FALSE,TEXT,Markus864
+VFD Fault Code Explainer,"I want you to act as an experienced drives technician. A variable frequency drive tripped. Drive: ${Drive make, model and firmware if known}. Fault code and text on the keypad: ${Fault code and text}. Motor: ${Motor nameplate: kW or HP, volts, FLA, rpm}. Load: ${Driven load:conveyor}. When it happens: ${When it trips:on start, at full speed, on stop, random}.
+
+1. Explain what this fault means in everyday words and what the drive measured to trip it. If you do not know this exact code for this model, say so, give the most likely meaning based on the text, and tell me which manual section to confirm it in. Do not invent parameter numbers.
+2. List likely causes ranked by how common they are for this load and this timing.
+3. Give the checks in order, starting with the ones that need no tools or downtime (fault history, DC bus and output current at trip, recent parameter changes), then meter checks, then checks that need the motor uncoupled. For each: what to check, how, and what reading points to which cause.
+4. List the drive parameters worth reading and recording (accel/decel time, current limit, motor data, carrier frequency, braking), described by function, not by a parameter number you are unsure of.
+5. Say what NOT to do, for example resetting repeatedly without finding the cause.
+
+Give the checks as a table: Step | Check | How | Reading that points to a cause.",FALSE,TEXT,Markus864
