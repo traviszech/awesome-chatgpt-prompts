@@ -212046,3 +212046,16 @@ A mid-century modern travel poster illustration of a Norwegian fjord with a smal
 
 </details>
 
+<details>
+<summary><strong>Claymation Diorama of a Tiny Ramen Stall on a Rainy Night</strong></summary>
+
+## Claymation Diorama of a Tiny Ramen Stall on a Rainy Night
+
+Contributed by [@f](https://github.com/f)
+
+```md
+A cozy claymation stop-motion diorama of a tiny ramen stall on a rainy night, in a square 1:1 frame, everything sculpted from plasticine with visible fingerprints and soft handmade textures. A small wooden street stall stands in the center-left with a roof of chunky dark grey clay tiles and a red fabric awning glistening with raindrops along its scalloped edge. Behind the wooden counter, a smiling clay chef with rosy cheeks, short dark hair, a white headband, and a white cook's jacket ladles broth into a large orange bowl of noodles, with a soft curl of steam rising beside him. Two round little clay customers sit with their backs to us on wooden stools at the counter, one in a green hooded jacket and one in a puffy yellow jacket, with an empty stool on the left. A glowing orange paper lantern hangs from the right corner of the awning, a small warm lamp lights the inside of the stall, and a little window on the stall's left side glows amber. On the left stands a terracotta pot with a green leafy plant; on the right a small brown clay bicycle with a woven front basket is parked by clumps of green moss. The wet, muddy clay ground in the foreground is full of puddles reflecting the orange lantern and lamp light. Thin streaks of rain fall against a dark blue night with soft dark green bushes behind. Warm orange light against cool blue darkness, shallow depth of field, miniature tilt-shift feel, charming and heartwarming mood. No readable text, no signs, no logos.
+```
+
+</details>
+
