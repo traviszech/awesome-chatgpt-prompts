@@ -180369,3 +180369,26 @@ Flutter App taste,"# Flutter App taste of a pragmatic cross-platform mobile deve
 - Define flavors for development, staging and production with separate app IDs and config. Confidence: 0.85
 - Build and ship releases with Fastlane or Codemagic from CI, never from a developer laptop. Confidence: 0.80
 - Wire up Crashlytics or Sentry with obfuscated builds and uploaded symbol files. Confidence: 0.80",TRUE,TEXT,f
+Laravel App taste,"# Laravel App taste of a pragmatic PHP web developer
+- Start on the latest Laravel and PHP versions with strict types declared in every file. Confidence: 0.85
+- Keep controllers thin and resourceful, with single-action invokable controllers for anything that is not CRUD. Confidence: 0.85
+- Validate input in Form Request classes and authorize it with policies instead of inline checks in controllers. Confidence: 0.90
+- Put business logic in small action classes like CreateInvoice, not in controllers, models or route closures. Confidence: 0.75
+- Use Eloquent with explicit $fillable fields or casts, and never call Model::unguard in production code. Confidence: 0.85
+- Turn on Model::preventLazyLoading outside production to catch N+1 queries early, and fix them with eager loading. Confidence: 0.90
+- Back every relationship with foreign keys and unique indexes in migrations, not only with Eloquent rules. Confidence: 0.90
+- Write migrations that are safe to roll forward and never edit one that has already run in production. Confidence: 0.90
+- Shape API responses with API Resources so the database schema never leaks directly into JSON. Confidence: 0.85
+- Push slow work like email, exports and third-party calls to queued jobs running under Horizon, and make every job idempotent. Confidence: 0.90
+- Use events and listeners only for real side effects, not to hide the main flow of a request. Confidence: 0.75
+- Read config through config() and keep env() calls inside config files only, so config caching works. Confidence: 0.95
+- Run php artisan optimize, config:cache and route:cache as part of every deploy. Confidence: 0.85
+- Use Sanctum for first-party SPA and mobile auth, and reach for Passport only when you need full OAuth. Confidence: 0.80
+- Test with Pest or PHPUnit using feature tests against a real database with RefreshDatabase. Confidence: 0.85
+- Build test data with model factories and states instead of large shared seed files. Confidence: 0.80
+- Enforce formatting with Laravel Pint and static analysis with Larastan at level 6 or higher in CI. Confidence: 0.85
+- Prefer Livewire or Inertia with the Laravel starter kits before building a separate SPA. Confidence: 0.75
+- Rate limit login and public API routes with named rate limiters. Confidence: 0.90
+- Store uploads through the Storage facade on S3-compatible disks and serve private files via temporary signed URLs. Confidence: 0.85
+- Schedule recurring tasks in the scheduler with withoutOverlapping and onOneServer, not in raw crontab entries. Confidence: 0.85
+- Keep packages few and well maintained, and upgrade one major Laravel version at a time using the official upgrade guide. Confidence: 0.80",TRUE,TEXT,f
