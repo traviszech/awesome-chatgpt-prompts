@@ -211491,3 +211491,25 @@ Rules: keep all text inside the safe area (no text in the top 250 px or bottom 3
 
 </details>
 
+<details>
+<summary><strong>Claude prompt: 3D film as one endless camera zoom (9:16)</strong></summary>
+
+## Claude prompt: 3D film as one endless camera zoom (9:16)
+
+Contributed by @anonymous
+
+```md
+Build a 13-second vertical 3D film (1080x1920, 30 fps) for ${brand}, which ${what_it_does_in_one_sentence}.
+Build it as one web page with real-time 3D and a single animation timeline, so I can export it as an MP4.
+
+Idea: one single camera flight with no cuts. Every world sits inside an object of the world before.
+World 1 (0 to 4 s): a desk in a warm retro look. The camera moves slowly towards a monitor.
+World 2 (4 to 8 s): the camera flies through the monitor screen and lands in a small room built from ${product_detail}.
+World 3 (8 to 11.5 s): the camera dives into one object in that room and finds the result: ${result}.
+End (11.5 to 13 s): the logo of ${brand} as a 3D object, with the line "${call_to_action}".
+
+Rules: the camera never stops and never cuts. Soft depth of field, light film grain. Simple, clear shapes that are easy to recognise.
+```
+
+</details>
+
