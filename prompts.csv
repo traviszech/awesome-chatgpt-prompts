@@ -180324,3 +180324,25 @@ def main(argv=None):
 
 if __name__ == ""__main__"":
     sys.exit(main())",FALSE,TEXT,f
+Webhook Integration taste,"# Webhook Integration taste of a reliability-focused integrations engineer
+- Verify every incoming webhook with an HMAC signature over the raw request body before parsing it as JSON. Confidence: 0.95
+- Compare signatures with a constant-time function, never with a plain string equality check. Confidence: 0.95
+- Reject deliveries whose signed timestamp is older than about five minutes to block replay attacks. Confidence: 0.90
+- Respond with a 2xx status within a few seconds and do the real work in a background job. Confidence: 0.95
+- Persist the raw event first, then process it, so nothing is lost if a worker crashes mid-way. Confidence: 0.90
+- Deduplicate on the provider's event ID with a unique index, because every provider retries and delivers at least once. Confidence: 0.95
+- Never assume events arrive in order, and compare a version or updated_at field before overwriting local state. Confidence: 0.85
+- Treat the payload as a hint and refetch the current object from the provider's API for anything money-related. Confidence: 0.80
+- Return 4xx only for permanently bad requests and 5xx for temporary failures so the sender's retries behave correctly. Confidence: 0.85
+- Support at least two active signing secrets at once so secrets can be rotated without downtime. Confidence: 0.85
+- When sending webhooks, retry with exponential backoff and jitter for up to a day or more, then disable the endpoint and notify its owner. Confidence: 0.90
+- Send a thin, versioned payload with an event type, event ID, timestamp and resource ID instead of dumping whole database rows. Confidence: 0.80
+- Name event types as resource.action in the past tense, like invoice.paid or user.deleted. Confidence: 0.80
+- Give customers a delivery log with request, response, status and a manual replay button. Confidence: 0.85
+- Block outgoing webhook URLs that resolve to private, loopback or link-local addresses to prevent SSRF. Confidence: 0.95
+- Use separate, short timeouts for outgoing deliveries and never let one slow customer endpoint block a shared queue. Confidence: 0.90
+- Require HTTPS for all webhook endpoints outside local development. Confidence: 0.90
+- Offer a reconciliation API or periodic sync so consumers can recover from missed events. Confidence: 0.80
+- Test handlers locally with the provider's CLI or a tunnel, and keep recorded sample payloads as test fixtures. Confidence: 0.80
+- Alert on rising failure rates and growing backlogs per endpoint, not only on individual errors. Confidence: 0.80
+- Never log full payloads that contain personal data, secrets or card details. Confidence: 0.90",TRUE,TEXT,f
