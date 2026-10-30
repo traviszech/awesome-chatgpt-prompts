@@ -179050,3 +179050,630 @@ def main(argv=None):
 
 if __name__ == ""__main__"":
     sys.exit(main())",FALSE,TEXT,f
+Houseplant Watering Schedule Planner,"---
+name: houseplant-watering-schedule-planner
+description: Builds a houseplant watering check calendar from a list of plants with pot size and material, light, drainage and last watering date. Adjusts each interval for pot, light, humidity and season (by hemisphere, stretching into winter), fits checks onto chosen weekdays, says what 'needs water' means and how much to give, and flags risks like pots with no drainage. Includes a stdlib Python planner with .ics export and --self-test.
+---
+
+# Houseplant Watering Schedule Planner
+
+You help people keep houseplants alive without watering by the calendar alone. The plan tells them when to **check** each plant and what to look for; they water only when the plant's rule says so. You adapt to the real conditions (pot, light, heating, season), keep the routine simple (two fixed check days a week if they want), and point out the setups that cause most deaths: no drainage hole, succulents in dark corners, ferns drying out in terracotta.
+
+## Files in this skill
+
+- `scripts/watering_planner.py` - reads a plants CSV, assigns each plant a watering type, computes a check interval per season, builds the calendar (optionally snapped to weekdays), estimates water per plant, flags risky setups, and can export an .ics file (Python 3.8+ standard library only)
+- `references/plant-water-profiles.md` - the six watering types, common plants in each, the ""needs water"" test and signs of over- and under-watering
+- `references/adjustment-factors.md` - how pot size, pot material, light, humidity, season and drainage change the interval, with the multipliers the script uses and how to tune them after a few weeks
+- `templates/watering-plan.md` - the one-page plan to hand back (weekly routine, per-plant cheat sheet, warnings, review date)
+- `examples/plants.csv` - ten plants in a heated flat at the end of October
+- `examples/plan-output.md` - the real output of the planner for that list
+
+## Workflow
+
+### 1. Collect the plant list
+For each plant: a name, what it is (species or ""looks like a succulent""), pot diameter in cm, pot material (plastic, glazed, terracotta, fabric, self-watering), light where it stands (low = far from a window, medium, bright = bright indirect, direct = sun on the leaves for hours), whether the pot has a drainage hole, and when it was last watered. Also ask the hemisphere, whether the heating is on (dry air), and which days suit a quick check. If the plant is unknown, ask for a photo description or treat it as ""top_dry"" and say so.
+
+### 2. Run the planner
+```
+python3 scripts/watering_planner.py examples/plants.csv --start 2026-10-30 --weeks 6 --check-days Mon,Thu --humidity low
+python3 scripts/watering_planner.py plants.csv --hemisphere south --weeks 8 --ics plants.ics
+python3 scripts/watering_planner.py plants.csv --json
+python3 scripts/watering_planner.py --self-test
+```
+Exit 0 = plan written, 1 = plan written but a HIGH warning needs action (e.g. no drainage), 2 = bad input (unknown material or light, pot size in mm, bad date). Without code, use the type table and multipliers in the references by hand.
+
+### 3. Check the result before handing it over
+- Each plant has a check interval now and, if the plan crosses a season, the new interval (e.g. ""7 d (winter: 9 d)"").
+- Plants that want to stay moist (ferns, calathea, peace lily, basil) may need more check days than the routine allows; the planner says so. Suggest a third check day, a plastic pot, or self-watering only for these.
+- ""Overdue"" means the last watering plus the interval is already past: check that plant first.
+- Read the warnings and turn HIGH ones into the first action of the plan.
+
+### 4. Deliver
+Fill `templates/watering-plan.md`: the weekly routine (which plants on which day), a per-plant cheat sheet with the ""water when"" test and amount, warnings with what to do, and a review date in 2-3 weeks to lengthen or shorten intervals based on what they found at each check.
+
+## Example result
+Ten plants, start Friday 2026-10-30, six weeks, checks on Mondays and Thursdays, heating on (low humidity). Ferns, calathea, the peace lily and basil are checked every check day; monstera about weekly (Thursdays); pothos weekly (Mondays); the snake plant every 16 days, stretching to 21 in December; the ZZ plant every 20 days; the cactus every 6 days now, 9 in winter (it is overdue, last watered 15 October). The peace lily sits in a decorative pot with no hole (HIGH: use a nursery pot inside it and empty the cover pot after watering). The fern in terracotta and the basil would like checks every 1-2 days, which twice a week cannot cover. See `examples/plan-output.md`.
+
+## Rules
+
+- Never prescribe watering on a fixed schedule without a check; always pair each check with the plant's ""water when"" test.
+- Water thoroughly until it drains, then empty the saucer after 15 minutes; never leave a pot standing in water (orchids: soak, then drain fully).
+- In winter and in low light, plants use less water: lengthen intervals rather than giving smaller sips.
+- Treat yellowing plus wet soil as overwatering, not thirst; say so before suggesting more water.
+- Do not guess a species from a vague name; ask or state the type you assumed.
+- Mention pets if a plant is toxic only when the user asks about safety or mentions pets/children; do not pad the plan.
+FILE:references/plant-water-profiles.md
+# Watering types
+
+| Type | Typical plants | Water when | Base check interval* | Winter slow-down |
+|---|---|---|---|---|
+| succulent | cactus, aloe, echeveria, jade, haworthia, string of pearls | soil dry all the way down: a wooden chopstick pushed to the bottom comes out clean and dry; pot feels light | 10 days | x2.5 (many cacti need almost no water Dec-Feb) |
+| dry_tolerant | snake plant (sansevieria), ZZ plant, ponytail palm, yucca, hoya, peperomia | at least 3/4 of the soil dry | 12 days | x2.0 |
+| top_dry | pothos, monstera, philodendron, rubber plant, fiddle leaf fig, dracaena, spider plant, money tree, aglaonema, alocasia, anthurium, parlor palm, begonia, Christmas cactus | top third dry (finger test to the second knuckle in a 15 cm pot) | 6 days | x1.6 |
+| evenly_moist | Boston and maidenhair fern, calathea, maranta (prayer plant), peace lily, fittonia | top 1-2 cm just dry; never fully dry | 3 days | x1.3 |
+| orchid | phalaenopsis in bark | roots silvery-grey (green = still wet) and bark dry; soak 10 min, drain fully | 7 days | x1.4 |
+| herb | basil, mint, parsley on a windowsill | top 1-2 cm dry | 2 days | x1.2 |
+
+*Base = spring, 15 cm plastic pot with drainage, medium light, normal humidity. Autumn is halfway between spring and winter; summer is x0.85. See `adjustment-factors.md`.
+
+## How to check (30 seconds per plant)
+1. **Finger test:** push a finger into the soil to the depth in the rule. Dry and crumbly = dry; cool and sticking = moist.
+2. **Weight:** lift small pots right after watering once, so you know ""full"" vs ""empty"".
+3. **Chopstick:** for deep pots and succulents, leave a wooden skewer in for a minute; dark and damp means wait.
+4. **Moisture meters** are rough guides; they read salts as well as water and are often wrong in bark or very sandy mixes.
+
+## Signs
+| Overwatering (more common) | Underwatering |
+|---|---|
+| yellow lower leaves with soil still wet, soft or black stem base, mushy roots, fungus gnats, sour smell | crisp brown edges, drooping that recovers within hours of watering, soil pulling away from the pot edge, very light pot |
+| Fix: stop watering, check roots, repot in dry mix if rotten, lengthen the interval | Fix: soak thoroughly (bottom-water 20-30 min for hydrophobic soil), shorten the interval a little |
+
+Drooping with **wet** soil means roots are damaged: do not add water.
+
+## Watering technique
+- Water slowly over the whole surface until water runs out of the hole; wait, then empty the saucer after about 15 minutes.
+- Room-temperature water. Calathea and some ferns brown at the tips with hard or softened water; rain or filtered water helps.
+- Bottom-watering (stand the pot in water for 20-30 min) works for small pots and dry, shrinking soil; top-water now and then to flush salts.
+- Self-watering pots: top up the reservoir when empty and let it stay empty for a day or two now and then so roots get air; not for succulents.
+FILE:references/adjustment-factors.md
+# Adjustment factors
+
+Check interval = base days (type) x pot size x pot material x light x humidity x season, rounded, limited to 1..45 days. These are the multipliers in `scripts/watering_planner.py`.
+
+| Factor | Value | Multiplier | Why |
+|---|---|---|---|
+| Pot diameter | under 10 cm | 0.6 | little soil, dries in days |
+| | 10-13 cm | 0.8 | |
+| | 14-19 cm | 1.0 | reference |
+| | 20-27 cm | 1.3 | more soil holds water longer |
+| | 28 cm and up | 1.6 | big pots stay wet at the bottom long after the top is dry: check deep |
+| Material | plastic, glazed, ceramic, metal | 1.0 | walls do not breathe |
+| | terracotta / unglazed clay | 0.75 | walls wick and evaporate water |
+| | fabric grow bag | 0.7 | dries from all sides |
+| | self-watering | 1.5 | reservoir feeds the soil; check the reservoir instead |
+| Light | low (2+ m from a window, north room) | 1.4 | little growth, little use |
+| | medium | 1.0 | |
+| | bright indirect | 0.85 | |
+| | direct sun on the leaves | 0.7 | |
+| Humidity | low (heating on, below ~35 %) | 0.85 | soil and leaves lose water faster |
+| | normal | 1.0 | |
+| | high (bathroom, humidifier) | 1.15 | |
+| Season | spring | 1.0 | |
+| | summer | 0.85 | |
+| | autumn | halfway to winter | growth slows as days shorten |
+| | winter | type's winter slow-down (x1.2 to x2.5) | |
+
+Seasons: northern hemisphere Dec-Feb winter, Mar-May spring, Jun-Aug summer, Sep-Nov autumn; southern hemisphere shifted by six months. Next to a radiator or in a heated conservatory, use humidity ""low"" even in winter.
+
+## Drainage
+No hole is the single biggest cause of root rot. Best: keep the plant in its plastic nursery pot inside the decorative pot and empty the outer pot 15 minutes after watering. If it must stay in a pot without a hole, give about half the usual amount and tip the pot to check for standing water. The planner flags this as HIGH.
+
+## Amount
+About 15-25 % of the pot volume, until water drains out of the hole. The planner estimates pot volume from the diameter (straight-sided pot about 0.9x as tall as wide), so a 15 cm pot gets about 450 ml, a 24 cm pot about 1.75 l. Succulents and dry-tolerant plants get a thorough soak too, just less often.
+
+## Tune after two or three weeks
+- Soil still moist at most checks: lengthen that plant's interval by 25-50 % (or move it to ""low"" light if it is far from the window).
+- Soil bone-dry at every check and the plant droops: shorten by 25 %.
+- Write the changes into the CSV (e.g. switch the type or light) and re-run, rather than remembering exceptions.
+- Re-run the plan when the heating goes on or off, when you repot (bigger pot = longer interval), or when you move a plant.
+
+## Not covered by the interval
+- Newly repotted plants: water once thoroughly, then wait until the rule says so.
+- Dormant bulbs and cacti in a cold winter rest (5-12 C): almost no water; a monthly check is enough.
+- Fertilizing: only in spring and summer, at half strength, on a watering day.
+FILE:templates/watering-plan.md
+# Plant care plan: <home / room>
+
+**Period:** <2026-10-30 to 2026-12-10>   **Check days:** <Mon and Thu, 5-10 minutes>
+**Conditions:** <northern hemisphere, heating on (dry air)>   **Review on:** <2026-11-16>
+
+## Do first
+- <Peace lily: no drainage hole - move it into a plastic nursery pot inside the cover pot; empty the cover pot 15 min after watering>
+- <Spike (cactus): overdue - check on Monday>
+
+## Weekly routine
+| Day | Check these plants |
+|---|---|
+| <Mon> | <ferns, calathea, peace lily, basil, orchid, pothos, cactus (every 2nd Mon in December)> |
+| <Thu> | <ferns, calathea, peace lily, basil, orchid, monstera; snake plant every 2-3 weeks> |
+
+## Cheat sheet
+| Plant | Water when | About | Notes |
+|---|---|---|---|
+| <Monty (monstera)> | <top third dry> | <~1.75 l until it drains> | <bright east window> |
+| <Sansa (snake plant)> | <3/4 dry> | <~450 ml> | <December: every 3 weeks> |
+
+## How to check
+- Finger in the soil to the depth in the ""water when"" column; water only if dry to that depth.
+- Water until it drains, empty the saucer after 15 minutes.
+- Wet soil + yellow leaves = too much water: skip and tell me.
+
+## Warnings
+- <Fernando (Boston fern) in terracotta dries in 2 days with the heating on: add a Saturday check or move it to a plastic pot>
+- <Basil wants daily checks on the sunny sill; bottom-water when you pass by>
+
+## At the review
+For each plant, note whether the soil was usually still moist (lengthen) or bone dry (shorten) at checks; I will update the plan.
+FILE:examples/plants.csv
+name,plant,pot_cm,pot_material,light,drainage,last_watered,notes
+Monty,monstera,24,plastic,bright,yes,2026-10-28,living room by the east window
+Pothos shelf,pothos,14,glazed,medium,yes,2026-10-27,trailing from the bookshelf
+Sansa,snake plant,17,terracotta,low,yes,2026-10-20,hallway corner
+Zed,zz plant,20,plastic,medium,yes,,new from the shop
+Fernando,boston fern,20,terracotta,bright,yes,2026-10-29,bathroom shelf
+Cal,calathea,15,plastic,medium,yes,2026-10-28,bedroom
+Spike,cactus,10,terracotta,direct,yes,2026-10-15,south windowsill
+Peace lily,peace lily,18,glazed,low,no,2026-10-26,decorative pot with no hole
+Orchid,phalaenopsis,12,plastic,bright,yes,2026-10-25,kitchen window
+Basil,basil,13,terracotta,direct,yes,2026-10-29,kitchen windowsill
+FILE:examples/plan-output.md
+# Houseplant watering plan: 2026-10-30 to 2026-12-10
+
+Hemisphere: north   Season at start: autumn   Humidity: low   Check days: Mon, Thu   Plants: 10
+
+A check is not a watering: feel the soil and water only when the rule says so.
+
+## Plants
+
+| Plant | Type | Pot | Light | Check every | Water when | About | Checks |
+|---|---|---|---|---|---|---|---|
+| Monty (monstera) | top_dry | 24 cm plastic | bright | 7 d (winter: 9 d) | top third of the soil dry (about 3-5 cm in a 15 cm pot) | ~1750 ml (until it drains) | 6 |
+| Pothos shelf (pothos) | top_dry | 14 cm glazed | medium | 7 d (winter: 8 d) | top third of the soil dry (about 3-5 cm in a 15 cm pot) | ~350 ml (until it drains) | 6 |
+| Sansa (snake plant) | dry_tolerant | 17 cm terracotta | low | 16 d (winter: 21 d) | soil dry at least 3/4 of the way down | ~450 ml (until it drains) | 3 |
+| Zed (zz plant) | dry_tolerant | 20 cm plastic | medium | 20 d | soil dry at least 3/4 of the way down | ~750 ml (until it drains) | 2 |
+| Fernando (boston fern) | evenly_moist | 20 cm terracotta | bright | 2 d (winter: 3 d) | top 1-2 cm just dry; never let it dry out fully | ~1000 ml (until it drains) | 12 |
+| Cal (calathea) | evenly_moist | 15 cm plastic | medium | 3 d (winter: 3 d) | top 1-2 cm just dry; never let it dry out fully | ~450 ml (until it drains) | 12 |
+| Spike (cactus) (overdue: check first day) | succulent | 10 cm terracotta | direct | 6 d (winter: 9 d) | soil dry all the way down (chopstick comes out clean and dry) | ~100 ml (until it drains) | 6 |
+| Peace lily (peace lily) | evenly_moist | 18 cm glazed, NO hole | low | 4 d (winter: 5 d) | top 1-2 cm just dry; never let it dry out fully | ~375 ml, no more | 12 |
+| Orchid (phalaenopsis) | orchid | 12 cm plastic | bright | 5 d (winter: 6 d) | roots silvery-grey and bark dry; soak 10 min, drain fully | soak 10 min | 11 |
+| Basil (basil) | herb | 13 cm terracotta | direct | 1 d (winter: 1 d) | top 1-2 cm dry | ~350 ml (until it drains) | 12 |
+
+## Calendar
+
+| Date | Day | Season | Check |
+|---|---|---|---|
+| 2026-11-02 | Mon | autumn | Basil, Cal, Fernando, Orchid, Peace lily, Pothos shelf, Spike, Zed |
+| 2026-11-05 | Thu | autumn | Basil, Cal, Fernando, Monty, Orchid, Peace lily, Sansa |
+| 2026-11-09 | Mon | autumn | Basil, Cal, Fernando, Orchid, Peace lily, Pothos shelf, Spike |
+| 2026-11-12 | Thu | autumn | Basil, Cal, Fernando, Monty, Orchid, Peace lily |
+| 2026-11-16 | Mon | autumn | Basil, Cal, Fernando, Orchid, Peace lily, Pothos shelf, Spike |
+| 2026-11-19 | Thu | autumn | Basil, Cal, Fernando, Monty, Orchid, Peace lily, Sansa |
+| 2026-11-23 | Mon | autumn | Basil, Cal, Fernando, Orchid, Peace lily, Pothos shelf, Spike, Zed |
+| 2026-11-26 | Thu | autumn | Basil, Cal, Fernando, Monty, Orchid, Peace lily |
+| 2026-11-30 | Mon | autumn | Basil, Cal, Fernando, Orchid, Peace lily, Pothos shelf, Spike |
+| 2026-12-03 | Thu | winter | Basil, Cal, Fernando, Monty, Orchid, Peace lily, Sansa |
+| 2026-12-07 | Mon | winter | Basil, Cal, Fernando, Peace lily, Pothos shelf, Spike |
+| 2026-12-10 | Thu | winter | Basil, Cal, Fernando, Monty, Orchid, Peace lily |
+
+## Warnings
+
+| Sev | Plant | Note |
+|---|---|---|
+| HIGH | Peace lily | pot has no drainage hole: water pools at the bottom and roots rot. Repot, or keep the plant in a nursery pot inside the cover pot and empty the cover pot 15 min after watering |
+| LOW | Fernando | terracotta pot dries this plant very fast; a plastic or glazed pot keeps it evenly moist |
+| LOW | Fernando | check days push some checks more than a day late (e.g. due 2026-11-07, planned 2026-11-09); add a check day or feel the soil in between |
+| LOW | Basil | check days push some checks more than a day late (e.g. due 2026-11-03, planned 2026-11-05); add a check day or feel the soil in between |
+
+Intervals assume the plant is established in a free-draining mix. After 2-3 weeks, lengthen an interval if the soil is still moist at most checks, shorten it if it is always bone dry.
+FILE:scripts/watering_planner.py
+#!/usr/bin/env python3
+""""""Houseplant watering schedule planner (Python 3.8+ standard library only).
+
+Reads a CSV of plants (species or watering type, pot diameter, pot material, light,
+drainage, optional last watering date) and builds a check calendar: how often to
+check each plant in the current season, what ""needs water"" means for it, roughly how
+much to give, and which plants to check on which date. Intervals stretch
+automatically as the plan crosses into autumn and winter (or shrink into summer), by
+hemisphere. Checks can be snapped to fixed weekdays (e.g. Mon,Thu) so the plan fits a
+routine. Optional .ics export for a calendar app.
+
+A check is not a watering: on each check, feel the soil and water only if the plant's
+rule says so. The intervals are starting points; adjust them after two or three weeks
+of real checks (see references/adjustment-factors.md).
+
+Usage:
+  python3 watering_planner.py plants.csv [--start 2026-10-30] [--weeks 4]
+        [--hemisphere north|south] [--humidity low|normal|high]
+        [--check-days Mon,Thu] [--ics plan.ics] [--json]
+  python3 watering_planner.py --self-test
+plants.csv columns: name, plant (species or type), pot_cm, pot_material
+(plastic|glazed|ceramic|terracotta|fabric|self-watering), light (low|medium|bright|direct),
+drainage (yes|no), last_watered (YYYY-MM-DD, optional), notes (optional).
+Types: succulent, dry_tolerant, top_dry, evenly_moist, orchid, herb.
+Exit codes: 0 = plan written, 1 = plan written with HIGH warnings (e.g. no drainage), 2 = bad input.
+""""""
+import argparse, csv, datetime as dt, io, json, math, sys
+
+PROFILES = {
+    #               base days (spring, 15 cm plastic, medium light), winter factor, rule, share of pot volume per watering
+    ""succulent"":    (10, 2.5, ""soil dry all the way down (chopstick comes out clean and dry)"", 0.15),
+    ""dry_tolerant"": (12, 2.0, ""soil dry at least 3/4 of the way down"", 0.15),
+    ""top_dry"":      (6, 1.6, ""top third of the soil dry (about 3-5 cm in a 15 cm pot)"", 0.20),
+    ""evenly_moist"": (3, 1.3, ""top 1-2 cm just dry; never let it dry out fully"", 0.20),
+    ""orchid"":       (7, 1.4, ""roots silvery-grey and bark dry; soak 10 min, drain fully"", 0.0),
+    ""herb"":         (2, 1.2, ""top 1-2 cm dry"", 0.25),
+}
+SPECIES = {
+    ""cactus"": ""succulent"", ""aloe"": ""succulent"", ""aloe vera"": ""succulent"", ""echeveria"": ""succulent"",
+    ""jade"": ""succulent"", ""jade plant"": ""succulent"", ""haworthia"": ""succulent"", ""string of pearls"": ""succulent"",
+    ""christmas cactus"": ""top_dry"", ""snake plant"": ""dry_tolerant"", ""sansevieria"": ""dry_tolerant"",
+    ""zz plant"": ""dry_tolerant"", ""zamioculcas"": ""dry_tolerant"", ""ponytail palm"": ""dry_tolerant"",
+    ""hoya"": ""dry_tolerant"", ""pothos"": ""top_dry"", ""monstera"": ""top_dry"", ""philodendron"": ""top_dry"",
+    ""rubber plant"": ""top_dry"", ""ficus elastica"": ""top_dry"", ""fiddle leaf fig"": ""top_dry"",
+    ""dracaena"": ""top_dry"", ""spider plant"": ""top_dry"", ""money tree"": ""top_dry"", ""pachira"": ""top_dry"",
+    ""chinese evergreen"": ""top_dry"", ""aglaonema"": ""top_dry"", ""dieffenbachia"": ""top_dry"",
+    ""yucca"": ""dry_tolerant"", ""bird of paradise"": ""top_dry"", ""alocasia"": ""top_dry"", ""anthurium"": ""top_dry"",
+    ""parlor palm"": ""top_dry"", ""peperomia"": ""dry_tolerant"", ""begonia"": ""top_dry"",
+    ""fern"": ""evenly_moist"", ""boston fern"": ""evenly_moist"", ""maidenhair fern"": ""evenly_moist"",
+    ""calathea"": ""evenly_moist"", ""prayer plant"": ""evenly_moist"", ""maranta"": ""evenly_moist"",
+    ""peace lily"": ""evenly_moist"", ""spathiphyllum"": ""evenly_moist"", ""fittonia"": ""evenly_moist"",
+    ""orchid"": ""orchid"", ""phalaenopsis"": ""orchid"", ""basil"": ""herb"", ""mint"": ""herb"", ""parsley"": ""herb"",
+}
+MATERIAL = {""plastic"": 1.0, ""glazed"": 1.0, ""ceramic"": 1.0, ""metal"": 1.0, ""terracotta"": 0.75,
+            ""clay"": 0.75, ""unglazed"": 0.75, ""fabric"": 0.7, ""self-watering"": 1.5}
+LIGHT = {""low"": 1.4, ""medium"": 1.0, ""bright"": 0.85, ""direct"": 0.7}
+HUMIDITY = {""low"": 0.85, ""normal"": 1.0, ""high"": 1.15}
+SEASON_FACTOR = {""spring"": 1.0, ""summer"": 0.85}
+DAY_NAMES = [""Mon"", ""Tue"", ""Wed"", ""Thu"", ""Fri"", ""Sat"", ""Sun""]
+
+
+class InputError(Exception):
+    pass
+
+
+def season_of(d, hemisphere):
+    m = d.month if hemisphere == ""north"" else (d.month + 5) % 12 + 1
+    return {12: ""winter"", 1: ""winter"", 2: ""winter"", 3: ""spring"", 4: ""spring"", 5: ""spring"",
+            6: ""summer"", 7: ""summer"", 8: ""summer""}.get(m, ""autumn"")
+
+
+def pot_factor(cm):
+    if cm < 10:
+        return 0.6
+    if cm < 14:
+        return 0.8
+    if cm < 20:
+        return 1.0
+    if cm < 28:
+        return 1.3
+    return 1.6
+
+
+def pot_litres(cm):
+    # straight-sided pot about 0.9x as tall as wide, minus ~10 % for the rim gap
+    r = cm / 2.0
+    return math.pi * r * r * (0.9 * cm) * 0.9 / 1000.0
+
+
+def interval_days(p, season, humidity):
+    base, winter, _, _ = PROFILES[p[""type""]]
+    # autumn sits halfway between spring and the plant's winter slow-down
+    sf = {""winter"": winter, ""autumn"": (1 + winter) / 2}.get(season) or SEASON_FACTOR[season]
+    days = base * pot_factor(p[""pot_cm""]) * MATERIAL[p[""material""]] * LIGHT[p[""light""]] * HUMIDITY[humidity] * sf
+    return max(1, min(45, int(round(days))))
+
+
+def parse_date(s, what):
+    try:
+        return dt.date.fromisoformat(s.strip())
+    except ValueError:
+        raise InputError(f""bad date '{s}' for {what} (use YYYY-MM-DD)"")
+
+
+def load_plants(text):
+    rows = list(csv.DictReader(io.StringIO(text)))
+    if not rows:
+        raise InputError(""plants CSV has no rows"")
+    cols = {c.strip().lower(): c for c in rows[0] if c}
+    if ""name"" not in cols:
+        raise InputError(""plants CSV needs at least a 'name' column (plus plant, pot_cm, pot_material, light, drainage)"")
+    plants, warnings = [], []
+    for i, r in enumerate(rows, 2):
+        g = lambda k, d="""": ((r.get(cols[k]) or """").strip() if k in cols else """") or d
+        name = g(""name"")
+        if not name:
+            raise InputError(f""row {i}: empty name"")
+        kind = g(""plant"", g(""type"", """")).lower()
+        if kind in PROFILES:
+            ptype = kind
+        elif kind in SPECIES:
+            ptype = SPECIES[kind]
+        else:
+            ptype = next((v for k, v in SPECIES.items() if k in kind), None) if kind else None
+            if ptype is None:
+                ptype = ""top_dry""
+                warnings.append((""MEDIUM"", name, f""unknown plant '{kind or '?'}': using type top_dry; set the plant column to one of {', '.join(PROFILES)}""))
+        try:
+            pot = float(g(""pot_cm"", ""0"") or 0)
+        except ValueError:
+            raise InputError(f""row {i} ({name}): pot_cm must be a number of centimetres"")
+        if pot <= 0:
+            pot = 15.0
+            warnings.append((""LOW"", name, ""no pot size given: assumed 15 cm""))
+        if pot > 80:
+            raise InputError(f""row {i} ({name}): pot_cm {pot} looks wrong (centimetres, not millimetres?)"")
+        mat = g(""pot_material"", ""plastic"").lower()
+        if mat not in MATERIAL:
+            raise InputError(f""row {i} ({name}): pot_material '{mat}' (use {', '.join(MATERIAL)})"")
+        light = g(""light"", ""medium"").lower().replace(""bright indirect"", ""bright"").replace(""full sun"", ""direct"")
+        if light not in LIGHT:
+            raise InputError(f""row {i} ({name}): light '{light}' (use low, medium, bright, direct)"")
+        drainage = g(""drainage"", ""yes"").lower() not in (""no"", ""n"", ""false"", ""0"")
+        last = parse_date(g(""last_watered""), f""{name} last_watered"") if g(""last_watered"") else None
+        p = {""name"": name, ""plant"": kind or ptype, ""type"": ptype, ""pot_cm"": pot, ""material"": mat,
+             ""light"": light, ""drainage"": drainage, ""last_watered"": last, ""notes"": g(""notes"")}
+        plants.append(p)
+        if not drainage:
+            warnings.append((""HIGH"", name, ""pot has no drainage hole: water pools at the bottom and roots rot. Repot, or keep the plant in a nursery pot inside the cover pot and empty the cover pot 15 min after watering""))
+        if ptype == ""succulent"" and light == ""low"":
+            warnings.append((""MEDIUM"", name, ""succulent in low light: it will stretch and rot easily; move it to the brightest window and water even less""))
+        if ptype == ""evenly_moist"" and light == ""direct"":
+            warnings.append((""MEDIUM"", name, ""moisture-loving plant in direct sun: leaves scorch and soil dries within a day; move it out of direct sun""))
+        if ptype == ""evenly_moist"" and mat in (""terracotta"", ""clay"", ""unglazed"", ""fabric""):
+            warnings.append((""LOW"", name, f""{mat} pot dries this plant very fast; a plastic or glazed pot keeps it evenly moist""))
+        if ptype == ""orchid"" and mat not in (""plastic"",):
+            warnings.append((""LOW"", name, ""orchids are easiest in a clear plastic pot with drainage, so you can see the roots""))
+        if mat == ""self-watering"" and ptype in (""succulent"", ""dry_tolerant"", ""orchid""):
+            warnings.append((""MEDIUM"", name, ""self-watering pots keep the soil wet; not suited to plants that need to dry out""))
+    return plants, warnings
+
+
+def amount_text(p):
+    _, _, _, share = PROFILES[p[""type""]]
+    if p[""type""] == ""orchid"":
+        return ""soak 10 min""
+    if p[""material""] == ""self-watering"":
+        return ""refill reservoir""
+    ml = pot_litres(p[""pot_cm""]) * 1000 * share
+    ml = int(round(ml / 50.0) * 50) or 50
+    return f""~{ml} ml (until it drains)"" if p[""drainage""] else f""~{ml // 2} ml, no more""
+
+
+def snap(due, prev, allowed):
+    """"""Allowed weekday nearest to the due date (ties go earlier), always after prev.""""""
+    if not allowed:
+        return due
+    best = None
+    for off in (0, -1, 1, -2, 2, -3, 3):
+        d = due + dt.timedelta(days=off)
+        if d > prev and d.weekday() in allowed:
+            best = d
+            break
+    if best is None:
+        best = max(due, prev + dt.timedelta(days=1))
+        while best.weekday() not in allowed:
+            best += dt.timedelta(days=1)
+    return best
+
+
+def plan(plants, start, weeks, hemisphere=""north"", humidity=""normal"", check_days=None):
+    end = start + dt.timedelta(days=7 * weeks - 1)
+    allowed = {DAY_NAMES.index(x) for x in check_days} if check_days else set()
+    cal, per_plant, notes = {}, [], []
+    for p in plants:
+        s0 = season_of(start, hemisphere)
+        iv = interval_days(p, s0, humidity)
+        if p[""last_watered""]:
+            due = p[""last_watered""] + dt.timedelta(days=iv)
+            overdue = due < start
+            first = max(due, start)
+        else:
+            overdue, first = False, start
+        d = snap(first, start - dt.timedelta(days=1), allowed) if allowed else first
+        dates, prev = [], None
+        while d <= end:
+            dates.append(d)
+            cal.setdefault(d, []).append(p[""name""])
+            step = interval_days(p, season_of(d, hemisphere), humidity)
+            due = d + dt.timedelta(days=step)
+            nd = snap(due, d, allowed)
+            if allowed and (nd - due).days > max(1, step // 5):
+                notes.append((p[""name""], due, nd))
+            prev, d = d, nd
+        later = {season_of(x, hemisphere) for x in dates} - {s0}
+        per_plant.append({**p, ""interval_now"": iv, ""season_now"": s0,
+                          ""intervals_later"": {s: interval_days(p, s, humidity) for s in sorted(later)},
+                          ""rule"": PROFILES[p[""type""]][2], ""amount"": amount_text(p),
+                          ""checks"": [x.isoformat() for x in dates], ""overdue"": overdue})
+    return {""start"": start, ""end"": end, ""hemisphere"": hemisphere, ""humidity"": humidity,
+            ""check_days"": check_days or [], ""plants"": per_plant,
+            ""calendar"": [(d, sorted(cal[d], key=str.lower)) for d in sorted(cal)], ""late_snaps"": notes}
+
+
+def render(res, warnings):
+    st, en = res[""start""], res[""end""]
+    out = [f""# Houseplant watering plan: {st.isoformat()} to {en.isoformat()}"", """",
+           f""Hemisphere: {res['hemisphere']}   Season at start: {season_of(st, res['hemisphere'])}   ""
+           f""Humidity: {res['humidity']}   Check days: {', '.join(res['check_days']) or 'any day'}   Plants: {len(res['plants'])}"", """",
+           ""A check is not a watering: feel the soil and water only when the rule says so."", """",
+           ""## Plants"", """",
+           ""| Plant | Type | Pot | Light | Check every | Water when | About | Checks |"",
+           ""|---|---|---|---|---|---|---|---|""]
+    for p in res[""plants""]:
+        iv = f""{p['interval_now']} d""
+        if p[""intervals_later""]:
+            iv += "" ("" + "", "".join(f""{s}: {v} d"" for s, v in p[""intervals_later""].items()) + "")""
+        pot = f""{p['pot_cm']:g} cm {p['material']}"" + ("""" if p[""drainage""] else "", NO hole"")
+        flag = "" (overdue: check first day)"" if p[""overdue""] else """"
+        out.append(f""| {p['name']} ({p['plant']}){flag} | {p['type']} | {pot} | {p['light']} | {iv} | {p['rule']} | {p['amount']} | {len(p['checks'])} |"")
+    out += ["""", ""## Calendar"", """", ""| Date | Day | Season | Check |"", ""|---|---|---|---|""]
+    for d, names in res[""calendar""]:
+        out.append(f""| {d.isoformat()} | {DAY_NAMES[d.weekday()]} | {season_of(d, res['hemisphere'])} | {', '.join(names)} |"")
+    if warnings or res[""late_snaps""]:
+        out += ["""", ""## Warnings"", """", ""| Sev | Plant | Note |"", ""|---|---|---|""]
+        order = {""HIGH"": 0, ""MEDIUM"": 1, ""LOW"": 2}
+        for sev, name, msg in sorted(warnings, key=lambda w: (order[w[0]], w[1].lower())):
+            out.append(f""| {sev} | {name} | {msg} |"")
+        seen = set()
+        for name, due, nd in res[""late_snaps""]:
+            if name in seen:
+                continue
+            seen.add(name)
+            out.append(f""| LOW | {name} | check days push some checks more than a day late (e.g. due {due.isoformat()}, planned {nd.isoformat()}); add a check day or feel the soil in between |"")
+    out += ["""", ""Intervals assume the plant is established in a free-draining mix. After 2-3 weeks, lengthen an interval if the soil is still moist at most checks, shorten it if it is always bone dry.""]
+    return ""\n"".join(out) + ""\n""
+
+
+def to_ics(res, stamp):
+    lines = [""BEGIN:VCALENDAR"", ""VERSION:2.0"", ""PRODID:-//houseplant-watering-schedule-planner//EN"", ""CALSCALE:GREGORIAN""]
+    for d, names in res[""calendar""]:
+        nd = d + dt.timedelta(days=1)
+        lines += [""BEGIN:VEVENT"", f""UID:plants-{d.strftime('%Y%m%d')}@watering-planner"", f""DTSTAMP:{stamp}"",
+                  f""DTSTART;VALUE=DATE:{d.strftime('%Y%m%d')}"", f""DTEND;VALUE=DATE:{nd.strftime('%Y%m%d')}"",
+                  ""SUMMARY:"" + ics_escape(""Check plants: "" + "", "".join(names)), ""TRANSP:TRANSPARENT"", ""END:VEVENT""]
+    lines.append(""END:VCALENDAR"")
+    return ""\r\n"".join(fold(l) for l in lines) + ""\r\n""
+
+
+def ics_escape(s):
+    return s.replace(""\\"", ""\\\\"").replace("";"", ""\\;"").replace("","", ""\\,"").replace(""\n"", ""\\n"")
+
+
+def fold(line):
+    b = line.encode(""utf-8"")
+    if len(b) <= 75:
+        return line
+    parts, cur = [], b""""
+    for ch in line:
+        e = ch.encode(""utf-8"")
+        if len(cur) + len(e) > (75 if not parts else 74):
+            parts.append(cur.decode(""utf-8"")); cur = b""""
+        cur += e
+    parts.append(cur.decode(""utf-8""))
+    return ""\r\n "".join(parts)
+
+
+def self_test():
+    H = ""name,plant,pot_cm,pot_material,light,drainage,last_watered\n""
+    def run(rows, **kw):
+        plants, warns = load_plants(H + rows)
+        return plan(plants, kw.pop(""start"", dt.date(2026, 4, 6)), kw.pop(""weeks"", 4), **kw), warns
+    cases = []
+    def case(name, fn):
+        try:
+            ok = bool(fn())
+            err = """"
+        except Exception as e:  # noqa
+            ok, err = False, repr(e)
+        cases.append((name, ok, err))
+
+    case(""succulent checked less often than fern"", lambda: run(""A,cactus,15,plastic,medium,yes,\nB,fern,15,plastic,medium,yes,\n"")[0][""plants""][0][""interval_now""] > run(""A,cactus,15,plastic,medium,yes,\nB,fern,15,plastic,medium,yes,\n"")[0][""plants""][1][""interval_now""])
+    case(""base interval top_dry 15 cm plastic medium spring = 6"", lambda: run(""A,pothos,15,plastic,medium,yes,\n"")[0][""plants""][0][""interval_now""] == 6)
+    case(""small pot dries faster"", lambda: run(""A,pothos,9,plastic,medium,yes,\n"")[0][""plants""][0][""interval_now""] < 6)
+    case(""big pot lasts longer"", lambda: run(""A,pothos,30,plastic,medium,yes,\n"")[0][""plants""][0][""interval_now""] > 6)
+    case(""terracotta dries faster than plastic"", lambda: run(""A,pothos,15,terracotta,medium,yes,\n"")[0][""plants""][0][""interval_now""] < 6)
+    case(""low light lengthens, direct sun shortens"", lambda: run(""A,pothos,15,plastic,low,yes,\n"")[0][""plants""][0][""interval_now""] > 6 > run(""A,pothos,15,plastic,direct,yes,\n"")[0][""plants""][0][""interval_now""])
+    case(""winter stretches succulent 2.5x"", lambda: run(""A,cactus,15,plastic,medium,yes,\n"", start=dt.date(2026, 1, 5))[0][""plants""][0][""interval_now""] == 25)
+    case(""summer shortens"", lambda: run(""A,pothos,15,plastic,medium,yes,\n"", start=dt.date(2026, 7, 6))[0][""plants""][0][""interval_now""] == 5)
+    case(""southern hemisphere: July is winter"", lambda: season_of(dt.date(2026, 7, 1), ""south"") == ""winter"" and season_of(dt.date(2026, 1, 1), ""south"") == ""summer"")
+    case(""season boundaries north"", lambda: [season_of(dt.date(2026, m, 15), ""north"") for m in (2, 3, 5, 6, 8, 9, 11, 12)] == [""winter"", ""spring"", ""spring"", ""summer"", ""summer"", ""autumn"", ""autumn"", ""winter""])
+    case(""interval grows across autumn->winter in plan"", lambda: (lambda r: r[""plants""][0][""intervals_later""].get(""winter"", 0) > r[""plants""][0][""interval_now""])(run(""A,pothos,15,plastic,medium,yes,\n"", start=dt.date(2026, 11, 16), weeks=4)[0]))
+    case(""checks spaced by interval"", lambda: run(""A,pothos,15,plastic,medium,yes,\n"")[0][""plants""][0][""checks""][:3] == [""2026-04-06"", ""2026-04-12"", ""2026-04-18""])
+    case(""last_watered sets first check"", lambda: run(""A,pothos,15,plastic,medium,yes,2026-04-04\n"")[0][""plants""][0][""checks""][0] == ""2026-04-10"")
+    case(""overdue goes to start"", lambda: (lambda p: p[""overdue""] and p[""checks""][0] == ""2026-04-06"")(run(""A,pothos,15,plastic,medium,yes,2026-03-20\n"")[0][""plants""][0]))
+    case(""snap to check days (Mon,Thu)"", lambda: all(dt.date.fromisoformat(x).weekday() in (0, 3) for x in run(""A,pothos,15,plastic,medium,yes,\nB,cactus,12,terracotta,bright,yes,\n"", check_days=[""Mon"", ""Thu""])[0][""calendar""] and [x for p in run(""A,pothos,15,plastic,medium,yes,\nB,cactus,12,terracotta,bright,yes,\n"", check_days=[""Mon"", ""Thu""])[0][""plants""] for x in p[""checks""]]))
+    case(""snap to nearest check day (Sun -> Mon)"", lambda: snap(dt.date(2026, 4, 12), dt.date(2026, 4, 6), {0, 3}) == dt.date(2026, 4, 13))
+    case(""snap tie goes earlier (Tue between Mon and Thu? no: Tue -> Mon)"", lambda: snap(dt.date(2026, 4, 14), dt.date(2026, 4, 9), {0, 3}) == dt.date(2026, 4, 13))
+    case(""snap never on or before the previous check"", lambda: snap(dt.date(2026, 4, 7), dt.date(2026, 4, 6), {0, 3}) == dt.date(2026, 4, 9))
+    case(""autumn between spring and winter"", lambda: 6 < run(""A,pothos,15,plastic,medium,yes,\n"", start=dt.date(2026, 10, 5))[0][""plants""][0][""interval_now""] < run(""A,pothos,15,plastic,medium,yes,\n"", start=dt.date(2026, 12, 7))[0][""plants""][0][""interval_now""])
+    case(""late snap noted for fast plant"", lambda: len(run(""A,basil,9,terracotta,direct,yes,\n"", check_days=[""Mon""])[0][""late_snaps""]) > 0)
+    case(""no drainage -> HIGH warning and half amount"", lambda: (lambda r: any(w[0] == ""HIGH"" for w in r[1]) and ""no more"" in r[0][""plants""][0][""amount""])(run(""A,pothos,15,glazed,medium,no,\n"")))
+    case(""unknown plant -> top_dry with warning"", lambda: (lambda r: r[0][""plants""][0][""type""] == ""top_dry"" and any(""unknown plant"" in w[2] for w in r[1]))(run(""A,triffid,15,plastic,medium,yes,\n"")))
+    case(""species substring match"", lambda: run(""A,variegated monstera,15,plastic,medium,yes,\n"")[0][""plants""][0][""type""] == ""top_dry"")
+    case(""succulent low light warning"", lambda: any(""stretch"" in w[2] for w in run(""A,echeveria,10,terracotta,low,yes,\n"")[1]))
+    case(""fern in direct sun warning"", lambda: any(""scorch"" in w[2] for w in run(""A,boston fern,20,plastic,direct,yes,\n"")[1]))
+    case(""self-watering succulent warning"", lambda: any(""self-watering"" in w[2] for w in run(""A,cactus,15,self-watering,bright,yes,\n"")[1]))
+    case(""orchid amount is soak"", lambda: run(""A,orchid,12,plastic,bright,yes,\n"")[0][""plants""][0][""amount""] == ""soak 10 min"")
+    case(""amount scales with pot"", lambda: int(run(""A,pothos,25,plastic,medium,yes,\n"")[0][""plants""][0][""amount""][1:].split()[0]) > int(run(""A,pothos,12,plastic,medium,yes,\n"")[0][""plants""][0][""amount""][1:].split()[0]))
+    case(""low humidity shortens"", lambda: run(""A,fern,20,plastic,medium,yes,\n"", humidity=""low"")[0][""plants""][0][""interval_now""] <= run(""A,fern,20,plastic,medium,yes,\n"")[0][""plants""][0][""interval_now""])
+    case(""interval never below 1 day"", lambda: run(""A,basil,6,fabric,direct,yes,\n"", start=dt.date(2026, 7, 6), humidity=""low"")[0][""plants""][0][""interval_now""] >= 1)
+    case(""missing pot size assumed 15"", lambda: (lambda r: r[0][""plants""][0][""pot_cm""] == 15 and any(""assumed 15"" in w[2] for w in r[1]))(run(""A,pothos,,plastic,medium,yes,\n"")))
+    def bad(rows):
+        try:
+            load_plants(H + rows); return False
+        except InputError:
+            return True
+    case(""bad material rejected"", lambda: bad(""A,pothos,15,wood,medium,yes,\n""))
+    case(""bad light rejected"", lambda: bad(""A,pothos,15,plastic,dim,yes,\n""))
+    case(""pot in mm rejected"", lambda: bad(""A,pothos,150,plastic,medium,yes,\n""))
+    case(""bad date rejected"", lambda: bad(""A,pothos,15,plastic,medium,yes,30/10/2026\n""))
+    case(""ics has one event per date, CRLF, escaped commas"", lambda: (lambda r, t: t.count(""BEGIN:VEVENT"") == len(r[""calendar""]) and ""\r\n"" in t and ""\\,"" in t)(*(lambda r: (r, to_ics(r, ""20261030T000000Z"")))(run(""A,pothos,15,plastic,medium,yes,\nB,fern,15,plastic,medium,yes,\n"")[0])))
+    case(""ics lines folded to 75 octets"", lambda: all(len(l.encode()) <= 75 for l in to_ics(run("""".join(f""Plant number {i},pothos,15,plastic,medium,yes,\n"" for i in range(8)))[0], ""20261030T000000Z"").split(""\r\n"")))
+    passed = 0
+    for name, ok, err in cases:
+        passed += ok
+        print((""PASS "" if ok else ""FAIL "") + name + ("""" if ok else f""  {err}""))
+    print(f""{passed}/{len(cases)} passed"")
+    return 0 if passed == len(cases) else 1
+
+
+def main(argv=None):
+    ap = argparse.ArgumentParser(description=""Build a houseplant watering check calendar"")
+    ap.add_argument(""plants"", nargs=""?"")
+    ap.add_argument(""--start"", help=""first day of the plan, YYYY-MM-DD (default today)"")
+    ap.add_argument(""--weeks"", type=int, default=4)
+    ap.add_argument(""--hemisphere"", choices=[""north"", ""south""], default=""north"")
+    ap.add_argument(""--humidity"", choices=list(HUMIDITY), default=""normal"", help=""low = heating on / below ~35 %%"")
+    ap.add_argument(""--check-days"", help=""snap checks to these weekdays, e.g. Mon,Thu"")
+    ap.add_argument(""--ics"", help=""also write an .ics calendar file"")
+    ap.add_argument(""--json"", action=""store_true"")
+    ap.add_argument(""--self-test"", action=""store_true"")
+    a = ap.parse_args(argv)
+    if a.self_test:
+        return self_test()
+    if not a.plants:
+        ap.error(""give a plants CSV, or --self-test"")
+    try:
+        start = parse_date(a.start, ""--start"") if a.start else dt.date.today()
+        if not 1 <= a.weeks <= 26:
+            raise InputError(""--weeks must be 1..26"")
+        days = None
+        if a.check_days:
+            days = [x.strip()[:3].title() for x in a.check_days.split("","") if x.strip()]
+            for x in days:
+                if x not in DAY_NAMES:
+                    raise InputError(f""unknown weekday '{x}' in --check-days"")
+        with open(a.plants, encoding=""utf-8"") as fh:
+            plants, warnings = load_plants(fh.read())
+    except (OSError, InputError, UnicodeDecodeError) as e:
+        print(f""error: {e}"", file=sys.stderr)
+        return 2
+    res = plan(plants, start, a.weeks, a.hemisphere, a.humidity, days)
+    if a.ics:
+        stamp = dt.datetime.now(dt.timezone.utc).strftime(""%Y%m%dT%H%M%SZ"")
+        with open(a.ics, ""w"", encoding=""utf-8"", newline="""") as fh:
+            fh.write(to_ics(res, stamp))
+    if a.json:
+        out = {**res, ""start"": res[""start""].isoformat(), ""end"": res[""end""].isoformat(),
+               ""calendar"": [{""date"": d.isoformat(), ""plants"": n} for d, n in res[""calendar""]],
+               ""late_snaps"": [{""plant"": n, ""due"": d.isoformat(), ""planned"": p.isoformat()} for n, d, p in res[""late_snaps""]],
+               ""plants"": [{**p, ""last_watered"": p[""last_watered""].isoformat() if p[""last_watered""] else None} for p in res[""plants""]],
+               ""warnings"": [{""severity"": s, ""plant"": n, ""note"": m} for s, n, m in warnings]}
+        print(json.dumps(out, indent=2))
+    else:
+        sys.stdout.write(render(res, warnings))
+    return 1 if any(w[0] == ""HIGH"" for w in warnings) else 0
+
+
+if __name__ == ""__main__"":
+    sys.exit(main())",FALSE,TEXT,f
