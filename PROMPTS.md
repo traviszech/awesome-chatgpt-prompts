@@ -211229,3 +211229,81 @@ Output: A high-quality cinematic short film in 16:9 aspect ratio, with realistic
 
 </details>
 
+<details>
+<summary><strong>Nostalgic Anime Development Board: Character Sheet + 8-Frame Storyboard (The Summer Detour)</strong></summary>
+
+## Nostalgic Anime Development Board: Character Sheet + 8-Frame Storyboard (The Summer Detour)
+
+Contributed by [@f](https://github.com/f)
+
+```md
+Create one vertical anime development board for an original 15-second short film titled "The Summer Detour".
+
+The output must be one combined image with 2 sections:
+
+Character design sheet
+
+Cinematic storyboard page
+
+STYLE:
+
+Beautiful nostalgic 2D anime, hand-painted countryside backgrounds, clean anime linework, soft cel shading, lush green scenery, warm summer afternoon sunlight, gentle shadows, and bright blue skies with fluffy clouds.
+
+Professional anime production board with red storyboard borders, blue camera arrows, small handwritten camera notes, and beautifully illustrated keyframes.
+
+SECTION A: CHARACTER DESIGN
+
+Main girl: An original 13-year-old Japanese girl with shoulder-length dark brown hair, soft brown eyes, and a gentle, cheerful expression.
+
+Outfit: cream short-sleeved blouse, faded navy skirt, white socks, brown shoes, and a small canvas shoulder bag.
+
+Personality: calm, curious, thoughtful, and quietly happy.
+
+Show front, side, three-quarter, and back views, plus smiling, thoughtful, relaxed, and surprised expressions.
+
+Include cycling, sitting, and looking toward the horizon poses.
+
+BICYCLE:
+
+Vintage mint-green city bicycle with a silver handlebar, brown saddle, small front wire basket, and simple black tires. A clear glass bottle of lemon soda sits securely inside the basket.
+
+Keep the bicycle's design consistent in every frame.
+
+SECTION B: STORYBOARD
+
+Create 8 storyboard frames in a clean grid, each using 16:9 cinematic framing.
+
+Keep the girl, bicycle, countryside, and lighting consistent.
+
+Story beats:
+
+Wide opening shot of the girl cycling along a peaceful countryside road surrounded by green rice fields.
+
+Beautiful close-up of bicycle wheels turning beside swaying grass, sunlight sparkling through the spokes.
+
+Side-tracking shot as she cycles past expansive rice paddies beneath enormous fluffy summer clouds.
+
+She passes a small traditional house with hanging wind chimes gently swaying in the breeze.
+
+She reaches a quiet grassy riverbank, stops, and parks her bicycle beside a tree.
+
+Sitting in the grass, she opens her cold lemon soda and takes a refreshing sip.
+
+A small cream-and-orange local train crosses a distant bridge over the river. She watches it with a gentle smile.
+
+Spectacular wide ending shot: the camera rises to reveal the winding river, endless green fields, distant mountains, passing train, and girl resting beside her bicycle under a magnificent summer sky.
+
+ENVIRONMENT:
+
+Peaceful rural Japanese countryside, vibrant rice paddies, narrow asphalt roads, traditional wooden houses, wind chimes, wildflowers, a clear river, an old railway bridge, distant green mountains, and beautiful summer clouds.
+
+Bright late-afternoon sunlight throughout.
+
+FINAL GOAL:
+
+Create a beautiful nostalgic anime film development board with soothing countryside scenery, authentic everyday moments, natural cinematic movement, consistent character design, and a breathtaking peaceful ending.
+
+```
+
+</details>
+
