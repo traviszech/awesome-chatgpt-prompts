@@ -211513,3 +211513,27 @@ Rules: the camera never stops and never cuts. Soft depth of field, light film gr
 
 </details>
 
+<details>
+<summary><strong>Claude prompt: 14-second product film for an invoicing app (16:9)</strong></summary>
+
+## Claude prompt: 14-second product film for an invoicing app (16:9)
+
+Contributed by @anonymous
+
+```md
+Build a 14-second motion design product film in 16:9 (1920x1080, 30 fps) for my app ${name}, which ${what_it_does}.
+Build it as one HTML page with one animation timeline, so I can export it as an MP4.
+
+Look: light grey-green background with a soft grid, white cards with thin borders, one brand colour ${hex}, one clean sans-serif font.
+
+The text builds word by word: "${hook_question}" / "${name} ${step_1}, ${step_2}, and ${step_3} for you." / "${result}."
+Scene 1: the hook question, big and centred.
+Scenes 2 to 4: one card shows each step. The card from one step becomes the object of the next step.
+Scene 5: the result with a small "done" stamp.
+Scene 6: logo, name and "${tagline}".
+
+Rules: the camera never stands still. Every move is eased. Key words are in the brand colour, the rest stays dark.
+```
+
+</details>
+
