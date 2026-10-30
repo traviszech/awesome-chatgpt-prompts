@@ -211561,3 +211561,28 @@ Rules: only one camera travel in the whole film. Words grow up from their baseli
 
 </details>
 
+<details>
+<summary><strong>Claude prompt: 11-second premium product film for an AI tool (16:9)</strong></summary>
+
+## Claude prompt: 11-second premium product film for an AI tool (16:9)
+
+Contributed by @anonymous
+
+```md
+Build an 11-second motion design product film in 16:9 (1920x1080, 30 fps) for my AI tool ${name}, which ${what_it_does}.
+Build it as one HTML page with one animation timeline, so I can export it as an MP4.
+
+Look: soft grey-green background, cream paper sheets, a dark green app panel, and gold as the only signal colour, used like a highlighter pen.
+
+Text builds word by word: "${problem}" / "${name} [does step 1], [step 2], and [step 3]." / "${claim}."
+Scene 1: a stack of paper sheets with the problem line on top.
+Scene 2: one line on a sheet gets marked in gold and lifts off as a strip.
+Scene 3: one camera move to the app panel. The strip lands there as a card.
+Scene 4: the card opens and shows the better version: ${result}.
+Scene 5: a gold marker stroke draws the logo. Name and claim appear.
+
+Rules: one object carries the story from start to end. Only one camera travel. Every move is eased.
+```
+
+</details>
+
