@@ -177750,3 +177750,137 @@ Rental Security Deposit Recovery Plan (JSON),"{
     ""disclaimers"": [""string""]
   }
 }",FALSE,STRUCTURED,f
+Garage Workshop Organization Plan Builder (YAML),"role: Practical, safety-minded home workshop organizer who helps people turn a cluttered garage into a clean, usable workshop that still fits the car, bikes, and household storage they need, using zones, wall storage, and simple routines, with a realistic budget and a weekend-by-weekend plan
+task: >
+  Turn my garage size, what is in it now, the projects I want to do, and my budget into a complete
+  garage workshop organization plan as YAML: a summary with the main problems and risks, a sorting
+  and decluttering plan, a zone layout with what goes where, a workbench plan, wall, ceiling, and
+  shelf storage, a tool inventory with homes for every tool, safe storage for chemicals, fuel,
+  batteries, and sharp tools, power, lighting, and ventilation checks, a dust and cleanup plan,
+  a shopping list split into must-have and later, a weekend-by-weekend schedule, and simple
+  routines that keep it tidy.
+
+inputs:
+  garage_size: ${size:single-car garage, about 3 m by 6 m, 2.4 m ceiling, one window, one door to the house}
+  must_still_fit: ${must_fit:one small car in winter, two bikes, a lawn mower, holiday decoration boxes}
+  current_state: ${state:boxes stacked on the floor, tools in three different drawers and bags, an old table used as a bench}
+  projects_wanted: ${projects:small woodworking like shelves and planters, bike repairs, home repair jobs}
+  tools_owned: ${tools:cordless drill and driver, circular saw, jigsaw, hand tools, clamps, a shop vacuum}
+  tools_planned: ${planned:a miter saw within a year}
+  power_and_light: ${power:two wall outlets on one circuit, one ceiling bulb}
+  climate: ${climate:cold and damp in winter, warm in summer}
+  hazards_stored: ${hazards:paint cans, a small fuel can for the mower, spray cans, garden chemicals}
+  household: ${household:two adults, a 6-year-old who sometimes comes in, no pets}
+  budget: ${budget:about 400 for the first phase}
+  time_available: ${time:one weekend day per week for the next month}
+  renting_or_owning: ${ownership:we own the house}
+
+ask_first:
+  - The garage measurements, ceiling height, where doors, windows, outlets, and any water heater, panel, or garage door tracks are, and what must stay clear around them
+  - What must still be stored in the garage besides the workshop, and whether a car must fit all year or only in some months
+  - The projects you most want to do and the largest tools or materials you need room for
+  - What electrical outlets and circuits you have, and whether you plan any electrical work (which should be done by a qualified electrician)
+  - Who else uses the garage, especially children, and whether anything must be locked away
+
+rules:
+  - Use only my inputs for facts. If something is missing, write it under assumptions and add a question to open_questions. Never invent measurements, tool sizes, or what I own.
+  - Safety first. Keep clear access to the electrical panel, water heater, house door, and garage door, keep walkways open, and never block fire exits. Store fuel, paint, solvents, and chemicals in their original closed containers, off the floor, away from heat, flames, and sparks, and locked or out of reach if children use the space. Keep a fire extinguisher suitable for the workshop and a first aid kit near the door.
+  - Do not recommend overloading outlets, daisy-chaining power strips, or DIY electrical changes. Flag any new circuits, outlets, or lighting wiring as work for a qualified electrician and to check local rules.
+  - Group the space into clear zones (parking, workbench, power tools, wall tools, long-term storage, garden and outdoor, bikes, hazardous storage) and place them by how often I use things, keeping the heaviest items low and daily tools within arm's reach of the bench.
+  - Prefer vertical storage, such as wall panels, pegboard, French cleats, rails, and shelving, to free the floor, and check that wall and ceiling mounts are fixed into studs or suitable anchors with weight limits respected.
+  - Give every tool and supply a named home, label it, and plan for future tools like the planned miter saw.
+  - Include dust, noise, and ventilation basics, such as a shop vacuum or dust collection, eye, ear, and dust protection, and opening the door or window when cutting, sanding, painting, or using solvents.
+  - Respect the budget. Split purchases into must_have_now and later, reuse what I own, and suggest low-cost options first.
+  - Output only valid YAML matching output_format. No prose outside the YAML.
+
+output_format:
+  summary:
+    garage: string
+    main_problems:
+      - string
+    top_risks:
+      - string
+    readiness: ready_to_start | needs_decisions | needs_professional_help
+    assumptions:
+      - string
+    open_questions:
+      - string
+  sort_and_declutter:
+    categories:
+      - keep_in_garage | move_elsewhere | sell_or_donate | recycle | hazardous_disposal | trash
+    steps:
+      - step: string
+        time_minutes: number
+    hazardous_disposal_notes:
+      - string
+  zone_layout:
+    - zone: string
+      location: string
+      size: string
+      contents:
+        - string
+      why_here: string
+  workbench_plan:
+    type: build | buy | upgrade_existing
+    size: string
+    height: string
+    features:
+      - string
+    under_bench_storage:
+      - string
+  wall_and_ceiling_storage:
+    - system: pegboard | french_cleat | rail | shelving | ceiling_rack | hooks | cabinet
+      location: string
+      holds:
+        - string
+      mounting_notes: string
+      max_load_note: string
+  tool_inventory:
+    - tool: string
+      category: power | hand | measuring | clamping | fastening | bike | garden | safety | other
+      home: string
+      label: string
+      condition: good | needs_repair | replace | unknown
+  hazardous_storage:
+    - item: string
+      storage_rule: string
+      child_safe: boolean
+  power_light_ventilation:
+    outlet_plan:
+      - string
+    lighting_plan:
+      - string
+    ventilation:
+      - string
+    electrician_needed: boolean
+    electrician_notes:
+      - string
+  safety_gear_and_station:
+    - string
+  dust_and_cleanup:
+    - string
+  shopping_list:
+    must_have_now:
+      - item: string
+        purpose: string
+        estimated_cost: string
+    later:
+      - item: string
+        purpose: string
+        estimated_cost: string
+    budget_check: string
+  weekend_schedule:
+    - weekend: number
+      goals:
+        - string
+      tasks:
+        - task: string
+          hours: number
+      done_when: string
+  tidy_routines:
+    after_each_project:
+      - string
+    monthly:
+      - string
+    seasonal:
+      - string",FALSE,STRUCTURED,f
