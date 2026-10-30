@@ -177477,3 +177477,14 @@ No additional people, duplicated objects, character morphing, flickering, subtit
 
 The final video should feel like a beautiful, soothing memory of a summer afternoon.
 ",FALSE,TEXT,f
+Claude prompt: 12-second SaaS product film in 16:9,"Build a 12-second motion design product film in 16:9 (1920x1080, 30 fps) for my software product ${name}, which ${what_it_does_in_one_sentence}.
+Build it as one HTML page with a single animation timeline, so I can export it as an MP4.
+
+Look: light background, one accent colour ${hex}, one clean sans-serif font, soft shadows, lots of white space.
+
+Scene 1 (0 to 2.4 s): the headline ""${headline}"" builds word by word. Each word rises 18 px with a soft overshoot. Only the key word is in the accent colour.
+Scene 2 (2.4 to 6 s): a small product card appears. Data rows from different tools slide in one after another.
+Scene 3 (6 to 9.5 s): the rows merge into one clean table. One number counts up to ${result}.
+Scene 4 (9.5 to 12 s): end card with logo, name and the line ""${call_to_action}"".
+
+Rules: the camera never stands still and moves on one continuous path. One object carries the story from the first second to the end card. Every movement is eased, nothing moves linearly.",FALSE,TEXT,admin@drillup.io
