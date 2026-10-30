@@ -211600,3 +211600,16 @@ Beside the door, put the logo in modern acrylic signage (transparent, and it has
 
 </details>
 
+<details>
+<summary><strong>Scientific Abstract and Brochure Builder with Reference Verification</strong></summary>
+
+## Scientific Abstract and Brochure Builder with Reference Verification
+
+Contributed by @anonymous
+
+```md
+Create a program for a performance called"", the purpose of which is to help create and verify scientific abstracts and manuals*input :product type> subject>brochure//number of tests:15-25-33-45-100//enter the design sample file*all M must be adhered to in the attached form colors font type that night //first reference //second reference///the first step of the tool performs a reference scan at the bottom of the page makes sure that the selected topic is part of the ideas of the reference//step the second took the main topic from the first reference and expanded through the second reference *with the attachment of all the attachments and illustrations related to the specific topic//reformulating the topic in a human format, not a tool, then the output in the form of a high-quality DVD and format
+```
+
+</details>
+
