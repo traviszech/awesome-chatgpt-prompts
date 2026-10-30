@@ -211586,3 +211586,17 @@ Rules: one object carries the story from start to end. Only one camera travel. E
 
 </details>
 
+<details>
+<summary><strong>modern acrylic signage </strong></summary>
+
+## modern acrylic signage 
+
+Contributed by [@2mikister](https://github.com/2mikister)
+
+```md
+Act as an interior designer and visualization art director. 
+Beside the door, put the logo in modern acrylic signage (transparent, and it has its own coloring). Do not change the picture; just put the signage in a modern way
+```
+
+</details>
+
