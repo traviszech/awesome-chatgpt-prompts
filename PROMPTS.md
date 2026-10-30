@@ -212124,3 +212124,16 @@ A steaming outdoor hot spring pool beside a traditional Japanese mountain inn du
 
 </details>
 
+<details>
+<summary><strong>Snowy Mountain Onsen at Dusk (Image-to-Video Animation)</strong></summary>
+
+## Snowy Mountain Onsen at Dusk (Image-to-Video Animation)
+
+Contributed by [@f](https://github.com/f)
+
+```md
+Start from the step 2 image "Steaming Outdoor Hot Spring Beside a Snowy Mountain Inn at Blue Hour" as the exact first frame, and animate it into a calm ${duration:6}-second cinematic shot. Keep the teal hot spring pool, the dark snow-capped rocks around it, the small stone lantern on the left, the larger stone lantern on the right, the two-storey wooden inn with its snowy roofs and warmly lit windows, the snow-laden pine trees, the dark mountain slope, the deep blue twilight sky, and the composition exactly as in the image. The camera makes a slow, gentle push-in toward the pool and the inn. Thick white steam drifts and curls slowly over the water and rises toward the trees. Large soft snowflakes keep falling evenly across the scene. The lanterns and the inn windows glow steadily without flickering. About two thirds of the way through, a small clump of snow slips off a pine branch above the pool and drops straight down into the water near the center, making a small white splash and soft ripples that spread outward and fade. The shot ends calm, with the steam still drifting. Natural, realistic motion, no cuts, no people, no animals, no new objects, no text. Soft sound of bubbling water, a quiet splash, and the hush of falling snow.
+```
+
+</details>
+
