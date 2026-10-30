@@ -212033,3 +212033,16 @@ A photorealistic wildlife photograph of a snow leopard standing on a snow-dusted
 
 </details>
 
+<details>
+<summary><strong>Mid-Century Travel Poster of a Norwegian Fjord with a Red Ferry</strong></summary>
+
+## Mid-Century Travel Poster of a Norwegian Fjord with a Red Ferry
+
+Contributed by [@f](https://github.com/f)
+
+```md
+A mid-century modern travel poster illustration of a Norwegian fjord with a small red ferry, in a portrait 3:4 frame, in a flat screen-print style with no text. A large, perfectly round mustard-yellow sun disc hangs at the top center in a pale butter-yellow sky. Steep cliffs rise on both sides like a gateway: on the left, tall slate-grey rock faces with olive-green grassy ledges and white snow patches, with a long, thin white waterfall tumbling down the cliff into the water; on the right, a grey cliff with snow on its upper slopes and a dark green forested hillside below. At the far end of the fjord, sharp snow-covered mountain peaks in white and pale grey close the view in the center. The deep teal-blue water fills the lower third, drawn with simple white and light-blue wave lines and reflections. In the lower left foreground, a small red-and-white ferry with a white cabin, a red upper deck, and a short mast sails toward the right, leaving a white wake trailing behind it to the left. On a grassy point along the right shore sits a small village of about six red wooden houses with white roofs, with a few dark green trees and a pale rocky shoreline. Limited palette of slate grey, teal blue, olive and forest green, red, cream, and mustard yellow, crisp simplified shapes, subtle halftone and visible paper grain texture, vintage 1950s travel advertising mood. No text, no lettering, no logos.
+```
+
+</details>
+
