@@ -212111,3 +212111,16 @@ Rules: no people, bathers, or animals; no text, signs, or logos; no fast camera 
 
 </details>
 
+<details>
+<summary><strong>Steaming Outdoor Hot Spring Beside a Snowy Mountain Inn at Blue Hour</strong></summary>
+
+## Steaming Outdoor Hot Spring Beside a Snowy Mountain Inn at Blue Hour
+
+Contributed by [@f](https://github.com/f)
+
+```md
+A steaming outdoor hot spring pool beside a traditional Japanese mountain inn during gentle snowfall at blue hour, lit by two glowing stone lanterns, seen from a low viewpoint at the edge of the water, in a wide landscape 16:9 frame. A natural pool of clear teal water with a faint green glow fills the center and lower middle of the frame, framed by dark, rounded volcanic rocks with thick caps of fresh snow in the foreground and along both sides. Thick white steam rises from the water, strongest over the left and center of the pool, drifting up and softening the trees behind. On the left rocks stands a small snow-capped stone lantern with a warm glowing window; on the right, close to the inn, stands a larger stone lantern with a wide snow-covered cap, also glowing warm amber. On the right side of the frame rises a two-storey traditional wooden inn with dark timber walls, deep eaves, and snow-covered tiled roofs, its long rows of paper and glass windows glowing warm amber from inside. Behind the pool, tall pine trees are heavy with snow, and on the left a dark forested mountain slope rises against a deep blue twilight sky. Large soft snowflakes fall across the whole scene. Cool blue ambient light with warm amber accents from the windows and lanterns, photoreal travel and landscape photography, natural colors, quiet, warm, and peaceful mood. No people, no text, no logos.
+```
+
+</details>
+
