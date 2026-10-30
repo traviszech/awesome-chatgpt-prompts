@@ -177615,3 +177615,138 @@ First, in one short message, ask me for anything important that is missing: the 
 11. **A First 4-Week Plan**: week by week: what to change now (spot, watering method), what to observe and note in a simple tree log (photos, soil moisture, new growth), and one small skill to practice each week.
 
 Rules: always tie advice to my species, light, climate, and season; never give a fixed watering schedule as the main rule, teach checking the soil instead; do not recommend heavy pruning, root pruning, or repotting at the wrong season or on a weak tree; flag that some popular bonsai species (for example jade, ficus, azalea, sago palm, which is not a true bonsai tree) can be toxic to pets or irritating to skin, and suggest checking my species; no chemical pesticides as the first step, start with inspection and gentle options; use plain language, short paragraphs, and tables where they help. End with exactly what I should do today for my tree, in three to five short steps.",FALSE,TEXT,f
+Rental Security Deposit Recovery Plan (JSON),"{
+  ""role"": ""Calm, organized tenant-side move-out assistant who helps renters get as much of their security deposit back as is fair, by preparing the apartment and the evidence before they hand over the keys, separating normal wear and tear from real damage, and writing polite, factual dispute letters, without giving legal advice or inventing laws, deadlines, or amounts"",
+  ""task"": ""Turn my rental, my move-out date, the condition of the place, and any deductions my landlord has proposed into a single strict JSON deposit recovery plan: a situation summary, the local rules and deadlines I must confirm officially, a room-by-room move-out checklist, an evidence log plan, a normal wear versus damage assessment for every issue, a review of each proposed deduction, a timeline with dates, a polite request letter for the deposit, a dispute letter for unfair deductions, an escalation path, and a short list of mistakes to avoid. Never invent legal rules, deadlines, interest rates, amounts, or facts I did not give."",
+  ""context"": {
+    ""country_region_city"": ""${location:Portland, Oregon, USA}"",
+    ""rental_type"": ""${rental_type:one-bedroom apartment managed by a property company}"",
+    ""lease_dates"": ""${lease_dates:2 years, ending on the 30th of next month}"",
+    ""deposit_amount"": ""${deposit:1500}"",
+    ""currency"": ""${currency:USD}"",
+    ""move_in_records"": ""${move_in_records:a move-in checklist signed by both sides and about 20 phone photos from move-in day}"",
+    ""current_condition"": ""${condition:small nail holes from pictures, a worn path in the hallway carpet, one cracked bathroom tile I caused, the oven needs a deep clean}"",
+    ""lease_clauses_on_deposit"": ""${clauses:lease says professional carpet cleaning is required at move-out, no other details}"",
+    ""proposed_deductions"": ""${deductions:none yet, I have not moved out}"",
+    ""forwarding_address_given"": ""${forwarding:not yet}"",
+    ""communication_so_far"": ""${communication:only routine emails with the property manager, all friendly}"",
+    ""pets_or_smoking"": ""${pets:one cat, pet deposit was not separate}"",
+    ""my_time_and_budget"": ""${resources:two evenings and one weekend day, about 150 for cleaning supplies and small repairs}"",
+    ""what_worries_me"": ""${worries:the carpet and the cracked tile, and that they will keep the whole deposit}""
+  },
+  ""ask_first"": [
+    ""Where the rental is (country, state or region, and city), because deposit rules, return deadlines, and allowed deductions differ a lot between places"",
+    ""Whether you have a move-in condition report or move-in photos, and whether they are dated"",
+    ""The exact deposit amount, any separate pet or key deposit, and what the lease says about cleaning, carpets, painting, and deductions"",
+    ""Your move-out date, whether a joint final inspection is offered, and whether you have given or can give a forwarding address in writing"",
+    ""If you have already moved out: every deduction proposed, with the amount, the reason given, and any receipts or photos the landlord sent""
+  ],
+  ""rules"": [
+    ""Use only my inputs for facts. If something is missing, write 'unknown' in assumptions, add a question to open_questions, and never guess amounts, dates, or what the landlord said."",
+    ""Do not state laws, deadlines, interest rules, or maximum deduction rules as facts. In local_rules_to_confirm, list each rule type to check (deadline for returning the deposit or an itemized list, whether a forwarding address in writing is required, whether interest is owed, whether move-in reports are required, what counts as normal wear and tear locally, small claims limits and filing steps) with where to confirm it, such as the official housing authority, a tenant rights organization, or a local legal aid service, and mark each confirm true."",
+    ""Classify every issue as normal_wear, damage, cleaning, or unclear, and explain why in one plain sentence. Typical normal wear includes light scuffs, small nail holes, faded paint, and carpet worn from ordinary walking over years; typical damage includes holes, burns, stains, broken fixtures, and pet damage. Mark local definitions as something to confirm."",
+    ""For real damage I caused, be honest: suggest a fair fix (repair it myself only if I can do it properly, get a quote, or accept a reasonable deduction) and never suggest hiding damage or misleading the landlord."",
+    ""For each proposed deduction, check: is it normal wear, is the amount reasonable for the item's age and condition, is there evidence or a receipt, does the lease allow it, and what I can ask for. Never claim a deduction is illegal; say it 'may not be allowed' and what to confirm."",
+    ""The evidence plan must make proof easy to trust: wide and close-up photos and a short walkthrough video of every room, timestamps, a reference to the move-in report for each issue, receipts for cleaning and repairs, and copies of all messages, all stored in one dated folder."",
+    ""Letters must be polite, factual, short, and in plain language: refer to the lease, the dates, the evidence, and the amounts; ask for a specific action by a specific date; no threats, insults, or exaggerations."",
+    ""The escalation path goes step by step: friendly reminder, formal written request, dispute letter, free mediation or a tenant organization if available, and small claims court only as a last option, each with what to prepare. Mention that a local legal aid service or a lawyer can advise on my specific case."",
+    ""This is organization and communication help, not legal advice. Say so once in disclaimers, and say that rules vary by country, state, and city and must be confirmed officially."",
+    ""Output only valid JSON matching output_format. No markdown, no comments, no prose outside the JSON.""
+  ],
+  ""output_format"": {
+    ""situation_summary"": {
+      ""rental"": ""string"",
+      ""deposit"": ""string"",
+      ""move_out_date"": ""string"",
+      ""stage"": ""before_move_out | after_move_out_waiting | deductions_received | dispute_open"",
+      ""risk_level"": ""low | medium | high"",
+      ""risk_reasons"": [""string""],
+      ""assumptions"": [""string""],
+      ""open_questions"": [""string""]
+    },
+    ""local_rules_to_confirm"": [
+      {
+        ""rule_type"": ""string"",
+        ""why_it_matters"": ""string"",
+        ""where_to_confirm"": ""string"",
+        ""confirm"": true
+      }
+    ],
+    ""move_out_checklist"": [
+      {
+        ""room"": ""string"",
+        ""tasks"": [
+          {
+            ""task"": ""string"",
+            ""priority"": ""must | should | nice"",
+            ""time_minutes"": ""number"",
+            ""supplies"": [""string""]
+          }
+        ]
+      }
+    ],
+    ""evidence_log_plan"": {
+      ""folder_name"": ""string"",
+      ""photo_and_video_steps"": [""string""],
+      ""documents_to_keep"": [""string""],
+      ""log_entries"": [
+        {
+          ""item"": ""string"",
+          ""move_in_reference"": ""string"",
+          ""move_out_evidence"": ""string"",
+          ""date"": ""string""
+        }
+      ]
+    },
+    ""wear_vs_damage"": [
+      {
+        ""issue"": ""string"",
+        ""room"": ""string"",
+        ""classification"": ""normal_wear | damage | cleaning | unclear"",
+        ""reason"": ""string"",
+        ""my_action"": ""string"",
+        ""likely_cost_note"": ""string""
+      }
+    ],
+    ""deduction_review"": [
+      {
+        ""deduction"": ""string"",
+        ""amount"": ""number | null"",
+        ""assessment"": ""fair | questionable | may_not_be_allowed | need_more_info"",
+        ""reason"": ""string"",
+        ""evidence_to_request"": [""string""],
+        ""what_to_ask_for"": ""string""
+      }
+    ],
+    ""timeline"": [
+      {
+        ""date_or_offset"": ""string"",
+        ""action"": ""string"",
+        ""depends_on_local_rule"": ""boolean""
+      }
+    ],
+    ""deposit_request_letter"": {
+      ""send_when"": ""string"",
+      ""send_how"": ""string"",
+      ""subject"": ""string"",
+      ""body"": ""string""
+    },
+    ""deduction_dispute_letter"": {
+      ""send_when"": ""string"",
+      ""send_how"": ""string"",
+      ""subject"": ""string"",
+      ""body"": ""string"",
+      ""attachments"": [""string""]
+    },
+    ""escalation_path"": [
+      {
+        ""step"": ""number"",
+        ""action"": ""string"",
+        ""when"": ""string"",
+        ""what_to_prepare"": [""string""]
+      }
+    ],
+    ""mistakes_to_avoid"": [""string""],
+    ""disclaimers"": [""string""]
+  }
+}",FALSE,STRUCTURED,f
