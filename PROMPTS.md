@@ -211190,3 +211190,42 @@ Contributed by [@f](https://github.com/f)
 
 </details>
 
+<details>
+<summary><strong>Korean Slice-of-Life Comedy: A Woman and Her Tiger-Hat Cat (16:9 Video)</strong></summary>
+
+## Korean Slice-of-Life Comedy: A Woman and Her Tiger-Hat Cat (16:9 Video)
+
+Contributed by [@f](https://github.com/f)
+
+```md
+Create a cinematic, ultra-realistic Korean-style short video featuring a young East Asian woman with a short black bob haircut and bangs, wearing a dark brown hoodie and casual pants. The video combines adorable animal moments, unexpected comedy, and cozy everyday life, with realistic physics, expressive characters, and professional cinematic camera work.
+
+Scene 1 – A Funny Day at the Playground:
+In a modern residential apartment playground, a young woman stands beside a cute gray tabby cat wearing an adorable tiger-striped animal hat. A large yellow helium balloon floats above the cat, creating a funny and unexpected situation. The woman holds a smartphone near her ear while managing the situation. Capture the cat's curious expressions and the woman's natural reactions with soft daylight, realistic fur details, and a cinematic shallow depth of field.
+
+Scene 2 – The Unexpected Accident:
+The woman walks near the playground while the cat and its leash move around her feet. In a sudden, funny moment, she loses her balance and falls onto the soft sandy ground. The cat remains surprisingly calm and curious, creating a humorous contrast. Use dynamic camera angles, natural body movements, realistic physics, and smooth cinematic transitions.
+
+Scene 3 – The Cat's Adventure:
+Show the adorable tabby cat wearing its miniature tiger hat as it walks around the playground. The yellow balloon and leash create playful visual moments. Capture close-ups of the cat's face, whiskers, paws, and fluffy striped fur. Include wide shots of the playground, apartment buildings, benches, and surrounding greenery.
+
+Scene 4 – A Cozy Evening:
+Transition to a peaceful residential courtyard during the evening golden hour. Warm lights glow through the apartment windows as the camera captures a quiet outdoor moment with a small fluffy dog wearing a blue ribbon. Use soft background bokeh, natural environmental details, and a warm cinematic atmosphere.
+
+Scene 5 – A Funny Dinner at Home:
+Inside a cozy, warmly lit modern kitchen, the same young woman sits at a wooden dining table filled with Korean-style home-cooked dishes, rice bowls, and small plates of side dishes. She eats with chopsticks while the adorable miniature cat, still wearing its tiger-striped hat, sits beside her at the table. The cat makes cute, expressive movements and watches the food with curiosity. The woman suddenly notices something unexpected and turns toward the cat with a surprised, confused expression. End with a charming comedic moment that highlights their playful relationship.
+
+Visual Style: Ultra-realistic cinematic photography, Korean slice-of-life aesthetic, 4K resolution, natural skin texture, highly detailed animal fur, expressive facial reactions, realistic lighting, smooth camera movements, shallow depth of field, soft daylight, warm evening tones, and professional film-quality color grading.
+
+Camera Direction: A combination of medium shots, wide establishing shots, low-angle animal shots, detailed close-ups, gentle tracking movements, and smooth cinematic transitions.
+
+Mood: Cute, funny, heartwarming, slightly chaotic, and wholesome.
+
+Important Consistency Rules: Keep the woman's facial appearance, short black bob hairstyle, bangs, and brown outfit consistent throughout the video. Maintain the same gray tabby cat and its tiger-striped hat in every scene where it appears. Ensure realistic animal anatomy, natural movements, consistent character appearances, and believable interactions between the characters.
+
+Output: A high-quality cinematic short film in 16:9 aspect ratio, with realistic motion, detailed environments, expressive storytelling, and no artificial-looking animation.
+
+```
+
+</details>
+
