@@ -214640,3 +214640,16 @@ Style reference used for the character images (Midjourney blend): --sref 1448908
 
 </details>
 
+<details>
+<summary><strong>3D Stop-Motion Movie Character Design Template</strong></summary>
+
+## 3D Stop-Motion Movie Character Design Template
+
+Contributed by [@f](https://github.com/f)
+
+```md
+A highly detailed 3D stop-motion animated movie character design of [character], [age], [cultural background], featuring [body proportions], [distinctive facial features], [hairstyle], [facial expression], wearing [outfit] with [fabric textures and details], [footwear], standing in [pose] with a charming, expressive personality, stylized cartoon facial proportions combined with realistic anatomy, distinctive character silhouette, slightly exaggerated features, playful imperfections, intricate fabric fibers, realistic material wear, rich tactile textures, handcrafted puppet aesthetic, sophisticated material layering, original animated film character design, cinematic 3D rendering, soft studio lighting, full-body composition, clean white background
+```
+
+</details>
+
