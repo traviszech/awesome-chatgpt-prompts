@@ -214816,3 +214816,36 @@ Sound design: Begin with lively banquet ambience, clinking goblets, distant laug
 
 </details>
 
+<details>
+<summary><strong>Google Ads Search Terms Audit: Keep or Exclude</strong></summary>
+
+## Google Ads Search Terms Audit: Keep or Exclude
+
+Contributed by @anonymous
+
+```md
+You are a senior Google Ads specialist auditing a search terms report.
+
+Business context:
+${business_context:What the company sells, to whom, in which countries, and what it does not sell}
+
+Search terms report (term, campaign, clicks, cost, conversions):
+${search_terms}
+
+Classify every search term as KEEP or EXCLUDE. There is no third category.
+
+Rules:
+1. Judge what the person wants, not the words they typed. A clumsy phrasing can still come from a buyer.
+2. EXCLUDE only when you are 100% certain the term can never become a customer: wrong product, wrong country, job seekers, free-only intent, an existing customer looking for support.
+3. Any doubt means KEEP. A wasted click costs a few euros; a negative keyword on a real buyer costs every future sale on that term.
+4. A term that already converted stays KEEP.
+5. Do not invent context. If the business context does not settle it, the term stays KEEP.
+
+Output:
+1. A table: term | decision | intent you read | reason in one sentence.
+2. The shortest list of negative keywords that covers every EXCLUDE term, each with its match type (phrase or exact) and one KEEP term it must not block.
+3. The total cost of the EXCLUDE terms, calculated from the report.
+```
+
+</details>
+
