@@ -245735,3 +245735,28 @@ act as a devops engineer: i have told you already don't entirely depend on the Q
 
 </details>
 
+<details>
+<summary><strong>My mini peoject</strong></summary>
+
+## My mini peoject
+
+Contributed by @anonymous
+
+```md
+---
+name: my-mini-peoject
+description: Pro
+---
+
+# My mini peoject
+
+Describe what this skill does and how the agent should use it.
+
+## Instructions
+
+- Step 1: ...
+- Step 2: ...
+```
+
+</details>
+
